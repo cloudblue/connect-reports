@@ -1,0 +1,11 @@
+-r dev.txt
+
+connect-cli
+pytest
+pytest-cov
+pytest-mock
+coverage[toml]
+isort[pyproject]
+flake8
+flake8-isort
+

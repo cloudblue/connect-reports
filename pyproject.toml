@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "connect_reports"
+version = "1.0.0"
+description = "1.0.0"
+authors = ["1.0.0"]
+license = "Apache Software License 2.0"
+packages = [
+    { include = "reports" }
+]
+readme = "./README.md"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+connect-openapi-client = "^21.0.9"
+openpyxl = "^3.0.5"
+
+[tool.poetry.dev-dependencies]
+connect-cli = "^21.13"
+pytest = "^6.2.1"
+pytest-cov = "^2.10.1"
+pytest-mock = "^3.4.0"
+responses = "^0.12.1"
+coverage = {extras = ["toml"], version = "^5.3.1"}
+isort = {extras = ["pyproject"], version = "^5.6.4"}
+flake8 = "^3.8.4"
+flake8-isort = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+addopts = "--cov=reports --cov-report=term-missing:skip-covered --cov-report=html --cov-report=xml"
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+omit = [
+]
+
+exclude_lines = [
+    "pragma: no cover",
+    "def __str__",
+    "def __repr__",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]

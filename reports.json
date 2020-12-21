@@ -1,0 +1,19 @@
+{
+    "name": "Connect Reports",
+    "description": "Standard set of reports for CloudBlue Connect",
+    "version": "1.0.0",
+    "language": "python",
+    "reports": [
+        {
+            "id": "connect_reports_1",
+            "name": "Connect Reports",
+            "description": "Standard set of reports for CloudBlue Connect",
+            "template": "templates/template.xlsx",
+            "start_row": 2,
+            "start_col": 1,
+            "entrypoint": "reports.connect_reports.connect_reports",
+            "parameters": [
+            ]
+        }
+    ]
+}
