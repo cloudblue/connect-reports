@@ -1,2 +1,18 @@
-connect-openapi-client
-openpyxl
+ansicolors==1.1.8
+certifi==2020.12.5
+chardet==4.0.0
+connect-markdown-renderer==1.0.1
+connect-openapi-client==21.0.9
+et-xmlfile==1.0.1
+idna==2.10
+importlib-metadata==3.3.0; python_version < "3.8"
+inflect==4.1.1
+jdcal==1.4.1
+mistune==0.8.4
+openpyxl==3.0.5
+pygments==2.7.3
+pyyaml==5.3.1
+requests==2.25.1
+typing-extensions==3.7.4.3; python_version < "3.8"
+urllib3==1.26.2
+zipp==3.4.0; python_version < "3.8"

@@ -21,9 +21,13 @@ pytest-cov = "^2.10.1"
 pytest-mock = "^3.4.0"
 responses = "^0.12.1"
 coverage = {extras = ["toml"], version = "^5.3.1"}
-isort = {extras = ["pyproject"], version = "^5.6.4"}
 flake8 = "^3.8.4"
-flake8-isort = "^4.0.0"
+flake8-broken-line = "^0"
+flake8-bugbear = "~20"
+flake8-comprehensions = "~3"
+flake8-string-format =  "^0"
+flake8-debugger = "~3"
+flake8-eradicate = "~1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

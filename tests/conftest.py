@@ -24,7 +24,7 @@ def _get_mock_url(url, kwargs, query=None):
             if k.startswith('ordering(') or k.startswith('select('):
                 mock_url = f'{mock_url}&{k}'
 
-    if kwargs and 'params' in kwargs:        
+    if kwargs and 'params' in kwargs:
         limit = kwargs['params']['limit']
         offset = kwargs['params']['offset']
         mock_url = f'{mock_url}&limit={limit}&offset={offset}'
@@ -54,6 +54,7 @@ def response_factory():
 def client_factory(mocker, response):
     def _create_client(connect_responses):
         response_iterator = iter(connect_responses)
+
         def _execute_http_call(self, method, url, kwargs):
             res = next(response_iterator)
             mock_url = _get_mock_url(url, kwargs, query=res.query)
@@ -73,12 +74,12 @@ def client_factory(mocker, response):
                 }
             elif isinstance(res.value, dict):
                 mock_kwargs['status'] = res.status or 200
-                mock_kwargs['json'] = res.value    
+                mock_kwargs['json'] = res.value
             elif res.value is None:
                 if res.exception:
                     mock_kwargs['side_effect'] = res.exception
                 else:
-                    mock_kwargs['status'] == res.status
+                    mock_kwargs['status'] = res.status
             else:
                 mock_kwargs['status'] = res.status or 200
                 mock_kwargs['body'] = str(res.value)
@@ -91,7 +92,7 @@ def client_factory(mocker, response):
             self.response = requests.request(method, url, **kwargs)
             if self.response.status_code >= 400:
                 self.response.raise_for_status()
-        
+
         client = ConnectClient('Key', use_specs=False)
         client._execute_http_call = MethodType(_execute_http_call, client)
         return client

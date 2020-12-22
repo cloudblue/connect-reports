@@ -1,11 +1,36 @@
 -r dev.txt
 
-connect-cli
-pytest
-pytest-cov
-pytest-mock
-coverage[toml]
-isort[pyproject]
-flake8
-flake8-isort
-
+appdirs==1.4.4
+atomicwrites==1.4.0; sys_platform == "win32"
+attrs==20.3.0
+click==7.1.2
+colorama==0.4.4; sys_platform == "win32"
+connect-cli==21.13
+coverage==5.3.1
+eradicate==2.0.0
+flake8==3.8.4
+flake8-broken-line==0.3.0
+flake8-bugbear==20.11.1
+flake8-comprehensions==3.3.1
+flake8-debugger==3.2.1
+flake8-eradicate==1.0.0
+flake8-string-format==0.3.0
+fs==2.4.11
+iniconfig==1.1.1
+mccabe==0.6.1
+packaging==20.8
+pluggy==0.13.1
+py==1.10.0
+pycodestyle==2.6.0
+pyflakes==2.2.0
+pyparsing==2.4.7
+pytest==6.2.1
+pytest-cov==2.10.1
+pytest-mock==3.4.0
+pytz==2020.4
+requests-toolbelt==0.9.1
+responses==0.12.1
+setuptools-scm==4.1.2
+six==1.15.0
+toml==0.10.2
+tqdm==4.48.2
