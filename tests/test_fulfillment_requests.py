@@ -59,7 +59,7 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
     }
     responses.append(
         response_factory(
-            count=1
+            count=1,
         )
     )
 
