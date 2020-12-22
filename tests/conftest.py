@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 import pytest
 import requests
 import responses
-
+import json
 from cnct import ConnectClient
 
 
@@ -96,3 +96,9 @@ def client_factory(mocker, response):
         client._execute_http_call = MethodType(_execute_http_call, client)
         return client
     return _create_client
+
+
+@pytest.fixture
+def ff_request():
+    with open('./tests/fixtures/ff_request.json') as request:
+        return json.load(request)

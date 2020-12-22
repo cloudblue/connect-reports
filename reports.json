@@ -5,14 +5,92 @@
     "language": "python",
     "reports": [
         {
-            "id": "connect_reports_1",
-            "name": "Connect Reports",
-            "description": "Standard set of reports for CloudBlue Connect",
-            "template": "templates/template.xlsx",
+            "id": "fulfillment_requests",
+            "name": "Fulfillment requests report",
+            "description": "Provides a report from fulfillment requests collection",
+            "template": "templates/fulfillment_requests.xlsx",
             "start_row": 2,
             "start_col": 1,
-            "entrypoint": "reports.connect_reports.connect_reports",
+            "entrypoint": "reports.fulfillment_requests.generate",
+            "audience": [
+                "provider",
+                "vendor",
+                "syndication"
+            ],
+            "report_spec": 1,
             "parameters": [
+                {
+                    "id": "date",
+                    "type": "daterange",
+                    "name": "Report period",
+                    "required": true
+                },
+                {
+                    "id": "product",
+                    "type": "product_list",
+                    "name": "Select the product or products to run the report",
+                    "required": true
+                },
+                {
+                    "id": "rr_type",
+                    "type": "fulfillment_type_list",
+                    "name": "Select the type of request"
+                },
+                {
+                    "id": "rr_status",
+                    "type": "fulfillment_status_list",
+                    "name": "Select the request status"
+                },
+                {
+                    "id": "mkp",
+                    "type": "marketplace_list",
+                    "name": "Select the marketplaces"
+                },
+                {
+                    "id": "hub",
+                    "type": "hubs_list",
+                    "name": "Select the Hubs"
+                }
+            ]
+        },
+        {
+            "id": "failed_requests_failed_with_reason",
+            "name": "Fulfillment requests failed with vendor reason",
+            "description": "Provides a report of fulfillment requests failed with vendors reason",
+            "template": "templates/fulfillment_requests_list.xlsx",
+            "start_row": 2,
+            "start_col": 1,
+            "entrypoint": "reports.fulfillment_requests_failed.generate",
+            "report_spec": 1,
+            "audience": [
+                "provider",
+                "vendor",
+                "syndication"
+            ],
+            "parameters": [
+                {
+                    "id": "date",
+                    "type": "daterange",
+                    "name": "Report period",
+                    "required": true
+                },
+                {
+                    "id": "rr_type",
+                    "type": "fulfillment_type_list",
+                    "name": "Select the type of request"
+                },
+                {
+                    "id": "product",
+                    "type": "product_list",
+                    "name": "Select the products to include from report",
+                    "required": true
+                },
+                {
+                    "id": "connection_type",
+                    "type": "connection_type",
+                    "name": "Select the type of transaction",
+                    "required": true
+                }
             ]
         }
     ]

@@ -1,0 +1,1323 @@
+{
+  "id": "PR-1895-0864-1238-001",
+  "type": "purchase",
+  "note": "",
+  "asset": {
+    "id": "AS-1895-0864-1238",
+    "status": "processing",
+    "external_id": "1147660",
+    "external_uid": "9b86f3c9-6c8c-43e4-af6e-aaa69f150693",
+    "product": {
+      "id": "PRD-276-377-545",
+      "icon": "/media/VA-392-495/PRD-276-377-545/media/PRD-276-377-545-logo_hy9fnEf.png",
+      "name": "My Product",
+      "status": "published"
+    },
+    "connection": {
+      "id": "CT-6838-5958",
+      "type": "production",
+      "status": "approved",
+      "provider": {
+        "id": "PA-425-033",
+        "name": "CB Demo Provider"
+      },
+      "vendor": {
+        "id": "VA-392-495",
+        "name": "Adrian Inc Oct 12"
+      },
+      "hub": {
+        "id": "HB-0309-9389",
+        "name": "IMC DEMOS"
+      },
+      "created_at": "2020-10-13T05:41:30+00:00"
+    },
+    "events": {
+      "created": {
+        "at": "2020-11-23T14:18:17+00:00"
+      },
+      "updated": {
+        "at": "2020-11-23T14:23:00+00:00"
+      }
+    },
+    "items": [
+      {
+        "id": "PRD_276_377_545_0001",
+        "global_id": "PRD-276-377-545-0001",
+        "mpn": "MPN-R-001",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 001",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "18",
+            "events": {
+              "created": {
+                "at": "2020-11-27T08:38:35+00:00",
+                "by": {
+                  "id": "UR-841-574-187",
+                  "name": "Marc Serrat"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:14+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0002",
+        "global_id": "PRD-276-377-545-0002",
+        "mpn": "MPN-R-002",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 002",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "17",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:09+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:22+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0003",
+        "global_id": "PRD-276-377-545-0003",
+        "mpn": "MPN-R-003",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 003",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "16",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:16+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:30+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0004",
+        "global_id": "PRD-276-377-545-0004",
+        "mpn": "MPN-R-004",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 004",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "15",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:23+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:38+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0005",
+        "global_id": "PRD-276-377-545-0005",
+        "mpn": "MPN-R-005",
+        "old_quantity": "0",
+        "quantity": "5",
+        "type": "Units",
+        "display_name": "Reservation Item 005",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "14",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:30+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:45+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0006",
+        "global_id": "PRD-276-377-545-0006",
+        "mpn": "MPN-R-006",
+        "old_quantity": "0",
+        "quantity": "6",
+        "type": "Units",
+        "display_name": "Reservation Item 006",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "13",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:37+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:52+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0007",
+        "global_id": "PRD-276-377-545-0007",
+        "mpn": "MPN-R-007",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 007",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "12",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:43+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:27:58+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0008",
+        "global_id": "PRD-276-377-545-0008",
+        "mpn": "MPN-R-008",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 008",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "11",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:50+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:05+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0009",
+        "global_id": "PRD-276-377-545-0009",
+        "mpn": "MPN-R-009",
+        "old_quantity": "0",
+        "quantity": "9",
+        "type": "Units",
+        "display_name": "Reservation Item 009",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "10",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:34:56+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:11+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0010",
+        "global_id": "PRD-276-377-545-0010",
+        "mpn": "MPN-R-010",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 010",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "9",
+            "events": {
+              "created": {
+                "at": "2020-12-07T12:26:27+00:00",
+                "by": {
+                  "id": "UR-841-574-187",
+                  "name": "Marc Serrat"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:18+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0011",
+        "global_id": "PRD-276-377-545-0011",
+        "mpn": "MPN-R-011",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 011",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "8",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:09+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:24+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0012",
+        "global_id": "PRD-276-377-545-0012",
+        "mpn": "MPN-R-012",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 012",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "7",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:16+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:31+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0013",
+        "global_id": "PRD-276-377-545-0013",
+        "mpn": "MPN-R-013",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 013",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "6",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:22+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:37+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0014",
+        "global_id": "PRD-276-377-545-0014",
+        "mpn": "MPN-R-014",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 014",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "5",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:29+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:44+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0015",
+        "global_id": "PRD-276-377-545-0015",
+        "mpn": "MPN-R-015",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 015",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "4",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:35+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:51+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0016",
+        "global_id": "PRD-276-377-545-0016",
+        "mpn": "MPN-R-016",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 016",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "3",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:42+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:28:57+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0017",
+        "global_id": "PRD-276-377-545-0017",
+        "mpn": "MPN-R-017",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 017",
+        "period": "Monthly",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "2",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:49+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:29:03+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "PRD_276_377_545_0018",
+        "global_id": "PRD-276-377-545-0018",
+        "mpn": "MPN-R-018",
+        "old_quantity": "0",
+        "quantity": "0",
+        "type": "Units",
+        "display_name": "Reservation Item 018",
+        "period": "OneTime",
+        "item_type": "Reservation",
+        "params": [
+          {
+            "value": "1",
+            "events": {
+              "created": {
+                "at": "2020-12-07T16:35:56+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              },
+              "updated": {
+                "at": "2020-12-09T10:29:10+00:00",
+                "by": {
+                  "id": "SU-745-238-122",
+                  "name": "CLI Token"
+                }
+              }
+            },
+            "id": "asdf",
+            "title": "asdf",
+            "description": "asdf",
+            "type": "text",
+            "scope": "item",
+            "phase": "configuration",
+            "hint": "I am the hint text",
+            "placeholder": "I am the placeholder text",
+            "constraints": {
+              "required": false,
+              "hidden": false,
+              "unique": false,
+              "shared": null
+            }
+          }
+        ]
+      }
+    ],
+    "params": [
+      {
+        "id": "t0_f_password",
+        "name": "t0_f_password",
+        "type": "password",
+        "phase": "fulfillment",
+        "description": "t0_f_password D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_f_password T",
+        "constraints": {
+          "max_length": 100,
+          "min_length": 1,
+          "meta": {},
+          "required": true,
+          "reconciliation": false
+        }
+      },
+      {
+        "id": "t0_f_text",
+        "name": "t0_f_text",
+        "type": "text",
+        "phase": "fulfillment",
+        "description": "t0_f_text D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_f_text T",
+        "constraints": {
+          "placeholder": "I am the placeholder text",
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": true,
+          "reconciliation": false
+        }
+      },
+      {
+        "id": "t0_o_address",
+        "name": "t0_o_address",
+        "type": "address",
+        "phase": "ordering",
+        "description": "t0_o_address D",
+        "value": "1388 Feil ForkPort Leoview, MI 47687 Hauckstad Nevada 70601-0096 US",
+        "value_error": "",
+        "title": "t0_o_address T",
+        "constraints": {
+          "default": {
+            "country": null
+          },
+          "meta": {},
+          "required": true
+        },
+        "structured_value": {
+          "address_line1": "1388 Feil ForkPort Leoview, MI 47687",
+          "address_line2": "",
+          "city": "Hauckstad",
+          "state": "Nevada",
+          "postal_code": "70601-0096",
+          "country": "US"
+        }
+      },
+      {
+        "id": "t0_o_checkbox",
+        "name": "t0_o_checkbox",
+        "type": "checkbox",
+        "phase": "ordering",
+        "description": "t0_o_checkbox D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_checkbox T",
+        "constraints": {
+          "meta": {
+            "choices": [
+              {
+                "label": "L-1",
+                "value": "V-1"
+              },
+              {
+                "label": "L-2",
+                "value": "V-2"
+              },
+              {
+                "label": "L-3",
+                "value": "V-3"
+              }
+            ]
+          },
+          "required": false
+        },
+        "structured_value": {
+          "V-1": true,
+          "V-2": false,
+          "V-3": false
+        },
+        "value_choices": [
+          {
+            "label": "L-1",
+            "value": "V-1"
+          },
+          {
+            "label": "L-2",
+            "value": "V-2"
+          },
+          {
+            "label": "L-3",
+            "value": "V-3"
+          }
+        ]
+      },
+      {
+        "id": "t0_o_choice",
+        "name": "t0_o_choice",
+        "type": "choice",
+        "phase": "ordering",
+        "description": "t0_o_choice D",
+        "value": "V-1",
+        "value_error": "",
+        "title": "t0_o_choice T",
+        "constraints": {
+          "meta": {
+            "choices": [
+              {
+                "label": "L-1",
+                "value": "V-1"
+              },
+              {
+                "label": "L-2",
+                "value": "V-2"
+              },
+              {
+                "label": "L-3",
+                "value": "V-3",
+                "default": true
+              }
+            ]
+          },
+          "required": false
+        },
+        "value_choices": [
+          {
+            "label": "L-1",
+            "value": "V-1"
+          },
+          {
+            "label": "L-2",
+            "value": "V-2"
+          },
+          {
+            "label": "L-3",
+            "value": "V-3",
+            "default": true
+          }
+        ]
+      },
+      {
+        "id": "t0_o_domain",
+        "name": "t0_o_domain",
+        "type": "domain",
+        "phase": "ordering",
+        "description": "t0_o_domain D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_domain T",
+        "constraints": {
+          "placeholder": "I am the placeholder text",
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": false
+        }
+      },
+      {
+        "id": "t0_o_dropdown",
+        "name": "t0_o_dropdown",
+        "type": "dropdown",
+        "phase": "ordering",
+        "description": "t0_o_dropdown D",
+        "value": "V-3",
+        "value_error": "",
+        "title": "t0_o_dropdown  T",
+        "constraints": {
+          "hint": "I am the hint text",
+          "meta": {
+            "choices": [
+              {
+                "label": "L-1",
+                "value": "V-1"
+              },
+              {
+                "label": "L-2",
+                "value": "V-2"
+              },
+              {
+                "label": "C-3",
+                "value": "V-3",
+                "default": true
+              }
+            ]
+          },
+          "required": false
+        },
+        "value_choices": [
+          {
+            "label": "L-1",
+            "value": "V-1"
+          },
+          {
+            "label": "L-2",
+            "value": "V-2"
+          },
+          {
+            "label": "C-3",
+            "value": "V-3",
+            "default": true
+          }
+        ]
+      },
+      {
+        "id": "t0_o_email",
+        "name": "t0_o_email",
+        "type": "email",
+        "phase": "ordering",
+        "description": "t0_o_email D",
+        "value": "mamam@mia.com",
+        "value_error": "",
+        "title": "t0_o_email T UPDATE",
+        "constraints": {
+          "placeholder": "I am the placeholder text",
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": false
+        }
+      },
+      {
+        "id": "t0_o_object",
+        "name": "t0_o_object",
+        "type": "object",
+        "phase": "ordering",
+        "description": "t0_o_object D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_object T",
+        "constraints": {
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": false
+        }
+      },
+      {
+        "id": "t0_o_password",
+        "name": "t0_o_password",
+        "type": "password",
+        "phase": "ordering",
+        "description": "t0_o_password D",
+        "value": "u#",
+        "value_error": "",
+        "title": "t0_o_password T",
+        "constraints": {
+          "max_length": 100,
+          "min_length": 1,
+          "meta": {},
+          "required": false
+        }
+      },
+      {
+        "id": "t0_o_phone",
+        "name": "t0_o_phone",
+        "type": "phone",
+        "phase": "ordering",
+        "description": "t0_o_phone D",
+        "value": "+34687769698",
+        "value_error": "",
+        "title": "t0_o_phone T",
+        "constraints": {
+          "hint": "I am the hint text",
+          "default": {
+            "country": null
+          },
+          "meta": {},
+          "required": false
+        },
+        "structured_value": {
+          "area_code": "687",
+          "country_code": "+34",
+          "phone_number": "769698",
+          "extension": ""
+        }
+      },
+      {
+        "id": "t0_o_subdomain",
+        "name": "t0_o_subdomain",
+        "type": "subdomain",
+        "phase": "ordering",
+        "description": "t0_o_subdomain D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_subdomain T",
+        "constraints": {
+          "hint": "I am the hint text",
+          "meta": {
+            "choices": [
+              {
+                "value": "AAA.COM",
+                "default": true,
+                "label": "AAA.COM"
+              },
+              {
+                "value": "BBB.COM",
+                "label": "BBB.COM"
+              }
+            ]
+          },
+          "required": false
+        },
+        "value_choices": [
+          {
+            "value": "AAA.COM",
+            "default": true,
+            "label": "AAA.COM"
+          },
+          {
+            "value": "BBB.COM",
+            "label": "BBB.COM"
+          }
+        ]
+      },
+      {
+        "id": "t0_o_text",
+        "name": "t0_o_text",
+        "type": "text",
+        "phase": "ordering",
+        "description": "t0_o_text D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_text  T",
+        "constraints": {
+          "placeholder": "I am the placeholder text",
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": false
+        }
+      },
+      {
+        "id": "t0_o_url",
+        "name": "t0_o_url",
+        "type": "url",
+        "phase": "ordering",
+        "description": "t0_o_url D",
+        "value": "",
+        "value_error": "",
+        "title": "t0_o_url T",
+        "constraints": {
+          "placeholder": "I am the placeholder text",
+          "hint": "I am the hint text",
+          "meta": {},
+          "required": false
+        }
+      }
+    ],
+    "tiers": {
+      "customer": {
+        "id": "TA-2483-1010-5646",
+        "external_id": "1149069",
+        "external_uid": "df57b844-955f-4ed5-84d7-e736eda44a79",
+        "name": "Mayer-Kerluke",
+        "contact_info": {
+          "address_line1": "1388 Feil ForkPort Leoview, MI 47687",
+          "address_line2": null,
+          "city": "Hauckstad",
+          "state": "Nevada",
+          "postal_code": "70601-0096",
+          "country": "us",
+          "contact": {
+            "first_name": "Florian",
+            "last_name": "Langosh",
+            "email": "jazlyn25@hagenes.com",
+            "phone_number": {
+              "country_code": "+1",
+              "area_code": "709",
+              "phone_number": "8908253",
+              "extension": "280"
+            }
+          }
+        }
+      },
+      "tier1": {
+        "id": "TA-0-2347-9392-6524",
+        "external_id": "1",
+        "external_uid": "6108fa88-62ba-4e18-af32-8af334afafae",
+        "name": "Connectdemos",
+        "contact_info": {
+          "address_line1": "3351 Michelson Drive, Suite 100",
+          "address_line2": "",
+          "city": "Irvine",
+          "state": "CA",
+          "postal_code": "92612-0697",
+          "country": "us",
+          "contact": {
+            "first_name": "Charlie",
+            "last_name": "Smith",
+            "email": "admin@imcdemos.com",
+            "phone_number": {
+              "country_code": "+1",
+              "area_code": "714",
+              "phone_number": "5661000",
+              "extension": ""
+            }
+          }
+        }
+      },
+      "tier2": {}
+    },
+    "configuration": {
+      "params": []
+    },
+    "marketplace": {
+      "id": "MP-91673",
+      "name": "Demo Marketplace",
+      "icon": "/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+    },
+    "contract": {
+      "id": "CRD-58096-38285-80856",
+      "type": "distribution",
+      "name": "Contract of Demo Marketplace Agreement"
+    }
+  },
+  "reason": "",
+  "status": "pending",
+  "created": "2020-11-23T14:18:17+00:00",
+  "updated": "2020-11-23T14:23:00+00:00",
+  "answered": false,
+  "assignee": {
+    "id": "UR-841-574-187",
+    "name": "Marc Serrat",
+    "email": "mserrat@odin.com"
+  },
+  "activation_key": "",
+  "template": {
+    "id": "TL-139-014-284",
+    "name": "Additional information is required to process your request",
+    "message": "Please complete our **[Activation Form](https://customer.sandbox.connect.cloudblue.com/?request_id=PR-1895-0864-1238-001&amp;code=zP51aEnxhLNjacoK)** to resume processing of your request"
+  },
+  "external_attributes": {},
+  "marketplace": {
+    "id": "MP-91673",
+    "name": "Demo Marketplace",
+    "icon": "/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+  },
+  "contract": {
+    "id": "CRD-58096-38285-80856",
+    "type": "distribution",
+    "name": "Contract of Demo Marketplace Agreement"
+  }
+}
