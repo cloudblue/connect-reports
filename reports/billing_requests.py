@@ -5,7 +5,6 @@
 #
 
 from cnct import R
-from datetime import datetime
 
 
 def generate(client, parameters, progress_callback):
