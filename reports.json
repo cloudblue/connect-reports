@@ -1,17 +1,16 @@
 {
     "name": "Connect Reports",
-    "description": "Standard set of reports for CloudBlue Connect",
+    "description_file": "Readme.md",
     "version": "1.0.0",
     "language": "python",
     "reports": [
         {
-            "id": "fulfillment_requests",
             "name": "Fulfillment requests report",
-            "description": "# Requests Report\nThis report provides a view of all transactions received for a given period of time\nThe generated report will provide a row for each item on the request.\nReport accepts to limit the output by:\n* List of products\n* Type of request\n* Status of the request\n* List of marketplaces\n* List of hubs",
-            "template": "templates/fulfillment_requests.xlsx",
+            "readme_file": "reports/fulfillment_requests/Readme.md",
+            "template": "reports/fulfillment_requests/template.xlsx",
             "start_row": 2,
             "start_col": 1,
-            "entrypoint": "reports.fulfillment_requests.generate",
+            "entrypoint": "reports.fulfillment_requests.entrypoint.generate",
             "audience": [
                 "provider",
                 "vendor"
@@ -52,13 +51,12 @@
             ]
         },
         {
-            "id": "failed_requests_with_reason",
             "name": "Fulfillment requests failed with vendor reason",
-            "description": "# Requests Report\n\nThis report provides a view of all failed requests received for a given period of time together with the reason that was provided when failing it.\n\nReport accepts to limit the output by:\n* Type of request\n* List of products\n* Type of transaction (preview, test or production)",
-            "template": "templates/fulfillment_requests_list.xlsx",
+            "readme_file": "reports/fulfillment_requests/Readme.md",
+            "template": "reports/fulfillment_requests/template.xlsx",
             "start_row": 2,
             "start_col": 1,
-            "entrypoint": "reports.fulfillment_requests_failed.generate",
+            "entrypoint": "reports.fulfillment_requests_failed.entrypoint.generate",
             "report_spec": 1,
             "audience": [
                 "provider",
@@ -89,13 +87,12 @@
             ]
         },
         {
-            "id": "billing_requests",
             "name": "Billing requests report",
-            "description": "# Billing Requests Report\nThis report provides a view of all billing transactions generated for a given period of time\nThe generated report will provide a row for each item on the billing request and will include vendor billing requests and provider ones if any.\nReport accepts to limit the output by:\n* List of products\n* List of marketplaces\n* List of hubs",
-            "template": "templates/billing_requests.xlsx",
+            "readme_file": "reports/billing_requests/Readme.md",
+            "template": "reports/billing_requests/template.xlsx",
             "start_row": 2,
             "start_col": 1,
-            "entrypoint": "reports.billing_requests.generate",
+            "entrypoint": "reports.billing_requests.entrypoint.generate",
             "audience": [
                 "provider",
                 "vendor"

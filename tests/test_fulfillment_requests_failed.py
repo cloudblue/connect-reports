@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from reports.fulfillment_requests_failed import generate
+from reports.fulfillment_requests_failed.entrypoint import generate
 
 
 def test_generate(progress, client_factory, response_factory, ff_request):

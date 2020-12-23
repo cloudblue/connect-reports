@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from reports.billing_requests import generate
+from reports.billing_requests.entrypoint import generate
 
 
 def test_generate(progress, client_factory, response_factory, billing_request):
