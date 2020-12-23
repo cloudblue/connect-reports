@@ -1,0 +1,326 @@
+{
+   "id":"BRV-3970-9735-4579-0002",
+   "type":"vendor",
+   "events":{
+      "created":{
+         "at":"2020-12-13T08:01:07.871744+00:00"
+      },
+      "updated":{
+         "at":"2020-12-13T08:01:07.871752+00:00"
+      }
+   },
+   "asset":{
+      "id":"AS-3970-9735-4579",
+      "status":"active",
+      "events":{
+         "created":{
+            "at":"2020-10-13T07:38:32+00:00"
+         },
+         "updated":{
+            "at":"2020-10-13T07:39:32+00:00"
+         }
+      },
+      "external_id":"1077898",
+      "external_uid":"fae8ed69-a2df-4ffb-90f4-562cc78a9010",
+      "product":{
+         "id":"PRD-276-377-545",
+         "name":"October 12",
+         "status":"published",
+         "icon":"/media/VA-392-495/PRD-276-377-545/media/PRD-276-377-545-logo_aJD74iQ.png"
+      },
+      "connection":{
+         "id":"CT-6838-5958",
+         "hub":{
+            "id":"HB-0309-9389",
+            "name":"IMC Demos"
+         },
+         "provider":{
+            "id":"PA-425-033",
+            "name":"IMC Demo Provider"
+         },
+         "vendor":{
+            "id":"VA-392-495",
+            "name":"Adrian Inc Oct 12"
+         },
+         "type":"production"
+      },
+      "params":[
+         {
+            "id":"t0_f_text",
+            "name":"t0_f_text T",
+            "description":"t0_f_text D",
+            "type":"text",
+            "value":"t"
+         },
+         {
+            "id":"t0_f_password",
+            "name":"t0_f_password T",
+            "description":"t0_f_password D",
+            "type":"password",
+            "value":"p"
+         },
+         {
+            "id":"t0_o_url",
+            "name":"t0_o_url T",
+            "description":"t0_o_url D",
+            "type":"url",
+            "value":""
+         },
+         {
+            "id":"t0_o_subdomain",
+            "name":"t0_o_subdomain T",
+            "description":"t0_o_subdomain D",
+            "type":"subdomain",
+            "value":"a1.AAA.COM"
+         },
+         {
+            "id":"t0_o_text",
+            "name":"t0_o_text  T",
+            "description":"t0_o_text D",
+            "type":"text",
+            "value":""
+         },
+         {
+            "id":"t0_o_phone",
+            "name":"t0_o_phone T",
+            "description":"t0_o_phone D",
+            "type":"phone",
+            "value":"+19493042234",
+            "structured_value":{
+               "area_code":"",
+               "country_code":"+1",
+               "phone_number":"9493042234"
+            }
+         },
+         {
+            "id":"t0_o_password",
+            "name":"t0_o_password T",
+            "description":"t0_o_password D",
+            "type":"password",
+            "value":"123123123"
+         },
+         {
+            "id":"t0_o_object",
+            "name":"t0_o_object T",
+            "description":"t0_o_object D",
+            "type":"object",
+            "value":""
+         },
+         {
+            "id":"t0_o_email",
+            "name":"t0_o_email T",
+            "description":"t0_o_email D",
+            "type":"email",
+            "value":"e@mail.net"
+         },
+         {
+            "id":"t0_o_dropdown",
+            "name":"t0_o_dropdown  T",
+            "description":"t0_o_dropdown D",
+            "type":"dropdown",
+            "value":"V-3"
+         },
+         {
+            "id":"t0_o_domain",
+            "name":"t0_o_domain T",
+            "description":"t0_o_domain D",
+            "type":"domain",
+            "value":""
+         },
+         {
+            "id":"t0_o_choice",
+            "name":"t0_o_choice T",
+            "description":"t0_o_choice D",
+            "type":"choice",
+            "value":"V-1"
+         },
+         {
+            "id":"t0_o_checkbox",
+            "name":"t0_o_checkbox T",
+            "description":"t0_o_checkbox D",
+            "type":"checkbox",
+            "value":"",
+            "structured_value":{
+               "V-1":false,
+               "V-2":false,
+               "V-3":false
+            }
+         },
+         {
+            "id":"t0_o_address",
+            "name":"t0_o_address T",
+            "description":"t0_o_address D",
+            "type":"address",
+            "value":"Address Line 005 City 005 CA 95005 US",
+            "structured_value":{
+               "city":"City 005",
+               "state":"CA",
+               "country":"US",
+               "postal_code":"95005",
+               "address_line1":"Address Line 005",
+               "address_line2":""
+            }
+         }
+      ],
+      "tiers":{
+         "customer":{
+            "id":"TA-9211-2694-3361",
+            "external_id":"1078904",
+            "external_uid":"d74f3fcb-397b-42ea-967d-be125ad0c1d5",
+            "name":"Test Customer 005",
+            "tax_id":"Tax-ID-005",
+            "contact_info":{
+               "address_line1":"Address Line 005",
+               "address_line2":null,
+               "city":"City 005",
+               "state":"CA",
+               "postal_code":"95005",
+               "country":"us",
+               "contact":{
+                  "first_name":"Test",
+                  "last_name":"Customer 005",
+                  "email":"test-customer-005@test.kuzk.in",
+                  "phone_number":{
+                     "country_code":"1",
+                     "area_code":"999",
+                     "phone_number":"9999999"
+                  }
+               }
+            }
+         },
+         "tier1":{
+            "id":"TA-0-2347-9392-6524",
+            "external_id":"1",
+            "external_uid":"6108fa88-62ba-4e18-af32-8af334afafae",
+            "name":"Connectdemos",
+            "tax_id":null,
+            "contact_info":{
+               "address_line1":"3351 Michelson Drive, Suite 100",
+               "address_line2":"",
+               "city":"Irvine",
+               "state":"CA",
+               "postal_code":"92612-0697",
+               "country":"us",
+               "contact":{
+                  "first_name":"Charlie",
+                  "last_name":"Smith",
+                  "email":"admin@imcdemos.com",
+                  "phone_number":{
+                     "country_code":"1",
+                     "area_code":"714",
+                     "phone_number":"5661000"
+                  }
+               }
+            }
+         }
+      },
+      "marketplace":{
+         "id":"MP-91673",
+         "name":"IMC Demo Marketplace",
+         "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_XdcpVQk.png"
+      },
+      "contract":{
+         "id":"CRD-58096-38285-80856",
+         "name":"Contract of Demo Marketplace Agreement"
+      },
+      "billing":{
+         "period":{
+            "delta":1.0,
+            "uom":"monthly"
+         },
+         "next_date":"2021-01-13T07:39:32+00:00",
+         "anniversary":{
+            "day":13
+         }
+      }
+   },
+   "items":[
+      {
+         "id":"PRD_276_377_545_0016",
+         "global_id":"PRD-276-377-545-0016",
+         "display_name":"Reservation Item 016",
+         "mpn":"MPN-R-016",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":3.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      },
+      {
+         "id":"PRD_276_377_545_0015",
+         "global_id":"PRD-276-377-545-0015",
+         "display_name":"Reservation Item 015",
+         "mpn":"MPN-R-015",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":2.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      },
+      {
+         "id":"PRD_276_377_545_0009",
+         "global_id":"PRD-276-377-545-0009",
+         "display_name":"Reservation Item 009",
+         "mpn":"MPN-R-009",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":12.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      },
+      {
+         "id":"PRD_276_377_545_0007",
+         "global_id":"PRD-276-377-545-0007",
+         "display_name":"Reservation Item 007",
+         "mpn":"MPN-R-007",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":2.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      },
+      {
+         "id":"PRD_276_377_545_0006",
+         "global_id":"PRD-276-377-545-0006",
+         "display_name":"Reservation Item 006",
+         "mpn":"MPN-R-006",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":9.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      },
+      {
+         "id":"PRD_276_377_545_0005",
+         "global_id":"PRD-276-377-545-0005",
+         "display_name":"Reservation Item 005",
+         "mpn":"MPN-R-005",
+         "item_type":"reservation",
+         "period":"monthly",
+         "quantity":5.0,
+         "type":"Units",
+         "billing":{
+            "cycle_number":2
+         }
+      }
+   ],
+   "attributes":{
+
+   },
+   "period":{
+      "from":"2020-12-13T07:39:32+00:00",
+      "to":"2021-01-13T07:39:32+00:00",
+      "delta":1.0,
+      "uom":"monthly"
+   }
+}

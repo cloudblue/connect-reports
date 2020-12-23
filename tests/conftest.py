@@ -151,3 +151,16 @@ def ff_request():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def billing_request():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'billing_request.json'
+            )
+    ) as request:
+        return json.load(request)
