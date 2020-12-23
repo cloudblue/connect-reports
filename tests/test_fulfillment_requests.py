@@ -29,7 +29,7 @@ def test_generate(progress, client_factory, response_factory, ff_request):
 
     responses.append(
         response_factory(
-            query='and(ge(created,2020-01-01),lt(created,2021-01-01))',
+            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
             value=[ff_request]
         )
     )
@@ -65,10 +65,10 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
 
     responses.append(
         response_factory(
-            query='and(ge(created,2020-01-01),lt(created,2021-01-01),in(asset.product.id,'
-                  '(PRD-276-377-545),in(asset.connection.type,(production),in(type,(purchase),'
-                  'in(status,(approved),in(asset.marketplace,MP-123),in(asset.connection.hub.id,'
-                  '(HB-123))',
+            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),'
+                  'in(asset.product.id,(PRD-276-377-545)),in(type,(purchase)),in(status,'
+                  '(approved)),in(asset.marketplace.id,(MP-123)),in(asset.connection.hub.id,'
+                  '(HB-123)))',
             value=[ff_request]
         )
     )
