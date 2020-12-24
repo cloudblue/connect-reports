@@ -1,5 +1,5 @@
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+from reports.utils import convert_to_datetime, get_value
 
 
 def calculate_period(delta, uom):
