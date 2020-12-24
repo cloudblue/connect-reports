@@ -11,7 +11,6 @@ from reports.utils import convert_to_datetime, get_value, get_basic_value
 
 def generate(client, parameters, progress_callback):
 
-    all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed', 'draft']
     query = R()
     query &= R().created.ge(parameters['date']['after'])
     query &= R().created.le(parameters['date']['before'])
@@ -19,8 +18,6 @@ def generate(client, parameters, progress_callback):
         query &= R().asset.product.id.oneof(parameters['product'])
     if parameters['rr_type']:
         query &= R().type.oneof(parameters['rr_type'])
-    else:
-        query &= R().status.oneof(all_types)
     query &= R().status.eq('failed')
     if parameters['connection_type']:
         query &= R().asset.connection.type.oneof(parameters['connection_type'])
