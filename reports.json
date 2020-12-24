@@ -1,126 +1,185 @@
 {
-    "name": "Connect Reports",
-    "description_file": "Readme.md",
-    "version": "1.0.0",
-    "language": "python",
-    "reports": [
-        {
-            "name": "Fulfillment requests report",
-            "readme_file": "reports/fulfillment_requests/Readme.md",
-            "template": "reports/fulfillment_requests/template.xlsx",
-            "start_row": 2,
-            "start_col": 1,
-            "entrypoint": "reports.fulfillment_requests.entrypoint.generate",
-            "audience": [
-                "provider",
-                "vendor"
-            ],
-            "report_spec": 1,
-            "parameters": [
-                {
-                    "id": "date",
-                    "type": "daterange",
-                    "name": "Report period",
-                    "required": true
-                },
-                {
-                    "id": "product",
-                    "type": "product_list",
-                    "name": "Select the product or products to run the report"
-                },
-                {
-                    "id": "rr_type",
-                    "type": "fulfillment_type_list",
-                    "name": "Select the type of request"
-                },
-                {
-                    "id": "rr_status",
-                    "type": "fulfillment_status_list",
-                    "name": "Select the request status"
-                },
-                {
-                    "id": "mkp",
-                    "type": "marketplace_list",
-                    "name": "Select the marketplaces"
-                },
-                {
-                    "id": "hub",
-                    "type": "hubs_list",
-                    "name": "Select the Hubs"
-                }
-            ]
-        },
-        {
-            "name": "Fulfillment requests failed with vendor reason",
-            "readme_file": "reports/fulfillment_requests/Readme.md",
-            "template": "reports/fulfillment_requests/template.xlsx",
-            "start_row": 2,
-            "start_col": 1,
-            "entrypoint": "reports.fulfillment_requests_failed.entrypoint.generate",
-            "report_spec": 1,
-            "audience": [
-                "provider",
-                "vendor"
-            ],
-            "parameters": [
-                {
-                    "id": "date",
-                    "type": "daterange",
-                    "name": "Report period",
-                    "required": true
-                },
-                {
-                    "id": "rr_type",
-                    "type": "fulfillment_type_list",
-                    "name": "Select the type of request"
-                },
-                {
-                    "id": "product",
-                    "type": "product_list",
-                    "name": "Select the products to include from report"
-                },
-                {
-                    "id": "connection_type",
-                    "type": "connection_type",
-                    "name": "Select the type of transaction"
-                }
-            ]
-        },
-        {
-            "name": "Billing requests report",
-            "readme_file": "reports/billing_requests/Readme.md",
-            "template": "reports/billing_requests/template.xlsx",
-            "start_row": 2,
-            "start_col": 1,
-            "entrypoint": "reports.billing_requests.entrypoint.generate",
-            "audience": [
-                "provider",
-                "vendor"
-            ],
-            "report_spec": 1,
-            "parameters": [
-                {
-                    "id": "date",
-                    "type": "daterange",
-                    "name": "Report period",
-                    "required": true
-                },
-                {
-                    "id": "product",
-                    "type": "product_list",
-                    "name": "Select the product or products to run the report"
-                },
-                {
-                    "id": "mkp",
-                    "type": "marketplace_list",
-                    "name": "Select the marketplaces"
-                },
-                {
-                    "id": "hub",
-                    "type": "hubs_list",
-                    "name": "Select the Hubs"
-                }
-            ]
-        }
-    ]
+   "name":"Connect Reports",
+   "description_file":"Readme.md",
+   "version":"1.0.0",
+   "language":"python",
+   "reports":[
+      {
+         "name":"Fulfillment requests report",
+         "readme_file":"reports/fulfillment_requests/Readme.md",
+         "template":"reports/fulfillment_requests/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.fulfillment_requests.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"date",
+               "type":"daterange",
+               "name":"Report period",
+               "description": "Provide the time period to create the report",
+               "required":true
+            },
+            {
+               "id":"product",
+               "type":"product_list",
+               "name":"Product list",
+               "description": "Select the products you want to include in report"
+            },
+            {
+               "id":"rr_type",
+               "type":"fulfillment_type_list",
+               "name":"Types of requests",
+               "description": "Select the requests types you want to include in report"
+            },
+            {
+               "id":"rr_status",
+               "type":"fulfillment_status_list",
+               "name":"Request status",
+               "description": "Select the status of the requests you want to include in report"
+            },
+            {
+               "id":"mkp",
+               "type":"marketplace_list",
+               "name":"Marketplaces",
+               "description": "Select the marketplaces you want to include in report"
+            },
+            {
+               "id":"hub",
+               "type":"hubs_list",
+               "name":"Hubs",
+               "description": "Select the hubs you want to include in report"
+            }
+         ]
+      },
+      {
+         "name":"Fulfillment requests failed with vendor reason",
+         "readme_file":"reports/fulfillment_requests/Readme.md",
+         "template":"reports/fulfillment_requests/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.fulfillment_requests_failed.entrypoint.generate",
+         "report_spec":1,
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "parameters":[
+            {
+               "id":"date",
+               "type":"daterange",
+               "name":"Report period",
+               "description": "Provide the time period to create the report",
+               "required":true
+            },
+            {
+               "id":"rr_type",
+               "type":"fulfillment_type_list",
+               "name":"Types of requests",
+               "description": "Select the requests types you want to include in report"
+            },
+            {
+               "id":"product",
+               "type":"product_list",
+               "name":"Product list",
+               "description": "Select the products you want to include in report"
+            },
+            {
+               "id":"connection_type",
+               "type":"connection_type",
+               "name":"Transaction type",
+               "description": "Select the type of transaction to include in report"
+            }
+         ]
+      },
+      {
+         "name":"Billing requests report",
+         "readme_file":"reports/billing_requests/Readme.md",
+         "template":"reports/billing_requests/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.billing_requests.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"date",
+               "type":"daterange",
+               "name":"Report period",
+               "description": "Provide the time period to create the report",
+               "required":true
+            },
+            {
+               "id":"product",
+               "type":"product_list",
+               "name":"Product list",
+               "description": "Select the products you want to include in report"
+            },
+            {
+               "id":"mkp",
+               "type":"marketplace_list",
+               "name":"Marketplaces",
+               "description": "Select the marketplaces you want to include in report"
+            },
+            {
+               "id":"hub",
+               "type":"hubs_list",
+               "name":"Hubs",
+               "description": "Select the hubs you want to include in report"
+            }
+         ]
+      },
+      {
+         "name":"Subscriptions list report",
+         "readme_file":"reports/subscription_list/Readme.md",
+         "template":"reports/subscription_list/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.subscription_list.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"date",
+               "type":"daterange",
+               "name":"Report period",
+               "description": "Provide the time period to create the report"
+            },
+            {
+               "id":"product",
+               "type":"product_list",
+               "name":"Product list",
+               "description": "Select the products you want to include in report"
+            },
+            {
+               "id":"mkp",
+               "type":"marketplace_list",
+               "name":"Marketplaces",
+               "description": "Select the marketplaces you want to include in report"
+            },
+            {
+               "id":"period",
+               "type":"billing_period",
+               "name":"Billing Periods",
+               "description": "Specify the billing periods to include in report"
+            },
+            {
+               "id":"status",
+               "type":"subscription_status",
+               "name":"Subscription status",
+               "description": "Specify the subscription status to include in report"
+            }
+         ]
+      }
+   ]
 }
