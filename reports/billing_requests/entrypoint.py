@@ -5,6 +5,7 @@
 #
 
 from cnct import R
+from reports.utils import convert_to_datetime
 
 
 def generate(client, parameters, progress_callback):
@@ -27,8 +28,8 @@ def generate(client, parameters, progress_callback):
         for item in request['items']:
             yield (
                 request['id'],
-                request['period']['from'].replace("T", " ").replace("+00:00", ""),
-                request['period']['to'].replace("T", " ").replace("+00:00", ""),
+                convert_to_datetime(request['period']['from']),
+                convert_to_datetime(request['period']['to']),
                 request['period']['delta'],
                 request['period']['uom'],
                 item['billing']['cycle_number'],
