@@ -19,38 +19,86 @@
          "parameters":[
             {
                "id":"date",
-               "type":"daterange",
+               "type":"date_range",
                "name":"Report period",
                "description": "Provide the time period to create the report",
                "required":true
             },
             {
                "id":"product",
-               "type":"product_list",
+               "type":"product",
                "name":"Product list",
                "description": "Select the products you want to include in report"
             },
             {
                "id":"rr_type",
-               "type":"fulfillment_type_list",
+               "type":"checkbox",
                "name":"Types of requests",
-               "description": "Select the requests types you want to include in report"
+               "description": "Select the requests types you want to include in report",
+               "choices": [
+                  {
+                     "value": "purchase",
+                     "label": "Purchase"
+                  },
+                  {
+                     "value": "change",
+                     "label": "Change"
+                  },
+                  {
+                     "value": "suspend",
+                     "label": "Suspend"
+                  },
+                  {
+                     "value": "resume",
+                     "label": "Resume"
+                  },
+                  {
+                     "value": "cancel",
+                     "label": "Cancel"
+                  }
+               ]
             },
             {
                "id":"rr_status",
-               "type":"fulfillment_status_list",
+               "type":"checkbox",
                "name":"Request status",
-               "description": "Select the status of the requests you want to include in report"
+               "description": "Select the status of the requests you want to include in report",
+               "choices": [
+                  {
+                     "value": "tiers_setup",
+                     "label": "Tier Setup"
+                  },
+                  {
+                     "value": "inquiring",
+                     "label": "Inquiring"
+                  },
+                  {
+                     "value": "pending",
+                     "label": "Pending"
+                  },
+                  {
+                     "value": "approved",
+                     "label": "Approved"
+                  },
+                  {
+                     "value": "failed",
+                     "label": "Failed"
+                  },
+                  {
+                     "value": "draft",
+                     "label": "Draft"
+                  }
+               ]
             },
             {
                "id":"mkp",
-               "type":"marketplace_list",
+               "type":"marketplace",
                "name":"Marketplaces",
                "description": "Select the marketplaces you want to include in report"
             },
             {
                "id":"hub",
-               "type":"hubs_list",
+               "type":"hub",
                "name":"Hubs",
                "description": "Select the hubs you want to include in report"
             }
@@ -71,28 +119,64 @@
          "parameters":[
             {
                "id":"date",
-               "type":"daterange",
+               "type":"date_range",
                "name":"Report period",
                "description": "Provide the time period to create the report",
                "required":true
             },
             {
                "id":"rr_type",
-               "type":"fulfillment_type_list",
+               "type":"checkbox",
                "name":"Types of requests",
-               "description": "Select the requests types you want to include in report"
+               "description": "Select the requests types you want to include in report",
+               "choices": [
+                  {
+                     "value": "purchase",
+                     "label": "Purchase"
+                  },
+                  {
+                     "value": "change",
+                     "label": "Change"
+                  },
+                  {
+                     "value": "suspend",
+                     "label": "Suspend"
+                  },
+                  {
+                     "value": "resume",
+                     "label": "Resume"
+                  },
+                  {
+                     "value": "cancel",
+                     "label": "Cancel"
+                  }
+               ]
             },
             {
                "id":"product",
-               "type":"product_list",
+               "type":"product",
                "name":"Product list",
                "description": "Select the products you want to include in report"
             },
             {
                "id":"connection_type",
-               "type":"connection_type",
+               "type":"checkbox",
                "name":"Transaction type",
-               "description": "Select the type of transaction to include in report"
+               "description": "Select the type of transaction to include in report",
+               "choices": [
+                  {
+                     "value": "preview",
+                     "label": "Preview"
+                  },
+                  {
+                     "value": "test",
+                     "label": "Test"
+                  },
+                  {
+                     "value": "production",
+                     "label": "Production"
+                  }
+               ]
             }
          ]
       },
@@ -111,26 +195,26 @@
          "parameters":[
             {
                "id":"date",
-               "type":"daterange",
+               "type":"date_range",
                "name":"Report period",
                "description": "Provide the time period to create the report",
                "required":true
             },
             {
                "id":"product",
-               "type":"product_list",
+               "type":"product",
                "name":"Product list",
                "description": "Select the products you want to include in report"
             },
             {
                "id":"mkp",
-               "type":"marketplace_list",
+               "type":"marketplace",
                "name":"Marketplaces",
                "description": "Select the marketplaces you want to include in report"
             },
             {
                "id":"hub",
-               "type":"hubs_list",
+               "type":"hub",
                "name":"Hubs",
                "description": "Select the hubs you want to include in report"
             }
@@ -151,33 +235,81 @@
          "parameters":[
             {
                "id":"date",
-               "type":"daterange",
+               "type":"date_range",
                "name":"Report period",
                "description": "Provide the time period to create the report"
             },
             {
                "id":"product",
-               "type":"product_list",
+               "type":"product",
                "name":"Product list",
                "description": "Select the products you want to include in report"
             },
             {
                "id":"mkp",
-               "type":"marketplace_list",
+               "type":"marketplace",
                "name":"Marketplaces",
                "description": "Select the marketplaces you want to include in report"
             },
             {
                "id":"period",
-               "type":"billing_period",
+               "type":"checkbox",
                "name":"Billing Periods",
-               "description": "Specify the billing periods to include in report"
+               "description": "Specify the billing periods to include in report",
+               "choices": [
+                  {
+                     "value": "monthly",
+                     "label": "1 Month"
+                  },
+                  {
+                     "value": "yearly",
+                     "label": "1 Year"
+                  },
+                  {
+                     "value": "years_2",
+                     "label": "2 Years"
+                  },
+                  {
+                     "value": "years_3",
+                     "label": "3 Years"
+                  },
+                  {
+                     "value": "years_4",
+                     "label": "4 Years"
+                  },
+                  {
+                     "value": "years_5",
+                     "label": "5 Years"
+                  }
+               ]
             },
             {
                "id":"status",
-               "type":"subscription_status",
+               "type":"checkbox",
                "name":"Subscription status",
-               "description": "Specify the subscription status to include in report"
+               "description": "Specify the subscription status to include in report",
+               "choices": [
+                  {
+                     "value": "active",
+                     "label": "Active"
+                  },
+                  {
+                     "value": "processing",
+                     "label": "Processing"
+                  },
+                  {
+                     "value": "suspended",
+                     "label": "Suspended"
+                  },
+                  {
+                     "value": "terminating",
+                     "label": "Terminating"
+                  },
+                  {
+                     "value": "terminated",
+                     "label": "Terminated"
+                  }
+               ]
             }
          ]
       }
