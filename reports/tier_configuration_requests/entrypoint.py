@@ -33,6 +33,11 @@ def generate(client, parameters, progress_callback):
             convert_to_datetime(get_value(request['events'], 'updated', 'at')),
             today,
             get_basic_value(request, 'status'),
+            get_value(
+                config,
+                'connection',
+                'type'
+            ),
             get_value(request, 'configuration', 'id'),
             get_value(request, 'configuration', 'tier_level'),
             get_value(config, 'account', 'name'),
