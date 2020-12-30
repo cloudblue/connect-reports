@@ -25,7 +25,7 @@ def generate(client, parameters, progress_callback):
             'name': marketplace['owner']['name'],
             'id': marketplace['owner']['id'],
         }
-    customers = client.ns('tier').accounts.filter(query).order_by('-created')
+    customers = client.ns('tier').accounts.filter(query).order_by('-created').limit(1000)
     progress = 0
     total = customers.count()
 
@@ -56,23 +56,26 @@ def generate(client, parameters, progress_callback):
                 get_basic_value(customer, 'tax_id'),
             ]
 
-            customer_extended_info = client.ns('tier').accounts[
-                get_basic_value(customer, 'id')
-            ].get()
+            if parameters['full_contact_info'] == 'yes':
+                customer_extended_info = client.ns('tier').accounts[
+                    get_basic_value(customer, 'id')
+                ].get()
 
-            contact = customer_extended_info['contact_info']
-            customer_row_extended = [
-                get_basic_value(contact, 'address_line1'),
-                get_basic_value(contact, 'address_line2'),
-                get_basic_value(contact, 'city'),
-                get_basic_value(contact, 'state'),
-                get_basic_value(contact, 'postal_code'),
-                get_basic_value(contact, 'country'),
-                get_value(contact, 'contact', 'first_name'),
-                get_value(contact, 'contact', 'last_name'),
-                get_value(contact, 'contact', 'email'),
-                create_phone(contact['contact']['phone_number'])
-            ]
+                contact = customer_extended_info['contact_info']
+                customer_row_extended = [
+                    get_basic_value(contact, 'address_line1'),
+                    get_basic_value(contact, 'address_line2'),
+                    get_basic_value(contact, 'city'),
+                    get_basic_value(contact, 'state'),
+                    get_basic_value(contact, 'postal_code'),
+                    get_basic_value(contact, 'country'),
+                    get_value(contact, 'contact', 'first_name'),
+                    get_value(contact, 'contact', 'last_name'),
+                    get_value(contact, 'contact', 'email'),
+                    create_phone(contact['contact']['phone_number'])
+                ]
+            else:
+                customer_row_extended = ['-'] * 10
             output.append(
                 customer_row + customer_row_extended
             )

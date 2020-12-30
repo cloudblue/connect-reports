@@ -595,6 +595,23 @@
                      "label": "Tier 2"
                   }
                ]
+            },
+            {
+               "id":"full_contact_info",
+               "type":"choice",
+               "name":"Put on report extended customer info",
+               "description": "If you need extended customer info like address and phone you can get it additionally, please note that this is a time consuming operation",
+               "choices": [
+                  {
+                     "value": "no",
+                     "label": "No"
+                  },
+                  {
+                     "value": "yes",
+                     "label": "Yes"
+                  }
+               ],
+               "required": true
             }
          ]
       }
