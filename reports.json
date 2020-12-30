@@ -549,6 +549,54 @@
                ]
             }
          ]
+      },
+      {
+         "name":"Customers List",
+         "readme_file":"reports/customers_list/Readme.md",
+         "template":"reports/customers_list/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.customers_list.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"date",
+               "type":"date_range",
+               "name":"Report period",
+               "description": "Provide the time period to create the report",
+               "required": true
+            },
+            {
+               "id":"mkp",
+               "type":"marketplace",
+               "name":"Marketplaces",
+               "description": "Select the marketplaces you want to include in report"
+            },
+            {
+               "id":"tier_type",
+               "type":"checkbox",
+               "name":"Type of Tier",
+               "description": "Select the scopes where accounts reported are involved",
+               "choices": [
+                  {
+                     "value": "customer",
+                     "label": "Customer"
+                  },
+                  {
+                     "value": "tier1",
+                     "label": "Tier 1"
+                  },
+                  {
+                     "value": "tier2",
+                     "label": "Tier 2"
+                  }
+               ]
+            }
+         ]
       }
    ]
 }

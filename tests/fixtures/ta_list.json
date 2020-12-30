@@ -1,0 +1,41 @@
+[
+   {
+      "id":"TA-7455-2434-5339",
+      "environment":"production",
+      "name":"Abbott and Sons",
+      "external_id":"1002976",
+      "external_uid":"8dfd2a34-0fd5-40a7-8b07-8711644c9d10",
+      "events":{
+         "created":{
+            "at":"2020-12-17T12:53:47+00:00",
+            "by":{
+               "id":"SU-506-434-371",
+               "name":"HB-0309-9389"
+            }
+         },
+         "updated":{
+            "at":"2020-12-17T12:53:47+00:00",
+            "by":{
+               "id":"SU-506-434-371",
+               "name":"HB-0309-9389"
+            }
+         }
+      },
+      "scopes":[
+         "customer",
+         "tier1",
+         "tier2"
+      ],
+      "marketplace":{
+         "id":"MP-91673",
+         "name":"Demo Marketplace",
+         "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+      },
+      "hub":{
+         "id":"HB-0309-9389",
+         "name":"IMC DEMOS"
+      },
+      "tax_id": "tax",
+      "version":1
+   }
+]

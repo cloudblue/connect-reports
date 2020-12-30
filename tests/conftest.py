@@ -190,3 +190,42 @@ def listing_request():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def mkp_list():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'mkp_list.json'
+            )
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def ta_list():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'ta_list.json'
+            )
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def tier_account():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'ta_account.json'
+            )
+    ) as request:
+        return json.load(request)

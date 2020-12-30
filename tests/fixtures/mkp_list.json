@@ -1,0 +1,40 @@
+[
+   {
+      "id":"MP-91673",
+      "name":"Demo Marketplace",
+      "description":"My Marketplace residing in Europe",
+      "owner":{
+         "id":"PA-425-033",
+         "name":"CB Demo Provider"
+      },
+      "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png",
+      "zone":"EU",
+      "hubs":[
+         {
+            "hub":{
+               "id":"HB-0309-9389",
+               "name":"IMC DEMOS"
+            },
+            "external_id":"1"
+         },
+         {
+            "hub":{
+               "id":"HB-0696-7875",
+               "name":"a.mserrat.spc.dev.cloud.im"
+            },
+            "external_id":"1"
+         }
+      ],
+      "countries":[
+         {
+            "id":"US",
+            "name":"United States"
+         }
+      ],
+      "sourcing":true,
+      "currency":"USD",
+      "attributes":[
+
+      ]
+   }
+]
