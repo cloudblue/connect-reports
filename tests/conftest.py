@@ -164,3 +164,16 @@ def billing_request():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def tcr_request():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'tcr_request.json'
+            )
+    ) as request:
+        return json.load(request)

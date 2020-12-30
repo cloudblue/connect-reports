@@ -1,0 +1,349 @@
+{
+   "id":"TCR-228-098-338-001",
+   "type":"setup",
+   "status":"approved",
+   "configuration":{
+      "id":"TC-228-098-338",
+      "name":"Configuration of TA-6977-4895-5793",
+      "account":{
+         "id":"TA-6977-4895-5793",
+         "external_id":"1000198",
+         "external_uid":"13ed6d40-6bf6-4b20-99c6-642dda18ba89",
+         "name":"Konkelectrics",
+         "contact_info":{
+            "address_line1":"6210 E Hwy 290",
+            "address_line2":"",
+            "city":"Austin",
+            "state":"TX",
+            "postal_code":"78723-1026",
+            "country":"us",
+            "contact":{
+               "first_name":"Gwen",
+               "last_name":"Clayton",
+               "email":"gwen.clayton@dbximmicro.com",
+               "phone_number":{
+                  "country_code":"+1",
+                  "area_code":"202",
+                  "phone_number":"5550137",
+                  "extension":""
+               }
+            }
+         }
+      },
+      "product":{
+         "id":"PRD-423-715-400",
+         "icon":"/media/VA-004-290/PRD-423-715-400/media/PRD-423-715-400-logo_d9syB4F.png",
+         "name":"TierParamsStage",
+         "status":"published"
+      },
+      "tier_level":1,
+      "connection":{
+         "id":"CT-7761-6934",
+         "type":"production",
+         "status":"approved",
+         "provider":{
+            "id":"PA-425-033",
+            "name":"CB Demo Provider"
+         },
+         "vendor":{
+            "id":"VA-004-290",
+            "name":"Weathertop"
+         },
+         "hub":{
+            "id":"HB-0309-9389",
+            "name":"IMC DEMOS"
+         },
+         "created_at":"2020-04-14T16:25:30+00:00"
+      },
+      "events":{
+         "created":{
+            "at":"2020-04-14T16:35:13+00:00"
+         },
+         "updated":{
+            "at":"2020-04-14T21:17:42+00:00",
+            "by":{
+               "id":"UR-841-574-187",
+               "name":"Marc Serrat"
+            }
+         }
+      },
+      "params":[
+         {
+            "value":"as",
+            "title":"Tier 1 fulfillment",
+            "description":"tier 1 Fulfillment",
+            "type":"text",
+            "scope":"tier1",
+            "phase":"fulfillment",
+            "constraints":{
+               "required":true,
+               "hidden":false,
+               "unique":false
+            },
+            "id":"tier1fulfillment"
+         },
+         {
+            "value":"sdfgk",
+            "title":"Tier 1 Ordering",
+            "description":"Tier 1 Ordering",
+            "type":"text",
+            "scope":"tier1",
+            "phase":"ordering",
+            "constraints":{
+               "required":true,
+               "hidden":false,
+               "unique":false
+            },
+            "id":"tier1ordering"
+         }
+      ],
+      "template":{
+         "id":"TL-309-614-308",
+         "name":"Default Activation Template",
+         "representation":"# Sample Template For Setup of Tier 1\n\nThis template is used to share details of the **successful** setup configuration of reseller of 1st level.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which have scope 'Tier 1'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "open_request":{
+         "id":"TCR-228-098-338-003"
+      },
+      "status":"processing",
+      "contract":{
+         "id":"CRD-99082-45842-69180",
+         "name":"Contract of IMC Demos Spain Distribution Agreement",
+         "type":"distribution"
+      },
+      "marketplace":{
+         "id":"MP-91673",
+         "name":"Demo Marketplace",
+         "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+      }
+   },
+   "parent_configuration":{
+      "id":"TC-980-877-258",
+      "name":"Configuration of TA-0-2347-9392-6524",
+      "account":{
+         "id":"TA-0-2347-9392-6524",
+         "external_id":"1",
+         "external_uid":"6108fa88-62ba-4e18-af32-8af334afafae",
+         "name":"Connectdemos",
+         "contact_info":{
+            "address_line1":"3351 Michelson Drive, Suite 100",
+            "address_line2":"",
+            "city":"Irvine",
+            "state":"CA",
+            "postal_code":"92612-0697",
+            "country":"us",
+            "contact":{
+               "first_name":"Charlie",
+               "last_name":"Smith",
+               "email":"admin@imcdemos.com",
+               "phone_number":{
+                  "country_code":"+1",
+                  "area_code":"714",
+                  "phone_number":"5661000",
+                  "extension":""
+               }
+            }
+         }
+      },
+      "product":{
+         "id":"PRD-423-715-400",
+         "icon":"/media/VA-004-290/PRD-423-715-400/media/PRD-423-715-400-logo_d9syB4F.png",
+         "name":"TierParamsStage",
+         "status":"published"
+      },
+      "tier_level":2,
+      "connection":{
+         "id":"CT-7761-6934",
+         "type":"production",
+         "status":"approved",
+         "provider":{
+            "id":"PA-425-033",
+            "name":"CB Demo Provider"
+         },
+         "vendor":{
+            "id":"VA-004-290",
+            "name":"Weathertop"
+         },
+         "hub":{
+            "id":"HB-0309-9389",
+            "name":"IMC DEMOS"
+         },
+         "created_at":"2020-04-14T16:25:30+00:00"
+      },
+      "events":{
+         "created":{
+            "at":"2020-04-14T16:35:12+00:00"
+         },
+         "updated":{
+            "at":"2020-04-14T17:20:22+00:00",
+            "by":{
+               "id":"UR-841-574-187",
+               "name":"Marc Serrat"
+            }
+         }
+      },
+      "params":[
+         {
+            "value":"yes",
+            "title":"Tier 2 ordering",
+            "description":"Tier 2 ordering",
+            "type":"text",
+            "scope":"tier2",
+            "phase":"ordering",
+            "constraints":{
+               "required":true,
+               "hidden":false,
+               "unique":false
+            },
+            "id":"Tier2Ordering"
+         },
+         {
+            "value":"ads",
+            "title":"Tier 2 Fulfillment",
+            "description":"Tier 2 fulfillment",
+            "type":"text",
+            "scope":"tier2",
+            "phase":"fulfillment",
+            "constraints":{
+               "required":true,
+               "hidden":false,
+               "unique":false
+            },
+            "id":"Tier2Fulfillment"
+         }
+      ],
+      "template":{
+         "id":"TL-953-434-938",
+         "name":"Default Activation Template",
+         "representation":"# Sample Template For Setup of Tier 2\n\nThis template is used to share details of the **successful** setup configuration of reseller of 2nd level.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which have scope 'Tier 2'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+      },
+      "status":"active",
+      "contract":{
+         "id":"CRD-99082-45842-69180",
+         "name":"Contract of IMC Demos Spain Distribution Agreement",
+         "type":"distribution"
+      },
+      "marketplace":{
+         "id":"MP-91673",
+         "name":"Demo Marketplace",
+         "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+      }
+   },
+   "events":{
+      "created":{
+         "at":"2020-04-14T16:35:13+00:00"
+      },
+      "updated":{
+         "at":"2020-04-14T17:23:53+00:00",
+         "by":{
+            "id":"UR-841-574-187",
+            "name":"Marc Serrat"
+         }
+      },
+      "inquired":{
+         "at":"2020-04-14T17:20:21+00:00"
+      },
+      "pended":{
+         "at":"2020-04-14T17:23:14+00:00"
+      },
+      "approved":{
+         "at":"2020-04-14T17:23:53+00:00",
+         "by":{
+            "id":"UR-841-574-187",
+            "name":"Marc Serrat"
+         }
+      }
+   },
+   "params":[
+      {
+         "value":"sdfg",
+         "title":"Tier 1 Ordering",
+         "description":"Tier 1 Ordering",
+         "type":"text",
+         "scope":"tier1",
+         "phase":"ordering",
+         "constraints":{
+            "required":true,
+            "hidden":false,
+            "unique":false
+         },
+         "id":"tier1ordering"
+      },
+      {
+         "value":"as",
+         "title":"Tier 1 fulfillment",
+         "description":"tier 1 Fulfillment",
+         "type":"text",
+         "scope":"tier1",
+         "phase":"fulfillment",
+         "constraints":{
+            "required":true,
+            "hidden":false,
+            "unique":false
+         },
+         "id":"tier1fulfillment"
+      }
+   ],
+   "assignee":{
+      "id":"UR-841-574-187",
+      "name":"Marc Serrat"
+   },
+   "template":{
+      "id":"TL-309-614-308",
+      "name":"Default Activation Template",
+      "representation":"# Sample Template For Setup of Tier 1\n\nThis template is used to share details of the **successful** setup configuration of reseller of 1st level.\n\nThis template uses **[Markdown](https://en.wikipedia.org/wiki/Markdown)** syntax and allows to use Parameters of the product which have scope 'Tier 1'.\n\n### Formatting\n\nMarkdown allows you to control various aspects of the document:\n\n1. Text formatting like **bold** or *italic*\n2. Images embedding\n3. Lists\n4. and more\n\n### Parameters\n\nYou can refer to the Parameters using their ID, like in the following example:\n\n* The value of **param_a** is ****\n* The value of **param_b** is ****\n\nYou can also embed pictures like the one below:\n\n![logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Ringworld_Waiting.jpg/270px-Ringworld_Waiting.jpg)"
+   },
+   "environment":"production",
+   "tiers":{
+      "tier1":{
+         "id":"TA-6977-4895-5793",
+         "external_id":"1000198",
+         "external_uid":"13ed6d40-6bf6-4b20-99c6-642dda18ba89",
+         "name":"Konkelectrics",
+         "contact_info":{
+            "address_line1":"6210 E Hwy 290",
+            "address_line2":"",
+            "city":"Austin",
+            "state":"TX",
+            "postal_code":"78723-1026",
+            "country":"us",
+            "contact":{
+               "first_name":"Gwen",
+               "last_name":"Clayton",
+               "email":"gwen.clayton@dbximmicro.com",
+               "phone_number":{
+                  "country_code":"+1",
+                  "area_code":"202",
+                  "phone_number":"5550137",
+                  "extension":""
+               }
+            }
+         }
+      },
+      "tier2":{
+         "id":"TA-0-2347-9392-6524",
+         "external_id":"1",
+         "external_uid":"6108fa88-62ba-4e18-af32-8af334afafae",
+         "name":"Connectdemos",
+         "contact_info":{
+            "address_line1":"3351 Michelson Drive, Suite 100",
+            "address_line2":"",
+            "city":"Irvine",
+            "state":"CA",
+            "postal_code":"92612-0697",
+            "country":"us",
+            "contact":{
+               "first_name":"Charlie",
+               "last_name":"Smith",
+               "email":"admin@imcdemos.com",
+               "phone_number":{
+                  "country_code":"+1",
+                  "area_code":"714",
+                  "phone_number":"5661000",
+                  "extension":""
+               }
+            }
+         }
+      }
+   }
+}

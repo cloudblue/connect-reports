@@ -312,6 +312,84 @@
                ]
             }
          ]
+      },
+      {
+         "name":"Tier Configuration requests",
+         "readme_file":"reports/tier_configuration_requests/Readme.md",
+         "template":"reports/tier_configuration_requests/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.tier_configuration_requests.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"date",
+               "type":"date_range",
+               "name":"Report period",
+               "description": "Provide the time period to create the report",
+               "required":true
+            },
+            {
+               "id":"product",
+               "type":"product",
+               "name":"Product list",
+               "description": "Select the products you want to include in report"
+            },
+            {
+               "id":"mkp",
+               "type":"marketplace",
+               "name":"Marketplaces",
+               "description": "Select the marketplaces you want to include in report"
+            },
+            {
+               "id":"rr_type",
+               "type":"checkbox",
+               "name":"Types of requests",
+               "description": "Select the type of requests you want to include in report",
+               "choices": [
+                  {
+                     "value": "setup",
+                     "label": "Setup"
+                  },
+                  {
+                     "value": "update",
+                     "label": "Update"
+                  }
+               ]
+            },
+            {
+               "id":"rr_status",
+               "type":"checkbox",
+               "name":"Request status",
+               "description": "Select the status of the requests you want to include in report",
+               "choices": [
+                  {
+                     "value": "tiers_setup",
+                     "label": "Tier Setup"
+                  },
+                  {
+                     "value": "inquiring",
+                     "label": "Inquiring"
+                  },
+                  {
+                     "value": "pending",
+                     "label": "Pending"
+                  },
+                  {
+                     "value": "approved",
+                     "label": "Approved"
+                  },
+                  {
+                     "value": "failed",
+                     "label": "Failed"
+                  }
+               ]
+            }
+         ]
       }
    ]
 }

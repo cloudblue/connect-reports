@@ -52,7 +52,7 @@ def generate(client, parameters, progress_callback):
     total = requests.count()
 
     output = []
-    today = datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
+    today = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
     for request in requests:
         connection = request['asset']['connection']
