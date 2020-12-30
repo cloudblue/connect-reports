@@ -177,3 +177,16 @@ def tcr_request():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def listing_request():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'listing_request.json'
+            )
+    ) as request:
+        return json.load(request)

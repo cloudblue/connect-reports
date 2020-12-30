@@ -1,0 +1,48 @@
+{
+   "id":"LSTR-316-530-321-001",
+   "type":"new",
+   "state":"completed",
+   "product":{
+      "id":"PRD-513-324-259",
+      "icon":"/media/VA-004-290/PRD-513-324-259/media/PRD-513-324-259-logo_rvulGhJ.png",
+      "name":"Syndication",
+      "version":1
+   },
+   "listing":{
+      "id":"LST-316-530-321",
+      "status":"listed",
+      "contract":{
+         "id":"CRD-17122-28805-97720",
+         "type":"distribution",
+         "name":"Contract of TestDistSkir",
+         "marketplace":{
+            "id":"MP-50711",
+            "name":"Test MP"
+         }
+      },
+      "product":{
+         "id":"PRD-513-324-259",
+         "icon":"/media/VA-004-290/PRD-513-324-259/media/PRD-513-324-259-logo_rvulGhJ.png",
+         "name":"Syndication",
+         "status":"published",
+         "version":1
+      },
+      "created":"2020-11-30T17:00:42+00:00",
+      "updated":"2020-11-30T17:05:02+00:00",
+      "vendor":{
+         "id":"VA-004-290",
+         "name":"Weathertop"
+      },
+      "provider":{
+         "id":"PA-639-594",
+         "name":"CloudBlue"
+      },
+      "upgrade_available":false
+   },
+   "creator":{
+      "id":"UR-841-574-187",
+      "name":"Marc Serrat"
+   },
+   "created":"2020-11-30T17:00:42+00:00",
+   "updated":"2020-11-30T17:00:56+00:00"
+}
