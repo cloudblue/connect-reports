@@ -229,3 +229,16 @@ def tier_account():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def contract_response():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'contract_response.json'
+            )
+    ) as request:
+        return json.load(request)

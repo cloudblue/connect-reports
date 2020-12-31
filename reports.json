@@ -614,6 +614,73 @@
                "required": true
             }
          ]
+      },
+      {
+         "name":"Contracts Report",
+         "readme_file":"reports/contract_list/Readme.md",
+         "template":"reports/contract_list/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.contract_list.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec":1,
+         "parameters":[
+            {
+               "id":"type",
+               "type":"checkbox",
+               "name":"Type of contract",
+               "description": "Select the types of contracts you want to include in the report, please note that depending on your type of account you may not get results for certain types.",
+               "choices": [
+                  {
+                     "value": "program",
+                     "label": "Program"
+                  },
+                  {
+                     "value": "distribution",
+                     "label": "Distribution"
+                  },
+                  {
+                     "value": "syndication",
+                     "label": "Syndication"
+                  },
+                  {
+                     "value": "service",
+                     "label": "Service"
+                  }
+               ]
+            },
+            {
+               "id":"status",
+               "type":"checkbox",
+               "name":"Contract status",
+               "description": "Select the status of contracts to include in report",
+               "choices": [
+                  {
+                     "value": "active",
+                     "label": "Active"
+                  },
+                  {
+                     "value": "enrolling",
+                     "label": "Enrolling"
+                  },
+                  {
+                     "value": "rejected",
+                     "label": "Rejected"
+                  },
+                  {
+                     "value": "pending",
+                     "label": "Pending"
+                  },
+                  {
+                     "value": "terminated",
+                     "label": "Terminated"
+                  }
+               ]
+            }
+         ]
       }
    ]
 }

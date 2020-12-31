@@ -1,0 +1,70 @@
+{
+   "id":"CRD-58096-38285-80856",
+   "type":"distribution",
+   "version":1,
+   "status":"active",
+   "owner":{
+      "id":"VA-392-495",
+      "name":"Adrian Inc Oct 12"
+   },
+   "version_created":"2020-10-13T05:40:15+00:00",
+   "events":{
+      "created":{
+         "at":"2020-10-13T05:24:39+00:00",
+         "by":{
+            "id":"UR-539-008-555",
+            "name":"Robert Balboa Oct 12"
+         }
+      },
+      "updated":{
+         "at":"2020-10-13T05:40:15+00:00",
+         "by":{
+            "id":"UR-386-336-555",
+            "name":"Beolars Bribbs"
+         }
+      },
+      "signed":{
+         "at":"2020-10-13T05:40:15+00:00",
+         "by":{
+            "id":"UR-386-336-555",
+            "name":"Beolars Bribbs"
+         }
+      },
+      "countersigned":{
+         "at":"2020-10-13T05:24:39+00:00",
+         "by":{
+            "id":"UR-539-008-555",
+            "name":"Robert Balboa Oct 12"
+         }
+      }
+   },
+   "name":"Contract of Demo Marketplace Agreement",
+   "agreement":{
+      "id":"AGD-791-385-257",
+      "name":"Demo Marketplace Agreement"
+   },
+   "creator":{
+      "id":"VA-392-495",
+      "name":"Adrian Inc Oct 12"
+   },
+   "enrolled":"2020-10-13T05:24:40+00:00",
+   "latest":true,
+   "activation":{
+      "message":"activation message",
+      "date":"2020-10-13T05:40:15+00:00"
+   },
+   "signee":{
+      "id":"UR-539-008-555",
+      "name":"Robert Balboa Oct 12"
+   },
+   "kind":"production",
+   "issuer":{
+      "id":"PA-425-033",
+      "name":"CB Demo Provider"
+   },
+   "marketplace":{
+      "id":"MP-91673",
+      "name":"Demo Marketplace",
+      "icon":"/media/PA-425-033/marketplaces/MP-91673/icon_0NPrdJx.png"
+   }
+}
