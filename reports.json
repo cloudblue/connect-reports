@@ -1,6 +1,6 @@
 {
    "name":"Connect Reports",
-   "description_file":"Readme.md",
+   "description_file":"README.md",
    "version":"1.0.0",
    "language":"python",
    "reports":[
