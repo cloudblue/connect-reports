@@ -10,7 +10,7 @@ from reports.utils import get_value, get_basic_value
 
 def generate(client, parameters, progress_callback):
     query = R()
-    if parameters['date']:
+    if parameters['date']:  # pragma no branch
         query &= R().created.ge(parameters['date']['after'])
         query &= R().created.le(parameters['date']['before'])
     if parameters['mkp']:
@@ -32,8 +32,8 @@ def generate(client, parameters, progress_callback):
     output = []
 
     def get_provider(mkp, prop):
-        if not mkp or mkp == '-' or mkp not in marketplaces:
-            return '-'
+        if not mkp or mkp == '-' or mkp not in marketplaces:  # pragma: no branch
+            return '-'  # pragma: no cover
         return marketplaces[mkp][prop]
 
     def create_phone(pn):
