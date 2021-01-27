@@ -242,3 +242,16 @@ def contract_response():
             )
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def usage_records_response():
+    with open(
+            os.path.join(
+                os.getcwd(),
+                'tests',
+                'fixtures',
+                'usage_records_response.json'
+            )
+    ) as request:
+        return json.load(request)

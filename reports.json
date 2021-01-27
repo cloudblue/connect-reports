@@ -15,7 +15,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -111,7 +111,7 @@
          "start_row":2,
          "start_col":1,
          "entrypoint":"reports.fulfillment_requests_failed.entrypoint.generate",
-         "report_spec":1,
+         "report_spec": "1",
          "audience":[
             "provider",
             "vendor"
@@ -191,7 +191,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -231,7 +231,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -324,7 +324,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -402,7 +402,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -451,7 +451,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -512,7 +512,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -561,7 +561,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"date",
@@ -626,7 +626,7 @@
             "provider",
             "vendor"
          ],
-         "report_spec":1,
+         "report_spec": "1",
          "parameters":[
             {
                "id":"type",
@@ -679,6 +679,35 @@
                      "label": "Terminated"
                   }
                ]
+            }
+         ]
+      },
+      {
+         "name": "Usage per subscription",
+         "readme_file":"reports/usage_in_subscription/Readme.md",
+         "template":"reports/usage_in_subscription/template.xlsx",
+         "start_row":2,
+         "start_col":1,
+         "entrypoint":"reports.usage_in_subscription.entrypoint.generate",
+         "audience":[
+            "provider",
+            "vendor"
+         ],
+         "report_spec": "1",
+         "parameters":[
+            {
+               "id":"product",
+               "type":"product",
+               "name":"Product list",
+               "description": "Select the products for what you want to filter active subscriptions",
+               "required": true
+            },
+            {
+               "id":"period",
+               "type":"date_range",
+               "name":"Report period",
+               "description": "Provide the time period you are interest to know if subscriptions had usage reporting",
+               "required": true
             }
          ]
       }
