@@ -38,7 +38,8 @@ def test_generate_usage(
         response_factory(
             query='and(eq(asset.id,AS-1895-0864-1238),or(and(ge(start_date,2020-12-01T00:00:00),'
                   'lt(start_date,2021-01-01T00:00:00)),and(ge(end_date,2020-12-01T00:00:00),'
-                  'lt(end_date,2021-01-01T00:00:00))))',
+                  'lt(end_date,2021-01-01T00:00:00)),and(lt(start_date,2020-12-01T00:00:00),'
+                  'gt(end_date,2021-01-01T00:00:00))))',
             value=[usage_records_response]
         )
     )

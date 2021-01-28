@@ -19,6 +19,8 @@ def generate(client, parameters, progress_callback):
                 R().start_date.ge(f'{start_date}') & R().start_date.lt(f'{end_date}')
             ) | (
                 R().end_date.ge(f'{start_date}') & R().end_date.lt(f'{end_date}')
+            ) | (
+                R().start_date.lt(f'{start_date}') & R().end_date.gt(f'{end_date}')
             )
         )
         usage_records = client.ns('usage').records.filter(rql)
