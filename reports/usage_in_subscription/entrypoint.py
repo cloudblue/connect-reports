@@ -13,8 +13,8 @@ def generate(client, parameters, progress_callback):
     start_date = parameters['period']['after']
     end_date = parameters['period']['before']
     for asset in assets:
-
-        rql = R().asset.id.eq(asset['id']) & (
+        billable_status = ['approved', 'closed']
+        rql = R().asset.id.eq(asset['id']) & R().status.oneof(billable_status) & (
             (
                 R().start_date.ge(f'{start_date}') & R().start_date.lt(f'{end_date}')
             ) | (
