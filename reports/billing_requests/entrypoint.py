@@ -12,12 +12,12 @@ def generate(client, parameters, progress_callback):
     query = R()
     query &= R().created.ge(parameters['date']['after'])
     query &= R().created.le(parameters['date']['before'])
-    if parameters['product']:
-        query &= R().asset.product.id.oneof(parameters['product'])
-    if parameters['mkp']:
-        query &= R().asset.marketplace.id.oneof(parameters['mkp'])
-    if parameters['hub']:
-        query &= R().asset.connection.hub.id.oneof(parameters['hub'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().asset.product.id.oneof(parameters['product']['choices'])
+    if parameters.get('mkp') and parameters['mkp']['all'] is False:
+        query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
+    if parameters.get('hub') and parameters['hub']['all'] is False:
+        query &= R().asset.connection.hub.id.oneof(parameters['hub']['choices'])
 
     requests = client.ns('subscriptions').requests.filter(query)
     progress = 0

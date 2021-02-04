@@ -12,12 +12,14 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
     responses = []
 
     parameters = {
-        "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00",
+        "mkp": {
+            "all": False,
+            "choices": ["mkp-1"],
         },
-        "mkp": ["mkp-1"],
-        "tier_type": ["mkp2"],
+        "tier_type": {
+            "all": False,
+            "choices": ["mkp2"],
+        },
         "full_contact_info": "yes",
     }
 
@@ -35,8 +37,7 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
 
     responses.append(
         response_factory(
-            query="and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),"
-                  "in(asset.marketplace.id,(mkp-1)),in(scopes,(mkp2)))",
+            query="and(in(asset.marketplace.id,(mkp-1)),in(scopes,(mkp2)))",
             value=ta_list,
         )
     )

@@ -12,15 +12,15 @@ from reports.utils import convert_to_datetime, get_value, get_basic_value
 def generate(client, parameters, progress_callback):
     all_status = ['draft', 'reviewing', 'deploying', 'completed', 'canceled']
     query = R()
-    if parameters['date']:
+    if parameters.get('date'):
         query &= R().created.ge(parameters['date']['after'])
         query &= R().created.le(parameters['date']['before'])
-    if parameters['product']:
-        query &= R().listing.product.id.oneof(parameters['product'])
-    if parameters['mkp']:
-        query &= R().listing.contract.marketplace.id.oneof(parameters['mkp'])
-    if parameters['rr_status']:
-        query &= R().state.oneof(parameters['rr_status'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().listing.product.id.oneof(parameters['product']['choices'])
+    if parameters.get('mkp') and parameters['mkp']['all'] is False:
+        query &= R().listing.contract.marketplace.id.oneof(parameters['mkp']['choices'])
+    if parameters.get('rr_status') and parameters['rr_status']['all'] is False:
+        query &= R().state.oneof(parameters['rr_status']['choices'])
     else:
         query &= R().state.oneof(all_status)
     requests = client.listing_requests.filter(query).order_by("-created")

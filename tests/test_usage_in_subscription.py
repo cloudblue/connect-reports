@@ -21,7 +21,10 @@ def test_generate_usage(
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": ["PRD-1"],
+        "product": {
+            "all": False,
+            "choices": ["PRD-1"],
+        },
     }
 
     responses.append(
@@ -32,7 +35,7 @@ def test_generate_usage(
 
     responses.append(
         response_factory(
-            query='and(in(product.id,(PRD-1)),eq(status,active))',
+            query='and(eq(status,active),in(product.id,(PRD-1)))',
             value=[asset]
         )
     )

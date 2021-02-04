@@ -30,14 +30,14 @@ def generate(client, parameters, progress_callback):
     if parameters['date']:
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
-    if parameters['product']:
-        query &= R().product.id.oneof(parameters['product'])
-    if parameters['mkp']:
-        query &= R().marketplace.id.oneof(parameters['mkp'])
-    if parameters['period']:
-        query &= R().billing.period.uom.oneof(parameters['period'])
-    if parameters['status']:
-        query &= R().status.oneof(parameters['status'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().product.id.oneof(parameters['product']['choices'])
+    if parameters.get('mkp') and parameters['mkp']['all'] is False:
+        query &= R().marketplace.id.oneof(parameters['mkp']['choices'])
+    if parameters.get('period') and parameters['period']['all'] is False:
+        query &= R().billing.period.uom.oneof(parameters['period']['choices'])
+    if parameters.get('status') and parameters['status']['all'] is False:
+        query &= R().status.oneof(parameters['status']['choices'])
 
     subscriptions = client.ns('subscriptions').assets.filter(query)
     progress = 0

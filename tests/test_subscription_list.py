@@ -17,10 +17,22 @@ def test_generate(progress, client_factory, response_factory, billing_request):
 
     parameters = {
         "date": None,
-        "product": None,
-        "mkp": None,
-        "period": None,
-        "status": None
+        "product": {
+            "all": True,
+            "choices": [],
+        },
+        "mkp": {
+            "all": True,
+            "choices": [],
+        },
+        "period": {
+            "all": True,
+            "choices": [],
+        },
+        "status": {
+            "all": True,
+            "choices": [],
+        }
     }
 
     responses.append(
@@ -51,12 +63,24 @@ def test_generate_all_params(progress, client_factory, response_factory, billing
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": [
-            "PRD-276-377-545"
-        ],
-        "mkp": ["MP-123"],
-        "period": ["monthly"],
-        "status": ["active"]
+        "product": {
+            "all": False,
+            "choices": [
+                "PRD-276-377-545"
+            ],
+        },
+        "mkp": {
+            "all": False,
+            "choices": ["MP-123"],
+        },
+        "period": {
+            "all": False,
+            "choices": ["monthly"],
+        },
+        "status": {
+            "all": False,
+            "choices": ["active"]
+        },
     }
 
     responses.append(

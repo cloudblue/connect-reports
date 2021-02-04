@@ -11,8 +11,14 @@ def test_generate(progress, client_factory, response_factory, contract_response)
     responses = []
 
     parameters = {
-        "type": None,
-        "status": None,
+        "type": {
+            "all": True,
+            "choices": [],
+        },
+        "status": {
+            "all": True,
+            "choice": [],
+        },
     }
     responses.append(
         response_factory(
@@ -40,8 +46,14 @@ def test_generate_all_params(progress, client_factory, response_factory, contrac
     responses = []
 
     parameters = {
-        "type": ['distribution'],
-        "status": ["active"]
+        "type": {
+            "all": False,
+            "choices": ['distribution'],
+        },
+        "status": {
+            "all": False,
+            "choices": ["active"],
+        }
     }
     responses.append(
         response_factory(

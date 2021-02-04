@@ -12,10 +12,18 @@ def test_generate(progress, client_factory, response_factory, tcr_request):
     responses = []
 
     parameters = {
-        "date": None,
-        "product": None,
-        "rr_status": None,
-        "mkp": None
+        "product": {
+            "all": True,
+            "choices": [],
+        },
+        "rr_status": {
+            "all": True,
+            "choices": [],
+        },
+        "mkp": {
+            "all": True,
+            "choices": [],
+        }
     }
 
     responses.append(
@@ -49,10 +57,22 @@ def test_generate_all_params(progress, client_factory, response_factory, tcr_req
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": ["PRD-1"],
-        "rr_type": ["setup"],
-        "rr_status": ['pending'],
-        "mkp": ["MKP-1"]
+        "product": {
+            "all": False,
+            "choices": ["PRD-1"],
+        },
+        "rr_type": {
+            "all": False,
+            "choices": ["setup"],
+        },
+        "rr_status": {
+            "all": False,
+            "choices": ['pending'],
+        },
+        "mkp": {
+            "all": False,
+            "choices": ["MKP-1"],
+        },
     }
 
     responses.append(

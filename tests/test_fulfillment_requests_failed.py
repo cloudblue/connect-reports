@@ -15,9 +15,18 @@ def test_generate(progress, client_factory, response_factory, ff_request):
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": None,
-        "connection_type": None,
-        "rr_type": None,
+        "product": {
+            "all": True,
+            "choices": [],
+        },
+        "connection_type": {
+            "all": True,
+            "choices": [],
+        },
+        "rr_type": {
+            "all": True,
+            "choices": [],
+        },
     }
     responses.append(
         response_factory(
@@ -48,11 +57,20 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": [
-            "PRD-276-377-545"
-        ],
-        "connection_type": ['production'],
-        "rr_type": ['purchase'],
+        "product": {
+            "all": False,
+            "choices": [
+                "PRD-276-377-545"
+            ],
+        },
+        "connection_type": {
+            "all": False,
+            "choices": ['production'],
+        },
+        "rr_type": {
+            "all": False,
+            "choices": ['purchase'],
+        }
     }
     responses.append(
         response_factory(

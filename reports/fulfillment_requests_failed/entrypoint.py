@@ -14,13 +14,13 @@ def generate(client, parameters, progress_callback):
     query = R()
     query &= R().created.ge(parameters['date']['after'])
     query &= R().created.le(parameters['date']['before'])
-    if parameters['product']:
-        query &= R().asset.product.id.oneof(parameters['product'])
-    if parameters['rr_type']:
-        query &= R().type.oneof(parameters['rr_type'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().asset.product.id.oneof(parameters['product']['choices'])
+    if parameters.get('rr_type') and parameters['rr_type']['all'] is False:
+        query &= R().type.oneof(parameters['rr_type']['choices'])
     query &= R().status.eq('failed')
-    if parameters['connection_type']:
-        query &= R().asset.connection.type.oneof(parameters['connection_type'])
+    if parameters.get('connection_type') and parameters['connection_type']['all'] is False:
+        query &= R().asset.connection.type.oneof(parameters['connection_type']['choices'])
     requests = client.requests.filter(query)
     progress = 0
     total = requests.count()

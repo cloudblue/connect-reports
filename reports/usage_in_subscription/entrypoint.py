@@ -63,8 +63,10 @@ def get_record(client, asset, start_date, end_date, progress):
 
 
 def generate(client, parameters, progress_callback):
-    product_rql = R().product.id.oneof(parameters['product'])
-    product_rql &= R().status.eq('active')
+    product_rql = R().status.eq('active')
+
+    if parameters.get('product') and parameters['product']['all'] is False:
+        product_rql &= R().product.id.oneof(parameters['product']['choices'])
 
     assets = client.ns('subscriptions').assets.filter(product_rql)
 
