@@ -15,11 +15,26 @@ def test_generate(progress, client_factory, response_factory, ff_request):
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": None,
-        "rr_status": None,
-        "rr_type": None,
-        "mkp": None,
-        "hub": None
+        "product": {
+            "all": True,
+            "choices": [],
+        },
+        "rr_status": {
+            "all": True,
+            "choices": [],
+        },
+        "rr_type": {
+            "all": True,
+            "choices": [],
+        },
+        "mkp": {
+            "all": True,
+            "choices": [],
+        },
+        "hub": {
+            "all": True,
+            "choices": [],
+        },
     }
     responses.append(
         response_factory(
@@ -50,13 +65,28 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
             "after": "2020-12-01T00:00:00",
             "before": "2021-01-01T00:00:00"
         },
-        "product": [
-            "PRD-276-377-545"
-        ],
-        "rr_status": ['approved'],
-        "rr_type": ['purchase'],
-        "mkp": ['MP-123'],
-        "hub": ['HB-123']
+        "product": {
+            "all": False,
+            "choices": [
+                "PRD-276-377-545"
+            ]
+        },
+        "rr_status": {
+            "all": False,
+            "choices": ['approved'],
+        },
+        "rr_type": {
+            "all": False,
+            "choices": ['purchase'],
+        },
+        "mkp": {
+            "all": False,
+            "choices": ['MP-123'],
+        },
+        "hub": {
+            "all": False,
+            "choices": ['HB-123'],
+        }
     }
     responses.append(
         response_factory(
