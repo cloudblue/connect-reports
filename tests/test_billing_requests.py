@@ -12,8 +12,10 @@ def test_generate(progress, client_factory, response_factory, billing_request):
 
     parameters = {
         "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            }
         },
         "product": {
             "all": True,
@@ -53,8 +55,10 @@ def test_generate_additional(progress, client_factory, response_factory, billing
 
     parameters = {
         "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00",
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            },
         },
         "product": {
             "all": False,

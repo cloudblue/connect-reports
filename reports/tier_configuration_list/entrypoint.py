@@ -7,8 +7,8 @@ def generate(client, parameters, progress_callback):
     all_types = ['active', 'processing']
     query = R()
     if parameters.get("date"):
-        query &= R().events.created.at.ge(parameters['date']['after'])
-        query &= R().events.created.at.le(parameters['date']['before'])
+        query &= R().events.created.at.ge(parameters['date']['value']['after'])
+        query &= R().events.created.at.le(parameters['date']['value']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().product.id.oneof(parameters['product']['choices'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:

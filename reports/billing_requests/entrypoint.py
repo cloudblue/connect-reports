@@ -10,8 +10,8 @@ from reports.utils import convert_to_datetime, get_value, get_basic_value
 
 def generate(client, parameters, progress_callback):
     query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
+    query &= R().created.ge(parameters['date']['value']['after'])
+    query &= R().created.le(parameters['date']['value']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().asset.product.id.oneof(parameters['product']['choices'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:

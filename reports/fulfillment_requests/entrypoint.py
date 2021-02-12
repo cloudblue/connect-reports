@@ -32,8 +32,8 @@ def generate(client, parameters, progress_callback):
     """
     all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed', 'draft']
     query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
+    query &= R().created.ge(parameters['date']['value']['after'])
+    query &= R().created.le(parameters['date']['value']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().asset.product.id.oneof(parameters['product']['choices'])
     if parameters.get('rr_type') and parameters['rr_type']['all'] is False:

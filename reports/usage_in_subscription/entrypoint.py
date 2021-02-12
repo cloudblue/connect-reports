@@ -72,8 +72,8 @@ def generate(client, parameters, progress_callback):
 
     total = assets.count()
     progress = Progress(progress_callback, total)
-    start_date = parameters['period']['after']
-    end_date = parameters['period']['before']
+    start_date = parameters['period']['value']['after']
+    end_date = parameters['period']['value']['before']
 
     ex = futures.ThreadPoolExecutor(max_workers=10)
 
