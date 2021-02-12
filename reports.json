@@ -104,7 +104,7 @@
                "id":"hub",
                "type":"hub",
                "name":"Hubs",
-               "required":true,
+               "required":false,
                "description":"Select the hubs you want to include in report"
             }
          ]
@@ -226,7 +226,7 @@
                "id":"hub",
                "type":"hub",
                "name":"Hubs",
-               "required":true,
+               "required":false,
                "description":"Select the hubs you want to include in report"
             }
          ]
