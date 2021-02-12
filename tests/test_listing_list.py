@@ -52,8 +52,10 @@ def test_generate_all_params(progress, client_factory, response_factory, listing
 
     parameters = {
         "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            },
         },
         "product": {
             "all": False,

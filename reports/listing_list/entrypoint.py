@@ -13,8 +13,8 @@ def generate(client, parameters, progress_callback):
     all_status = ['listed', 'unlisted']
     query = R()
     if parameters.get('date'):
-        query &= R().created.ge(parameters['date']['after'])
-        query &= R().created.le(parameters['date']['before'])
+        query &= R().created.ge(parameters['date']['value']['after'])
+        query &= R().created.le(parameters['date']['value']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().product.id.oneof(parameters['product']['choices'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:

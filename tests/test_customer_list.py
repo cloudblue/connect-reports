@@ -63,8 +63,10 @@ def test_generate_2(progress, client_factory, response_factory, mkp_list, ta_lis
 
     parameters = {
         "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00",
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            }
         },
         "mkp": None,
         "tier_type": None,
@@ -111,8 +113,10 @@ def test_generate_3(progress, client_factory, response_factory, mkp_list, ta_lis
 
     parameters = {
         "date": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00",
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            }
         },
         "mkp": None,
         "tier_type": None,

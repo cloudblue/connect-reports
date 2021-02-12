@@ -11,8 +11,8 @@ from reports.utils import get_value, get_basic_value
 def generate(client, parameters, progress_callback):
     query = R()
     if parameters.get('date'):
-        query &= R().created.ge(parameters['date']['after'])
-        query &= R().created.le(parameters['date']['before'])
+        query &= R().created.ge(parameters['date']['value']['after'])
+        query &= R().created.le(parameters['date']['value']['before'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:
         query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
     if parameters.get('tier_type') and parameters['tier_type']['all'] is False:

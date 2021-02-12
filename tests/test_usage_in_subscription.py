@@ -18,8 +18,10 @@ def test_generate_usage(
 
     parameters = {
         "period": {
-            "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "value": {
+                "after": "2020-12-01T00:00:00",
+                "before": "2021-01-01T00:00:00",
+            }
         },
         "product": {
             "all": False,
