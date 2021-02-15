@@ -99,13 +99,6 @@
                "name":"Marketplaces",
                "required":true,
                "description":"Select the marketplaces you want to include in report"
-            },
-            {
-               "id":"hub",
-               "type":"hub",
-               "name":"Hubs",
-               "required":false,
-               "description":"Select the hubs you want to include in report"
             }
          ]
       },
@@ -221,13 +214,6 @@
                "name":"Marketplaces",
                "required":true,
                "description":"Select the marketplaces you want to include in report"
-            },
-            {
-               "id":"hub",
-               "type":"hub",
-               "name":"Hubs",
-               "required":false,
-               "description":"Select the hubs you want to include in report"
             }
          ]
       },
