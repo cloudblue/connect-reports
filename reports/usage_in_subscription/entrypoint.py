@@ -2,6 +2,7 @@ from cnct import R
 from reports.utils import convert_to_datetime, get_value, get_basic_value, Progress
 from concurrent import futures
 
+
 def get_record(client, asset, start_date, end_date, progress):
     billable_status = ['approved', 'closed']
     rql = R().asset.id.eq(asset['id']) & R().status.oneof(billable_status) & (
