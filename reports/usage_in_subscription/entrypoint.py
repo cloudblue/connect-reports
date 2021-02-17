@@ -1,23 +1,6 @@
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+from reports.utils import convert_to_datetime, get_value, get_basic_value, Progress
 from concurrent import futures
-from threading import Lock
-
-
-class Progress:
-
-    def __init__(self, callback, total):
-        self.lock = Lock()
-        self.current = 0
-        self.total = total
-        self.callback = callback
-
-    def increment(self):
-        self.lock.acquire()
-        self.current += 1
-        self.lock.release()
-        self.callback(self.current, self.total)
-
 
 def get_record(client, asset, start_date, end_date, progress):
     billable_status = ['approved', 'closed']
