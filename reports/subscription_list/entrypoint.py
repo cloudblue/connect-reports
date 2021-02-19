@@ -27,7 +27,7 @@ def get_anniversary_month(subscription_billing):
 
 def generate(client, parameters, progress_callback):
     query = R()
-    if parameters['date'] and parameters['date']['after'] != '':
+    if parameters.get('date') and parameters['date']['after'] != '':
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
@@ -53,9 +53,9 @@ def generate(client, parameters, progress_callback):
             calculate_period(
                 subscription['billing']['period']['delta'],
                 subscription['billing']['period']['uom'],
-            ),
-            get_anniversary_day(subscription['billing']),
-            get_anniversary_month(subscription['billing']),
+            ) if 'billing' in subscription else '-',
+            get_anniversary_day(subscription['billing']) if 'billing' in subscription else '-',
+            get_anniversary_month(subscription['billing']) if 'billing' in subscription else '-',
             subscription['contract']['id'] if 'contract' in subscription else '-',
             subscription['contract']['name'] if 'contract' in subscription else '-',
             get_value(subscription['tiers'], 'customer', 'id'),
