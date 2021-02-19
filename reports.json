@@ -331,7 +331,8 @@
                "id":"date",
                "type":"date_range",
                "name":"Report period",
-               "description":"Provide the time period to create the report"
+               "description":"Provide the time period to create the report",
+               "required": true,
             },
             {
                "id":"product",

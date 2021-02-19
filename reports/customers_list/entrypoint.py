@@ -10,7 +10,7 @@ from reports.utils import get_value, get_basic_value
 
 def generate(client, parameters, progress_callback):
     query = R()
-    if parameters.get('date'):
+    if parameters.get('date') and parameters['date']['after'] != '':
         query &= R().created.ge(parameters['date']['after'])
         query &= R().created.le(parameters['date']['before'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:

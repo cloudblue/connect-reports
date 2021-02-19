@@ -27,7 +27,7 @@ def get_anniversary_month(subscription_billing):
 
 def generate(client, parameters, progress_callback):
     query = R()
-    if parameters['date']:
+    if parameters['date'] and parameters['date']['after'] != '':
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:

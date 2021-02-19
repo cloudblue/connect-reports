@@ -12,7 +12,7 @@ from reports.utils import convert_to_datetime, get_value, get_basic_value
 def generate(client, parameters, progress_callback):
     all_status = ['listed', 'unlisted']
     query = R()
-    if parameters.get('date'):
+    if parameters.get('date') and parameters['date']['after'] != '':
         query &= R().created.ge(parameters['date']['after'])
         query &= R().created.le(parameters['date']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:

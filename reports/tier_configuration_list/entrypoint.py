@@ -6,7 +6,7 @@ from datetime import datetime
 def generate(client, parameters, progress_callback):
     all_types = ['active', 'processing']
     query = R()
-    if parameters.get("date"):
+    if parameters.get("date") and parameters['date']['after'] != '':
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
     if parameters.get('product') and parameters['product']['all'] is False:
