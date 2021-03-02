@@ -25,7 +25,7 @@ def generate(client, parameters, progress_callback):
             'name': marketplace['owner']['name'],
             'id': marketplace['owner']['id'],
         }
-    customers = client.ns('tier').accounts.filter(query).order_by('-created').limit(1000)
+    customers = client.ns('tier').accounts.filter(query).order_by('-events.created.at').limit(1000)
     progress = 0
     total = customers.count()
 
