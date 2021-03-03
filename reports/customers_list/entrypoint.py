@@ -12,11 +12,10 @@ from concurrent import futures
 def generate(client, parameters, progress_callback):
     query = R()
     if parameters.get('date') and parameters['date']['after'] != '':
-        query &= R().created.ge(parameters['date']['after'])
-        query &= R().created.le(parameters['date']['before'])
+        query &= R().events.created.at.ge(parameters['date']['after'])
+        query &= R().events.created.at.le(parameters['date']['before'])
     if parameters.get('tier_type') and parameters['tier_type']['all'] is False:
         query &= R().scopes.oneof(parameters['tier_type']['choices'])
-
     marketplaces_list = client.marketplaces.all()
     hubs = {}
     for marketplace in marketplaces_list:

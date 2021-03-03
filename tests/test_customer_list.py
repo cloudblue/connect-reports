@@ -34,7 +34,8 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
 
     responses.append(
         response_factory(
-            query="and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))",
+            query="and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,"
+                  "2021-01-01T00:00:00))",
             value=ta_list
         )
     )
