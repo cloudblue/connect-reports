@@ -79,7 +79,7 @@ def generate(client, parameters, progress_callback):
 
         return customer_row + customer_row_extended
 
-    ex = futures.ThreadPoolExecutor(max_workers=10)
+    ex = futures.ThreadPoolExecutor()
 
     wait_for = []
 

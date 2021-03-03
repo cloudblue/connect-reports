@@ -59,7 +59,7 @@ def generate(client, parameters, progress_callback):
     start_date = parameters['period']['after']
     end_date = parameters['period']['before']
 
-    ex = futures.ThreadPoolExecutor(max_workers=10)
+    ex = futures.ThreadPoolExecutor()
 
     wait_for = []
     for asset in assets:
