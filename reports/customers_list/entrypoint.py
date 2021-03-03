@@ -5,7 +5,8 @@
 #
 
 from cnct import R
-from reports.utils import get_value, get_basic_value
+from reports.utils import get_value, get_basic_value, Progress
+from concurrent import futures
 
 
 def generate(client, parameters, progress_callback):
@@ -13,78 +14,86 @@ def generate(client, parameters, progress_callback):
     if parameters.get('date') and parameters['date']['after'] != '':
         query &= R().created.ge(parameters['date']['after'])
         query &= R().created.le(parameters['date']['before'])
-    if parameters.get('mkp') and parameters['mkp']['all'] is False:
-        query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
     if parameters.get('tier_type') and parameters['tier_type']['all'] is False:
         query &= R().scopes.oneof(parameters['tier_type']['choices'])
 
     marketplaces_list = client.marketplaces.all()
-    marketplaces = {}
+    hubs = {}
     for marketplace in marketplaces_list:
-        marketplaces[marketplace['id']] = {
-            'name': marketplace['owner']['name'],
-            'id': marketplace['owner']['id'],
-        }
+        if 'hubs' in marketplace:
+            for hub in marketplace['hubs']:
+                if 'hub' in hub and hub['hub']['id'] not in hubs:
+                    hubs[hub['hub']['id']] = marketplace['owner']
+
     customers = client.ns('tier').accounts.filter(query).order_by('-events.created.at').limit(1000)
-    progress = 0
+
     total = customers.count()
+    progress = Progress(progress_callback, total)
 
-    output = []
-
-    def get_provider(mkp, prop):
-        if not mkp or mkp == '-' or mkp not in marketplaces:  # pragma: no branch
+    def get_provider(hub, prop):
+        if not hub or hub == '-' or hub not in hubs:  # pragma: no branch
             return '-'  # pragma: no cover
-        return marketplaces[mkp][prop]
+        return hubs[hub][prop]
 
     def create_phone(pn):
         return f'{pn["country_code"]}{pn["area_code"]}{pn["phone_number"]}{pn["extension"]}'
 
-    for customer in customers:
-        try:
-            customer_row = [
-                get_basic_value(customer, 'id'),
-                get_basic_value(customer, 'external_id'),
-                get_basic_value(customer, 'environment'),
-                'Yes' if 'customer' in customer['scopes'] else '-',
-                'Yes' if 'tier1' in customer['scopes'] else '-',
-                'Yes' if 'tier2' in customer['scopes'] else '-',
-                get_provider(get_value(customer, 'marketplace', 'id'), 'id'),
-                get_provider(get_value(customer, 'marketplace', 'id'), 'name'),
-                get_value(customer, 'marketplace', 'id'),
-                get_value(customer, 'marketplace', 'name'),
-                get_basic_value(customer, 'name'),
-                get_basic_value(customer, 'tax_id'),
+    def get_record(client, customer, parameters, progress):
+
+        customer_row = [
+            get_basic_value(customer, 'id'),
+            get_basic_value(customer, 'external_id'),
+            'Yes' if 'customer' in customer['scopes'] else '-',
+            'Yes' if 'tier1' in customer['scopes'] else '-',
+            'Yes' if 'tier2' in customer['scopes'] else '-',
+            get_provider(get_value(customer, 'hub', 'id'), 'id'),
+            get_provider(get_value(customer, 'hub', 'id'), 'name'),
+            get_basic_value(customer, 'name'),
+            get_basic_value(customer, 'tax_id'),
+        ]
+
+        if parameters['full_contact_info'] == 'yes':
+            customer_extended_info = client.ns('tier').accounts[
+                get_basic_value(customer, 'id')
+            ].get()
+
+            contact = customer_extended_info['contact_info']
+            customer_row_extended = [
+                get_basic_value(contact, 'address_line1'),
+                get_basic_value(contact, 'address_line2'),
+                get_basic_value(contact, 'city'),
+                get_basic_value(contact, 'state'),
+                get_basic_value(contact, 'postal_code'),
+                get_basic_value(contact, 'country'),
+                get_value(contact, 'contact', 'first_name'),
+                get_value(contact, 'contact', 'last_name'),
+                get_value(contact, 'contact', 'email'),
+                create_phone(contact['contact']['phone_number']),
+                'Available',
             ]
+        else:
+            customer_row_extended = ['-'] * 10
+            customer_row_extended.append('Not available')
 
-            if parameters['full_contact_info'] == 'yes':
-                customer_extended_info = client.ns('tier').accounts[
-                    get_basic_value(customer, 'id')
-                ].get()
+        progress.increment()
 
-                contact = customer_extended_info['contact_info']
-                customer_row_extended = [
-                    get_basic_value(contact, 'address_line1'),
-                    get_basic_value(contact, 'address_line2'),
-                    get_basic_value(contact, 'city'),
-                    get_basic_value(contact, 'state'),
-                    get_basic_value(contact, 'postal_code'),
-                    get_basic_value(contact, 'country'),
-                    get_value(contact, 'contact', 'first_name'),
-                    get_value(contact, 'contact', 'last_name'),
-                    get_value(contact, 'contact', 'email'),
-                    create_phone(contact['contact']['phone_number'])
-                ]
-            else:
-                customer_row_extended = ['-'] * 10
-            output.append(
-                customer_row + customer_row_extended
+        return customer_row + customer_row_extended
+
+    ex = futures.ThreadPoolExecutor(max_workers=10)
+
+    wait_for = []
+
+    for customer in customers:
+
+        wait_for.append(
+            ex.submit(
+                get_record,
+                client,
+                customer,
+                parameters,
+                progress,
             )
+        )
 
-        except Exception:
-            progress += 1
-            progress_callback(progress, total)
-            pass
-        progress += 1
-        progress_callback(progress, total)
-
-    return output
+    for future in futures.as_completed(wait_for):
+        yield future.result()

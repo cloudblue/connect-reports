@@ -586,13 +586,6 @@
                "description":"Optional: in case that is desired, report can be limited to customers that had been created in the specified period of time"
             },
             {
-               "id":"mkp",
-               "type":"marketplace",
-               "name":"Marketplaces",
-               "required":true,
-               "description":"Select the marketplaces you want to include in report"
-            },
-            {
                "id":"tier_type",
                "type":"checkbox",
                "name":"Type of Tier",
