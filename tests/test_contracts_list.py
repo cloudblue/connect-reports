@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
@@ -22,14 +22,14 @@ def test_generate(progress, client_factory, response_factory, contract_response)
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
-            value=[contract_response]
-        )
+            value=[contract_response],
+        ),
     )
 
     client = client_factory(responses)
@@ -53,19 +53,19 @@ def test_generate_all_params(progress, client_factory, response_factory, contrac
         "status": {
             "all": False,
             "choices": ["active"],
-        }
+        },
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query='and(in(type,(distribution)),in(status,(active)))',
-            value=[contract_response]
-        )
+            value=[contract_response],
+        ),
     )
 
     client = client_factory(responses)

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
@@ -13,7 +13,7 @@ def test_generate(progress, client_factory, response_factory, ff_request):
     parameters = {
         "date": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": True,
@@ -30,16 +30,16 @@ def test_generate(progress, client_factory, response_factory, ff_request):
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),eq(status,'
                   'failed))',
-            value=[ff_request]
-        )
+            value=[ff_request],
+        ),
     )
 
     client = client_factory(responses)
@@ -55,12 +55,12 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
     parameters = {
         "date": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": False,
             "choices": [
-                "PRD-276-377-545"
+                "PRD-276-377-545",
             ],
         },
         "connection_type": {
@@ -70,12 +70,12 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
         "rr_type": {
             "all": False,
             "choices": ['purchase'],
-        }
+        },
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
@@ -83,8 +83,8 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),'
                   'in(asset.product.id,(PRD-276-377-545)),in(type,(purchase)),eq(status,failed),'
                   'in(asset.connection.type,(production)))',
-            value=[ff_request]
-        )
+            value=[ff_request],
+        ),
     )
 
     client = client_factory(responses)

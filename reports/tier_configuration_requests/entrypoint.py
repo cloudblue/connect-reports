@@ -1,5 +1,7 @@
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+
+from reports.utils import convert_to_datetime, get_basic_value, get_value
+
 from datetime import datetime
 
 
@@ -36,7 +38,7 @@ def generate(client, parameters, progress_callback):
             get_value(
                 config,
                 'connection',
-                'type'
+                'type',
             ),
             get_value(request, 'configuration', 'id'),
             get_value(request, 'configuration', 'tier_level'),
@@ -48,72 +50,72 @@ def generate(client, parameters, progress_callback):
             get_value(
                 request['parent_configuration'],
                 'account',
-                'name'
+                'name',
             ) if 'parent_configuration' in request else '-',
             get_value(
                 request['parent_configuration'],
                 'account',
-                'external_id'
+                'external_id',
             ) if 'parent_configuration' in request else '-',
             get_value(
                 request['parent_configuration'],
                 'account',
-                'id'
+                'id',
             ) if 'parent_configuration' in request else '-',
             get_value(
                 config['connection'],
                 'provider',
-                'id'
+                'id',
             ) if 'connection' in config else '-',
             get_value(
                 config['connection'],
                 'provider',
-                'name'
+                'name',
             ) if 'connection' in config else '-',
             get_value(
                 config['connection'],
                 'vendor',
-                'id'
+                'id',
             ) if 'connection' in config else '-',
             get_value(
                 config['connection'],
                 'vendor',
-                'name'
+                'name',
             ) if 'connection' in config else '-',
             get_value(
                 config,
                 'product',
-                'id'
+                'id',
             ),
             get_value(
                 config,
                 'product',
-                'name'
+                'name',
             ),
             get_value(
                 config['connection'],
                 'hub',
-                'id'
+                'id',
             ) if 'connection' in config else '-',
             get_value(
                 config['connection'],
                 'hub',
-                'name'
+                'name',
             ) if 'connection' in config else '-',
             get_value(
                 config,
                 'contract',
-                'id'
+                'id',
             ),
             get_value(
                 config,
                 'marketplace',
-                'id'
+                'id',
             ),
             get_value(
                 config,
                 'marketplace',
-                'name'
+                'name',
             ),
         )
 

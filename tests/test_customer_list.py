@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
@@ -21,28 +21,28 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
 
     responses.append(
         response_factory(
-            value=mkp_list
-        )
+            value=mkp_list,
+        ),
     )
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query="and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,"
                   "2021-01-01T00:00:00))",
-            value=ta_list
-        )
+            value=ta_list,
+        ),
     )
 
     responses.append(
         response_factory(
-            value=tier_account
-        )
+            value=tier_account,
+        ),
     )
 
     client = client_factory(responses)

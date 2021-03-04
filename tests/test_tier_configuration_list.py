@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
@@ -23,20 +23,20 @@ def test_generate(progress, client_factory, response_factory, tcr_request):
         "mkp": {
             "all": True,
             "choices": [],
-        }
+        },
     }
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query='in(status,(active,processing))',
-            value=[tcr_request['configuration']]
-        )
+            value=[tcr_request['configuration']],
+        ),
     )
 
     client = client_factory(responses)
@@ -55,7 +55,7 @@ def test_generate_all_params(progress, client_factory, response_factory, tcr_req
     parameters = {
         "date": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": False,
@@ -77,8 +77,8 @@ def test_generate_all_params(progress, client_factory, response_factory, tcr_req
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
@@ -86,8 +86,8 @@ def test_generate_all_params(progress, client_factory, response_factory, tcr_req
             query='and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,'
                   '2021-01-01T00:00:00),in(product.id,(PRD-1)),in(marketplace.id,(MKP-1)),'
                   'in(status,(pending)))',
-            value=[tcr_request['configuration']]
-        )
+            value=[tcr_request['configuration']],
+        ),
     )
 
     client = client_factory(responses)

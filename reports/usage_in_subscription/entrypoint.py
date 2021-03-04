@@ -1,6 +1,10 @@
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value, Progress
+
+from reports.utils import Progress, convert_to_datetime, get_basic_value, get_value
+
 from concurrent import futures
+
+from cnct import ClientError
 
 
 def get_record(client, asset, start_date, end_date, progress):
@@ -42,7 +46,7 @@ def get_record(client, asset, start_date, end_date, progress):
         get_value(asset['connection'], 'hub', 'id'),
         get_value(asset['connection'], 'hub', 'name'),
         len(uf),
-        ', '.join(uf)
+        ', '.join(uf),
     ]
 
 
@@ -62,16 +66,21 @@ def generate(client, parameters, progress_callback):
     ex = futures.ThreadPoolExecutor()
 
     wait_for = []
-    for asset in assets:
-        wait_for.append(
-            ex.submit(
-                get_record,
-                client,
-                asset,
-                start_date,
-                end_date,
-                progress
+    try:
+        for asset in assets:
+            wait_for.append(
+                ex.submit(
+                    get_record,
+                    client,
+                    asset,
+                    start_date,
+                    end_date,
+                    progress,
+                ),
             )
-        )
-    for future in futures.as_completed(wait_for):
-        yield future.result()
+        for future in futures.as_completed(wait_for):
+            yield future.result()
+    except ClientError:
+        for future in wait_for:
+            future.cancel()
+        raise

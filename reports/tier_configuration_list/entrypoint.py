@@ -1,5 +1,7 @@
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+
+from reports.utils import convert_to_datetime, get_basic_value, get_value
+
 from datetime import datetime
 
 
@@ -34,7 +36,7 @@ def generate(client, parameters, progress_callback):
             get_value(
                 configuration,
                 'connection',
-                'type'
+                'type',
             ),
             get_value(configuration, 'account', 'name'),
             get_value(configuration, 'account', 'external_id'),
@@ -42,57 +44,57 @@ def generate(client, parameters, progress_callback):
             get_value(
                 configuration['connection'],
                 'provider',
-                'id'
+                'id',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration['connection'],
                 'provider',
-                'name'
+                'name',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration['connection'],
                 'vendor',
-                'id'
+                'id',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration['connection'],
                 'vendor',
-                'name'
+                'name',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration,
                 'product',
-                'id'
+                'id',
             ),
             get_value(
                 configuration,
                 'product',
-                'name'
+                'name',
             ),
             get_value(
                 configuration['connection'],
                 'hub',
-                'id'
+                'id',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration['connection'],
                 'hub',
-                'name'
+                'name',
             ) if 'connection' in configuration else '-',
             get_value(
                 configuration,
                 'contract',
-                'id'
+                'id',
             ),
             get_value(
                 configuration,
                 'marketplace',
-                'id'
+                'id',
             ),
             get_value(
                 configuration,
                 'marketplace',
-                'name'
+                'name',
             ),
         )
 

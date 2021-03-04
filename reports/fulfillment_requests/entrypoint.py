@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
 from cnct import R
+
 from datetime import datetime
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+
+from reports.utils import convert_to_datetime, get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):
@@ -51,20 +53,19 @@ def generate(client, parameters, progress_callback):
     progress = 0
     total = requests.count()
 
-    output = []
     today = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
     for request in requests:
         connection = request['asset']['connection']
         for item in request['asset']['items']:
-            output.append([
+            yield (
                 get_basic_value(request, 'id'),
                 get_basic_value(request, 'type'),
                 convert_to_datetime(
-                    get_basic_value(request, 'created')
+                    get_basic_value(request, 'created'),
                 ),
                 convert_to_datetime(
-                    get_basic_value(request, 'updated')
+                    get_basic_value(request, 'updated'),
                 ),
                 today,
                 get_basic_value(item, 'global_id'),
@@ -95,8 +96,6 @@ def generate(client, parameters, progress_callback):
                 get_value(connection, 'hub', 'id') if 'hub' in connection else '',
                 get_value(connection, 'hub', 'name') if 'hub' in connection else '',
                 get_value(request, 'asset', 'status'),
-            ])
+            )
         progress += 1
         progress_callback(progress, total)
-
-    return output

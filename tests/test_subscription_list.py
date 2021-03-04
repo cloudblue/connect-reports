@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
 from reports.subscription_list.entrypoint import (
-    generate,
     calculate_period,
+    generate,
     get_anniversary_day,
     get_anniversary_month,
 )
@@ -32,20 +32,20 @@ def test_generate(progress, client_factory, response_factory, billing_request):
         "status": {
             "all": True,
             "choices": [],
-        }
+        },
     }
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query=None,
-            value=[billing_request['asset']]
-        )
+            value=[billing_request['asset']],
+        ),
     )
 
     client = client_factory(responses)
@@ -61,12 +61,12 @@ def test_generate_all_params(progress, client_factory, response_factory, billing
     parameters = {
         "date": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": False,
             "choices": [
-                "PRD-276-377-545"
+                "PRD-276-377-545",
             ],
         },
         "mkp": {
@@ -79,21 +79,21 @@ def test_generate_all_params(progress, client_factory, response_factory, billing
         },
         "status": {
             "all": False,
-            "choices": ["active"]
+            "choices": ["active"],
         },
     }
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query=None,
-            value=[billing_request['asset']]
-        )
+            value=[billing_request['asset']],
+        ),
     )
 
     client = client_factory(responses)
@@ -115,7 +115,7 @@ def test_get_anniversaries():
     subscription = {
         'anniversary': {
             'day': 2,
-        }
+        },
     }
     assert 2 == get_anniversary_day(subscription)
     assert "-" == get_anniversary_month(subscription)

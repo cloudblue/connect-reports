@@ -1,7 +1,8 @@
-from reports.usage_in_subscription import entrypoint
-from unittest.mock import patch
-
 import datetime
+
+from reports.usage_in_subscription import entrypoint
+
+from unittest.mock import patch
 
 
 def test_generate_usage(
@@ -19,7 +20,7 @@ def test_generate_usage(
     parameters = {
         "period": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": False,
@@ -29,15 +30,15 @@ def test_generate_usage(
 
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query='and(eq(status,active),in(product.id,(PRD-1)))',
-            value=[asset]
-        )
+            value=[asset],
+        ),
     )
 
     responses.append(
@@ -47,14 +48,14 @@ def test_generate_usage(
                   'and(ge(end_date,2020-12-01T00:00:00),lt(end_date,'
                   '2021-01-01T00:00:00))))',
             value=[usage_records_response],
-        )
+        ),
     )
 
     client = client_factory(responses)
 
     with patch(
         'reports.usage_in_subscription.entrypoint.get_record',
-        return_value=[[1, 2, 3]]
+        return_value=[[1, 2, 3]],
     ):
 
         result = list(entrypoint.generate(client, parameters, progress))
@@ -78,7 +79,7 @@ def test_record(
                   'and(ge(end_date,2020-12-01T00:00:00),lt(end_date,'
                   '2021-01-01T00:00:00))))',
             value=[usage_records_response],
-        )
+        ),
     ]
 
     client = client_factory(responses)
@@ -89,7 +90,7 @@ def test_record(
         ff_request['asset'],
         '2020-12-01T00:00:00',
         '2021-01-01T00:00:00',
-        thread_progress
+        thread_progress,
     )
 
     assert result == [

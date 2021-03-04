@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
 from cnct import R
-from reports.utils import get_value, get_basic_value
+
+from reports.utils import get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):

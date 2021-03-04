@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
@@ -26,15 +26,15 @@ def test_generate(progress, client_factory, response_factory, listing_request):
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
         response_factory(
             query='in(state,(draft,reviewing,deploying,completed,canceled))',
-            value=[listing_request]
-        )
+            value=[listing_request],
+        ),
     )
 
     client = client_factory(responses)
@@ -53,7 +53,7 @@ def test_generate_all_params(progress, client_factory, response_factory, listing
     parameters = {
         "date": {
             "after": "2020-12-01T00:00:00",
-            "before": "2021-01-01T00:00:00"
+            "before": "2021-01-01T00:00:00",
         },
         "product": {
             "all": False,
@@ -66,12 +66,12 @@ def test_generate_all_params(progress, client_factory, response_factory, listing
         "rr_status": {
             "all": False,
             "choices": ["reviewing"],
-        }
+        },
     }
     responses.append(
         response_factory(
-            count=1
-        )
+            count=1,
+        ),
     )
 
     responses.append(
@@ -79,8 +79,8 @@ def test_generate_all_params(progress, client_factory, response_factory, listing
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),'
                   'in(listing.product.id,(PRD-123)),in(listing.contract.marketplace.id,(MKP-123)),'
                   'in(state,(reviewing)))',
-            value=[listing_request]
-        )
+            value=[listing_request],
+        ),
     )
 
     client = client_factory(responses)

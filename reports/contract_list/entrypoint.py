@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
 from cnct import R
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+
+from reports.utils import convert_to_datetime, get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):
@@ -17,7 +18,6 @@ def generate(client, parameters, progress_callback):
     contracts = client.contracts.filter(query).select("agreement").order_by("-status")
     progress = 0
     total = contracts.count()
-    output = []
 
     for contract in contracts:
         yield (
@@ -34,23 +34,29 @@ def generate(client, parameters, progress_callback):
             get_value(contract['sourcing'], 'product', 'id') if 'sourcing' in contract else '-',
             get_value(contract['sourcing'], 'product', 'name') if 'sourcing' in contract else '-',
             get_value(
-                contract['events']['signed'], 'by', 'name'
+                contract['events']['signed'],
+                'by',
+                'name',
             ) if 'signed' in contract['events'] else '-',
             convert_to_datetime(
                 get_value(
-                    contract['events'], 'signed', 'at'
-                )
+                    contract['events'],
+                    'signed',
+                    'at',
+                ),
             ) if 'created' in contract['events'] else '-',
             get_value(
-                contract['events']['countersigned'], 'by', 'name'
+                contract['events']['countersigned'],
+                'by',
+                'name',
             ) if 'countersigned' in contract['events'] else '-',
             convert_to_datetime(
                 get_value(
-                    contract['events'], 'countersigned', 'at'
-                )
+                    contract['events'],
+                    'countersigned',
+                    'at',
+                ),
             ) if 'countersigned' in contract['events'] else '-',
         )
         progress += 1
         progress_callback(progress, total)
-
-    return output

@@ -4,8 +4,11 @@ from types import MethodType
 from urllib.parse import parse_qs
 
 import pytest
+
 import requests
+
 import responses
+
 import json
 import os
 
@@ -109,7 +112,7 @@ def client_factory():
                 mock_kwargs['status'] = 200
                 mock_kwargs['json'] = res.value
                 mock_kwargs['headers'] = {
-                    'Content-Range': f'items 0-{end}/{count}'
+                    'Content-Range': f'items 0-{end}/{count}',
                 }
             elif isinstance(res.value, dict):
                 mock_kwargs['status'] = res.status or 200
@@ -143,12 +146,12 @@ def client_factory():
 @pytest.fixture
 def ff_request():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'ff_request.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'ff_request.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -156,12 +159,12 @@ def ff_request():
 @pytest.fixture
 def billing_request():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'billing_request.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'billing_request.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -169,12 +172,12 @@ def billing_request():
 @pytest.fixture
 def tcr_request():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'tcr_request.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'tcr_request.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -182,12 +185,12 @@ def tcr_request():
 @pytest.fixture
 def listing_request():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'listing_request.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'listing_request.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -195,12 +198,12 @@ def listing_request():
 @pytest.fixture
 def mkp_list():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'mkp_list.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'mkp_list.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -208,12 +211,12 @@ def mkp_list():
 @pytest.fixture
 def ta_list():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'ta_list.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'ta_list.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -221,12 +224,12 @@ def ta_list():
 @pytest.fixture
 def tier_account():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'ta_account.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'ta_account.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -234,12 +237,12 @@ def tier_account():
 @pytest.fixture
 def contract_response():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'contract_response.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'contract_response.json',
+        ),
     ) as request:
         return json.load(request)
 
@@ -247,11 +250,11 @@ def contract_response():
 @pytest.fixture
 def usage_records_response():
     with open(
-            os.path.join(
-                os.getcwd(),
-                'tests',
-                'fixtures',
-                'usage_records_response.json'
-            )
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'usage_records_response.json',
+        ),
     ) as request:
         return json.load(request)

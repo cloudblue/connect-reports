@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2020, CloudBlue
+# Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
 
 from cnct import R
+
 from datetime import datetime
-from reports.utils import convert_to_datetime, get_value, get_basic_value
+
+from reports.utils import convert_to_datetime, get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):
@@ -26,7 +28,6 @@ def generate(client, parameters, progress_callback):
     listings = client.listings.filter(query).order_by("-created")
     progress = 0
     total = listings.count()
-    output = []
     today = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
     for listing in listings:
@@ -34,10 +35,10 @@ def generate(client, parameters, progress_callback):
             get_basic_value(listing, 'id'),
             get_basic_value(listing, 'status'),
             convert_to_datetime(
-                get_basic_value(listing, 'created')
+                get_basic_value(listing, 'created'),
             ),
             convert_to_datetime(
-                get_basic_value(listing, 'updated')
+                get_basic_value(listing, 'updated'),
             ),
             today,
             get_value(listing, 'contract', 'id'),
@@ -50,5 +51,3 @@ def generate(client, parameters, progress_callback):
         )
         progress += 1
         progress_callback(progress, total)
-
-    return output
