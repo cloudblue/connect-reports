@@ -11,7 +11,7 @@ readme = "./README.md"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-connect-openapi-client = "^21.0.9"
+connect-openapi-client = "^22"
 openpyxl = "^3.0.5"
 
 [tool.poetry.dev-dependencies]

@@ -5,7 +5,7 @@ atomicwrites==1.4.0
 attrs==20.3.0
 click==7.1.2
 colorama==0.4.4
-connect-cli==22.5
+connect-cli==22.6
 coverage==5.5
 eradicate==2.0.0
 flake8-broken-line==0.3.0

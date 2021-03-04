@@ -2,7 +2,7 @@ ansicolors==1.1.8
 certifi==2020.12.5
 chardet==4.0.0
 connect-markdown-renderer==1.0.1
-connect-openapi-client==21.0.13
+connect-openapi-client==22.0.1
 et-xmlfile==1.0.1
 idna==2.10
 importlib-metadata==3.7.0
