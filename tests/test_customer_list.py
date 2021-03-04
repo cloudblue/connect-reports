@@ -17,7 +17,6 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
             "before": "2021-01-01T00:00:00",
         },
         "tier_type": None,
-        "full_contact_info": "no",
     }
 
     responses.append(
@@ -55,5 +54,5 @@ def test_generate(progress, client_factory, response_factory, mkp_list, ta_list,
     for res in result[0]:
         if res == '-':
             i += 1
-    assert i == 10
+    assert i == 3
     assert len(result[0]) == 20
