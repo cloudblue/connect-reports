@@ -54,7 +54,7 @@ def test_generate(progress, client_factory, response_factory, ff_request):
 
     result = list(generate(client, parameters, progress))
 
-    assert len(result) == 18
+    assert len(result) == 1
 
 
 def test_generate_additional(progress, client_factory, response_factory, ff_request):
@@ -108,4 +108,4 @@ def test_generate_additional(progress, client_factory, response_factory, ff_requ
 
     result = list(generate(client, parameters, progress))
 
-    assert len(result) == 18
+    assert len(result) == 1

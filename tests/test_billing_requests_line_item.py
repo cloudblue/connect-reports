@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from reports.billing_requests.entrypoint import generate
+from reports.billing_requests_line_item.entrypoint import generate
 
 
 def test_generate(progress, client_factory, response_factory, billing_request):
@@ -45,7 +45,7 @@ def test_generate(progress, client_factory, response_factory, billing_request):
 
     result = list(generate(client, parameters, progress))
 
-    assert len(result) == 1
+    assert len(result) == 6
 
 
 def test_generate_additional(progress, client_factory, response_factory, billing_request):
@@ -94,4 +94,4 @@ def test_generate_additional(progress, client_factory, response_factory, billing
 
     result = list(generate(client, parameters, progress))
 
-    assert len(result) == 1
+    assert len(result) == 6
