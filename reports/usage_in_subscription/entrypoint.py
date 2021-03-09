@@ -8,14 +8,9 @@ from cnct import ClientError
 
 
 def get_record(client, asset, start_date, end_date, progress):
-    billable_status = ['approved', 'closed']
-    rql = R().asset.id.eq(asset['id']) & R().status.oneof(billable_status) & (
-        (
-            R().start_date.ge(f'{start_date}') & R().start_date.lt(f'{end_date}')
-        ) | (
-            R().end_date.ge(f'{start_date}') & R().end_date.lt(f'{end_date}')
-        )
-    )
+    rql = f"eq(asset.id,{asset['id']}),in(status,(approved,closed)),(and(ge(start_date,"
+    rql += f"{start_date}),lt(start_date,{end_date}))|and(ge(end_date,{start_date}),"
+    rql += f"lt(end_date,{end_date})))"
     usage_records = client.ns('usage').records.filter(rql)
     uf = []
     for record in usage_records:
