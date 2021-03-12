@@ -60,6 +60,7 @@ def generate(client, parameters, progress_callback):
         yield (
             get_basic_value(request, 'id'),
             get_basic_value(request, 'type'),
+            get_basic_value(request, 'status'),
             convert_to_datetime(
                 get_basic_value(request, 'created'),
             ),
