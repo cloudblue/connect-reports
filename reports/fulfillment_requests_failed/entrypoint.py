@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from cnct import R
+from connect.client import R
 
 from datetime import datetime
 

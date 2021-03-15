@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from cnct import R
+from connect.client import R
 
 from datetime import datetime
 
@@ -22,7 +22,7 @@ def generate(client, parameters, progress_callback):
 
     :param client: An instance of the CloudBlue Connect
                     client.
-    :type client: cnct.ConnectClient
+    :type client: connect.client.ConnectClient
     :param parameters: Input parameters used to calculate the
                         resulting dataset.
     :type parameters: dict

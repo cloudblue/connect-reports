@@ -12,7 +12,7 @@ import responses
 import json
 import os
 
-from cnct import ConnectClient
+from connect.client import ConnectClient
 
 
 ConnectResponse = namedtuple(

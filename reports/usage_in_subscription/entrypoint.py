@@ -1,10 +1,10 @@
-from cnct import R
+from connect.client import R
 
 from reports.utils import Progress, convert_to_datetime, get_basic_value, get_value
 
 from concurrent import futures
 
-from cnct import ClientError
+from connect.client import ClientError
 
 
 def get_record(client, asset, start_date, end_date, progress):
