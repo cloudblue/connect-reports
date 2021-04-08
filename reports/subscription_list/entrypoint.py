@@ -1,46 +1,17 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2021, CloudBlue
+# All rights reserved.
+#
+
 from connect.client import R
 
 from reports.utils import convert_to_datetime, get_value
 
 
-def calculate_period(delta, uom):
-    if delta == 1:
-        if uom == 'monthly':
-            return 'Monthly'
-        return 'Yearly'
-    else:
-        if uom == 'monthly':
-            return f'{int(delta)} Months'
-        return f'{int(delta)} Years'
-
-
-def get_anniversary_day(subscription_billing):
-    if 'anniversary' in subscription_billing and 'day' in subscription_billing['anniversary']:
-        return subscription_billing['anniversary']['day']
-    return '-'
-
-
-def get_anniversary_month(subscription_billing):
-    if 'anniversary' in subscription_billing and 'month' in subscription_billing['anniversary']:
-        return subscription_billing['anniversary']['month']
-    return '-'
-
-
 def generate(client, parameters, progress_callback):
-    query = R()
-    if parameters.get('date') and parameters['date']['after'] != '':
-        query &= R().events.created.at.ge(parameters['date']['after'])
-        query &= R().events.created.at.le(parameters['date']['before'])
-    if parameters.get('product') and parameters['product']['all'] is False:
-        query &= R().product.id.oneof(parameters['product']['choices'])
-    if parameters.get('mkp') and parameters['mkp']['all'] is False:
-        query &= R().marketplace.id.oneof(parameters['mkp']['choices'])
-    if parameters.get('period') and parameters['period']['all'] is False:
-        query &= R().billing.period.uom.oneof(parameters['period']['choices'])
-    if parameters.get('status') and parameters['status']['all'] is False:
-        query &= R().status.oneof(parameters['status']['choices'])
+    subscriptions = _get_subscriptions(client, parameters)
 
-    subscriptions = client.ns('subscriptions').assets.filter(query)
     progress = 0
     total = subscriptions.count()
 
@@ -79,3 +50,43 @@ def generate(client, parameters, progress_callback):
         )
         progress += 1
         progress_callback(progress, total)
+
+
+def _get_subscriptions(client, parameters):
+    query = R()
+    if parameters.get('date') and parameters['date']['after'] != '':
+        query &= R().events.created.at.ge(parameters['date']['after'])
+        query &= R().events.created.at.le(parameters['date']['before'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().product.id.oneof(parameters['product']['choices'])
+    if parameters.get('mkp') and parameters['mkp']['all'] is False:
+        query &= R().marketplace.id.oneof(parameters['mkp']['choices'])
+    if parameters.get('period') and parameters['period']['all'] is False:
+        query &= R().billing.period.uom.oneof(parameters['period']['choices'])
+    if parameters.get('status') and parameters['status']['all'] is False:
+        query &= R().status.oneof(parameters['status']['choices'])
+
+    return client.ns('subscriptions').assets.filter(query)
+
+
+def calculate_period(delta, uom):
+    if delta == 1:
+        if uom == 'monthly':
+            return 'Monthly'
+        return 'Yearly'
+    else:
+        if uom == 'monthly':
+            return f'{int(delta)} Months'
+        return f'{int(delta)} Years'
+
+
+def get_anniversary_day(subscription_billing):
+    if 'anniversary' in subscription_billing and 'day' in subscription_billing['anniversary']:
+        return subscription_billing['anniversary']['day']
+    return '-'
+
+
+def get_anniversary_month(subscription_billing):
+    if 'anniversary' in subscription_billing and 'month' in subscription_billing['anniversary']:
+        return subscription_billing['anniversary']['month']
+    return '-'

@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2021, CloudBlue
+# All rights reserved.
+#
+
 from connect.client import R
 
 from reports.utils import Progress, convert_to_datetime, get_basic_value, get_value

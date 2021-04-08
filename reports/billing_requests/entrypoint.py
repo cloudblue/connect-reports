@@ -10,19 +10,11 @@ from reports.utils import convert_to_datetime, get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):
-    query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
-    if parameters.get('product') and parameters['product']['all'] is False:
-        query &= R().asset.product.id.oneof(parameters['product']['choices'])
-    if parameters.get('mkp') and parameters['mkp']['all'] is False:
-        query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
-    if parameters.get('hub') and parameters['hub']['all'] is False:
-        query &= R().asset.connection.hub.id.oneof(parameters['hub']['choices'])
+    requests = _get_requests(client, parameters)
 
-    requests = client.ns('subscriptions').requests.filter(query)
     progress = 0
     total = requests.count()
+
     for request in requests:
         connection = request['asset']['connection']
         yield (
@@ -55,3 +47,18 @@ def generate(client, parameters, progress_callback):
         )
         progress += 1
         progress_callback(progress, total)
+
+
+def _get_requests(client, parameters):
+    query = R()
+    query &= R().created.ge(parameters['date']['after'])
+    query &= R().created.le(parameters['date']['before'])
+
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().asset.product.id.oneof(parameters['product']['choices'])
+    if parameters.get('mkp') and parameters['mkp']['all'] is False:
+        query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
+    if parameters.get('hub') and parameters['hub']['all'] is False:
+        query &= R().asset.connection.hub.id.oneof(parameters['hub']['choices'])
+
+    return client.ns('subscriptions').requests.filter(query)

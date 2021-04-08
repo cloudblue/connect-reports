@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2021, CloudBlue
+# All rights reserved.
+#
+
 from collections import namedtuple
 from collections.abc import Iterable
 from types import MethodType

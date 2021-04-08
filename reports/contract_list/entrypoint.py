@@ -10,12 +10,8 @@ from reports.utils import convert_to_datetime, get_basic_value, get_value
 
 
 def generate(client, parameters, progress_callback):
-    query = R()
-    if parameters.get('type') and parameters['type']['all'] is False:
-        query &= R().type.oneof(parameters['type']['choices'])
-    if parameters.get('status') and parameters['status']['all'] is False:
-        query &= R().status.oneof(parameters['status']['choices'])
-    contracts = client.contracts.filter(query).select("agreement").order_by("-status")
+    contracts = _get_contracts(client, parameters)
+
     progress = 0
     total = contracts.count()
 
@@ -60,3 +56,14 @@ def generate(client, parameters, progress_callback):
         )
         progress += 1
         progress_callback(progress, total)
+
+
+def _get_contracts(client, parameters):
+    query = R()
+
+    if parameters.get('type') and parameters['type']['all'] is False:
+        query &= R().type.oneof(parameters['type']['choices'])
+    if parameters.get('status') and parameters['status']['all'] is False:
+        query &= R().status.oneof(parameters['status']['choices'])
+
+    return client.contracts.filter(query).select("agreement").order_by("-status")
