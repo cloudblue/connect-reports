@@ -26,7 +26,7 @@ def generate(client, parameters, progress_callback):
     requests = client.requests.filter(query)
     progress = 0
     total = requests.count()
-    today = datetime.today().strftime('%Y-%m-%d-%H:%M:%S')
+    today = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
     for request in requests:
         connection = request['asset']['connection']
         yield (
