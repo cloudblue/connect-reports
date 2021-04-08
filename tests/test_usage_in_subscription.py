@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2021, CloudBlue
+# All rights reserved.
+#
+
 import datetime
 
 from reports.usage_in_subscription import entrypoint

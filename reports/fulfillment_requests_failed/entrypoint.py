@@ -6,27 +6,15 @@
 
 from connect.client import R
 
-from datetime import datetime
-
-from reports.utils import convert_to_datetime, get_basic_value, get_value
+from reports.utils import convert_to_datetime, get_basic_value, get_value, today_str
 
 
 def generate(client, parameters, progress_callback):
+    requests = _get_requests(client, parameters)
 
-    query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
-    if parameters.get('product') and parameters['product']['all'] is False:
-        query &= R().asset.product.id.oneof(parameters['product']['choices'])
-    if parameters.get('rr_type') and parameters['rr_type']['all'] is False:
-        query &= R().type.oneof(parameters['rr_type']['choices'])
-    query &= R().status.eq('failed')
-    if parameters.get('connection_type') and parameters['connection_type']['all'] is False:
-        query &= R().asset.connection.type.oneof(parameters['connection_type']['choices'])
-    requests = client.requests.filter(query)
     progress = 0
     total = requests.count()
-    today = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+
     for request in requests:
         connection = request['asset']['connection']
         yield (
@@ -38,7 +26,7 @@ def generate(client, parameters, progress_callback):
             convert_to_datetime(
                 get_basic_value(request, 'updated'),
             ),
-            today,
+            today_str(),
             get_value(request['asset']['tiers'], 'customer', 'id'),
             get_value(request['asset']['tiers'], 'customer', 'name'),
             get_value(request['asset']['tiers'], 'customer', 'external_id'),
@@ -65,3 +53,19 @@ def generate(client, parameters, progress_callback):
 
         progress += 1
         progress_callback(progress, total)
+
+
+def _get_requests(client, parameters):
+    query = R()
+    query &= R().created.ge(parameters['date']['after'])
+    query &= R().created.le(parameters['date']['before'])
+
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().asset.product.id.oneof(parameters['product']['choices'])
+    if parameters.get('rr_type') and parameters['rr_type']['all'] is False:
+        query &= R().type.oneof(parameters['rr_type']['choices'])
+    query &= R().status.eq('failed')
+    if parameters.get('connection_type') and parameters['connection_type']['all'] is False:
+        query &= R().asset.connection.type.oneof(parameters['connection_type']['choices'])
+
+    return client.requests.filter(query)

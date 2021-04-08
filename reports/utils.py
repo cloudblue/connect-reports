@@ -1,3 +1,9 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2021, CloudBlue
+# All rights reserved.
+#
+
 from datetime import datetime
 from threading import Lock
 
@@ -10,6 +16,10 @@ def convert_to_datetime(param_value):
         param_value.replace("T", " ").replace("+00:00", ""),
         "%Y-%m-%d %H:%M:%S",
     )
+
+
+def today_str():
+    return datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 
 
 def get_basic_value(base, value):
@@ -25,7 +35,6 @@ def get_value(base, prop, value):
 
 
 class Progress:
-
     def __init__(self, callback, total):
         self.lock = Lock()
         self.current = 0
