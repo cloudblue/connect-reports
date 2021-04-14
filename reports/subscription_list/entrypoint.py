@@ -19,6 +19,7 @@ def generate(client, parameters, progress_callback):
         yield (
             subscription.get('id'),
             subscription.get('external_id', '-'),
+            get_value(subscription, 'connection', 'type'),
             convert_to_datetime(subscription['events']['created']['at']),
             convert_to_datetime(subscription['events']['updated']['at']),
             subscription.get('status'),
