@@ -7,15 +7,37 @@
       {
          "name":"Fulfillment requests report",
          "readme_file":"reports/fulfillment_requests/Readme.md",
-         "template":"reports/fulfillment_requests/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.fulfillment_requests.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/fulfillment_requests/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -105,15 +127,37 @@
       {
          "name":"Fulfillment requests report at line item level",
          "readme_file":"reports/fulfillment_requests_line_item/Readme.md",
-         "template":"reports/fulfillment_requests_line_item/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.fulfillment_requests_line_item.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/fulfillment_requests_line_item/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -203,14 +247,36 @@
       {
          "name":"Fulfillment requests failed with vendor reason",
          "readme_file":"reports/fulfillment_requests/Readme.md",
-         "template":"reports/fulfillment_requests/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.fulfillment_requests_failed.entrypoint.generate",
-         "report_spec":"1",
          "audience":[
             "provider",
             "vendor"
+         ],
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/fulfillment_requests/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
          ],
          "parameters":[
             {
@@ -282,15 +348,37 @@
       {
          "name":"Billing requests report",
          "readme_file":"reports/billing_requests/Readme.md",
-         "template":"reports/billing_requests/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.billing_requests.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/billing_requests/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -318,15 +406,37 @@
       {
          "name":"Billing requests report at line item level",
          "readme_file":"reports/billing_requests_line_item/Readme.md",
-         "template":"reports/billing_requests_line_item/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.billing_requests_line_item.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/billing_requests_line_item/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -354,15 +464,37 @@
       {
          "name":"Subscriptions list report",
          "readme_file":"reports/subscription_list/Readme.md",
-         "template":"reports/subscription_list/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.subscription_list.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/subscription_list/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -451,15 +583,37 @@
       {
          "name":"Tier Configuration requests",
          "readme_file":"reports/tier_configuration_requests/Readme.md",
-         "template":"reports/tier_configuration_requests/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.tier_configuration_requests.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/tier_configuration_requests/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -533,15 +687,37 @@
       {
          "name":"Tier Configurations",
          "readme_file":"reports/tier_configuration_list/Readme.md",
-         "template":"reports/tier_configuration_list/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.tier_configuration_list.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/tier_configuration_list/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -586,15 +762,37 @@
       {
          "name":"Listing Requests",
          "readme_file":"reports/listing_requests/Readme.md",
-         "template":"reports/listing_requests/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.listing_requests.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/listing_requests/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -651,15 +849,37 @@
       {
          "name":"Listing List",
          "readme_file":"reports/listing_list/Readme.md",
-         "template":"reports/listing_list/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.listing_list.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/listing_list/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -703,15 +923,37 @@
       {
          "name":"Customers List",
          "readme_file":"reports/customers_list/Readme.md",
-         "template":"reports/customers_list/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.customers_list.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/customers_list/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"date",
@@ -745,15 +987,37 @@
       {
          "name":"Contracts Report",
          "readme_file":"reports/contract_list/Readme.md",
-         "template":"reports/contract_list/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.contract_list.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/contract_list/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"type",
@@ -814,15 +1078,37 @@
       {
          "name":"Usage per subscription",
          "readme_file":"reports/usage_in_subscription/Readme.md",
-         "template":"reports/usage_in_subscription/template.xlsx",
-         "start_row":2,
-         "start_col":1,
          "entrypoint":"reports.usage_in_subscription.entrypoint.generate",
          "audience":[
             "provider",
             "vendor"
          ],
-         "report_spec":"1",
+         "report_spec":"2",
+         "renderers": [
+            {
+               "id": "xlsx",
+               "type": "xlsx",
+               "default": true,
+               "description": "Export data in Microsoft Excel 2020 format.",
+               "template": "reports/usage_in_subscription/templates/xlsx/template.xlsx",
+               "args": {
+                   "start_row": 2,
+                   "start_col": 1
+               }
+            },
+            {
+               "id": "json",
+               "type": "json",
+               "default": false,
+               "description": "Export data as JSON"
+            },
+            {
+               "id": "csv",
+               "type": "csv",
+               "default": false,
+               "description": "Export data as CSV"
+            }
+         ],
          "parameters":[
             {
                "id":"product",

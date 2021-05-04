@@ -9,7 +9,7 @@ from connect.client import R
 from reports.utils import convert_to_datetime, get_value
 
 
-def generate(client, parameters, progress_callback):
+def generate(client=None, parameters=None, progress_callback=None, renderer_type=None, extra_context_callback=None):
     subscriptions = _get_subscriptions(client, parameters)
 
     progress = 0

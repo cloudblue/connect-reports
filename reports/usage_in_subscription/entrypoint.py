@@ -51,7 +51,7 @@ def get_record(client, asset, start_date, end_date, progress):
     ]
 
 
-def generate(client, parameters, progress_callback):
+def generate(client=None, parameters=None, progress_callback=None, renderer_type=None, extra_context_callback=None):
     product_rql = R().status.eq('active')
 
     if parameters.get('product') and parameters['product']['all'] is False:

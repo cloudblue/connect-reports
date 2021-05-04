@@ -9,7 +9,7 @@ from connect.client import R
 from reports.utils import get_basic_value, get_value
 
 
-def generate(client, parameters, progress_callback):
+def generate(client=None, parameters=None, progress_callback=None, renderer_type=None, extra_context_callback=None):
     hubs_dict = _get_hubs_dict(client)
     customers = _get_customers(client, parameters)
 
