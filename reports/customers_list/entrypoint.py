@@ -51,7 +51,7 @@ def generate(
 def _get_customers(client, parameters):
     query = R()
 
-    if parameters.get('date') and parameters['date']['after'] != '':
+    if parameters.get('date') and parameters['date'].get('after'):
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
     if parameters.get('tier_type') and parameters['tier_type']['all'] is False:
