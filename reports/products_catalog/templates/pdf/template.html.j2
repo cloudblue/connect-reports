@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="reports/products_catalog/templates/pdf/template.css" rel="stylesheet">
+    <title>Report</title>
+    <meta name="description" content="Report example">
+</head>
+
+<body>
+<article id="cover">
+    <div class="cover-text">
+        <div>
+            <h1>Connect Catalog</h1>
+            <p>{{ extra_context.products_count }} Products by {{ extra_context.vendors_count }} Vendors</p>
+            <p>{{ extra_context.generation_date }}</p>
+        </div>
+    </div>
+</article>
+
+{% set ns = namespace(count=0, closed=false) %}
+
+{% for product in data %}
+  {% if loop.index0 % 4 == 0 %}
+    {% set ns.closed = false %}
+    <article class="catalog">
+  {% endif %}
+    <div class="item-wrapper">
+        <img src="{{ extra_context.api_url }}{{ product.icon }}">
+        <div class="content">
+            <div class="id">{{ product.id }}</div>
+            <h2>{{ product.name }}</h2>
+            <div class="subtitle">{{ product.owner.name }}</div>
+            <div class="description">{{ product.short_description }}</div>
+            {% if product.sourcing and product.sourcing.agreements %}
+              <div class="marketplaces">
+              {% for agreement in product.sourcing.agreements %}
+                <img src="https://api.connect.cloudblue.com{{ agreement.marketplace.icon }}">
+              {% endfor %}
+              </div>
+            {% endif %}
+        </div>
+    </div>
+    {% set ns.count = ns.count + 1 %}
+    {% if ns.count == 4 %}
+      {% set ns.closed = false %}
+      {% set ns.count = 0 %}
+      </article>
+    {% endif %}
+    
+  {% endfor %}
+  {% if not ns.closed %}
+    </article>
+  {% endif %}
+</body>
+</html>
