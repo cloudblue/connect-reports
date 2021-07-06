@@ -1,0 +1,134 @@
+[
+   {
+      "id":"PRD-768-002-669",
+      "name":"Smash",
+      "icon":"/media/VA-229-788/PRD-768-002-669/media/PRD-768-002-669-logo.png",
+      "status":"published",
+      "short_description":"Sending files has never been easier with Smash. It only takes a few clicks, or a drag and drop, to send large files of any size and type. Neither you nor your recipients need to have a Smash account. Smash is also available on macOS, iOS and Android.",
+      "detailed_description":"A text **description** of the product. This text will be seen by providers that have access to this product and can be used to populate other systems, like [CloudBlue Catalog](https://catalog.cloudblue.com).\n\nThe **first sentence** (about 3-4 lines) of this description **counts the most**. So please start with an attention-grabbing sentence that pitches users and clearly sets out what the product is intended for.\n\nTake into account the following recommendations regarding the product description:\n\n* Keep it concise, informative and easy-to-understand\n* Stick to the tone of your brand\n* Avoid specific terms, keep it simple\n* Make sure to describe target audience for this product\n* Outline key features and key differentiators\nPlease keep in mind that maximum allowed space is **up to 4,000 characters** - make sure to explain your product within that limit.\n\n# Use formatted text\nCloudBlue Connect allows you to enrich this description with the [markdown text](https://en.wikipedia.org/wiki/Markdown) formatting. **Markdown** allows including multiple elements, like* Unsorted lists of items, like this one\n* Sorted lists, like the one below\n    1. First point\n    2. Second point\n* Font styles, like *italic*, **bold** and `monospace`\n* Headings - note that we strongly recommend to use 2nd level only ## for this document\n\n# For more information\nPlease refer to our **[documentation](https://connect.cloudblue.com/documentation)** to learn more about product editor capabilities.",
+      "configurations":{
+         "suspend_resume_supported":false,
+         "requires_reseller_information":true
+      },
+      "customer_ui_settings":{
+         "description":"We are happy to provide you the Cloud Service - an ultimate solution for your company. Stop using the legacy on-premises solution on your computer. Move to the cloud with our help.",
+         "getting_started":"You are now ready to use the Cloud Service and migrate the files from your local computer and mobile devices to the cloud. Download apps for Windows Desktop, Windows Phone, Mac OS or Android following one of the links below, or access the service web interface directly.",
+         "download_links":[
+            {
+               "title":"Windows",
+               "url":"https://example.com/download/windows",
+               "visible_for":"admin"
+            },
+            {
+               "title":"macOS",
+               "url":"https://example.com/download/macos",
+               "visible_for":"admin"
+            },
+            {
+               "title":"iPhone",
+               "url":"https://example.com/download/iphone",
+               "visible_for":"admin"
+            },
+            {
+               "title":"Android",
+               "url":"https://example.com/download/android1",
+               "visible_for":"admin"
+            }
+         ],
+         "documents":[
+            {
+               "title":"Admin Manual",
+               "url":"https://example.com/manual/admin"
+            }
+         ],
+         "languages":[
+
+         ],
+         "provisioning_message":"Please wait while your request is being fulfilled."
+      },
+      "version":8,
+      "category":{
+         "id":"CAT-19782",
+         "name":"Finance"
+      },
+      "published_at":"2021-07-06T08:47:59+00:00",
+      "owner":{
+         "id":"VA-229-788",
+         "name":"Extension MSMKP Vendor"
+      },
+      "latest":true,
+      "media":{
+         "position":1,
+         "id":"PRDM-768-002-669-55807",
+         "type":"image",
+         "thumbnail":"/media/VA-229-788/PRD-768-002-669/media/media.png",
+         "url":"/media/VA-229-788/PRD-768-002-669/media/media.png"
+      },
+      "usage_rule":{
+         "enabled":true
+      },
+      "stats":{
+         "versions":8
+      },
+      "capabilities":{
+         "ppu":null,
+         "reservation":{
+            "consumption":false
+         },
+         "cart":{
+            "validation":true
+         },
+         "inquiring":{
+            "validation":false
+         },
+         "tiers":{
+            "updates":false,
+            "configs":{
+               "level":1,
+               "setup":{
+                  "inquiring_validation":false
+               },
+               "update":{
+                  "validation":false,
+                  "inquiring_validation":false
+               }
+            },
+            "validation":true
+         },
+         "subscription":{
+            "change":{
+               "editable_ordering_parameters":false,
+               "validation":false,
+               "inquiring_validation":false
+            },
+            "hold":false,
+            "schema":"evergreen"
+         }
+      },
+      "visibility":{
+         "owner":false,
+         "listing":true,
+         "syndication":false,
+         "catalog":false
+      },
+      "changes_description":"new version with RTV Tier",
+      "public":true,
+      "events":{
+         "created":{
+            "at":"2021-07-06T08:47:59+00:00",
+            "by":{
+               "id":"UR-024-000-000",
+               "name":"Marc vendor"
+            }
+         }
+      },
+      "extensions":[
+         {
+            "id":"EXT-0001",
+            "name":"CloudBlue Commerce",
+            "status":"success",
+            "package_url":"https://devconnect.blob.core.windows.net/devportal-packages-dev/PRD-768-002-669-0008.aps.zip"
+         }
+      ]
+   }
+]

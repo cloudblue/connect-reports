@@ -1125,6 +1125,30 @@
                "required":true
             }
          ]
-      }
+      },
+      {
+            "name": "Catalog Report",
+            "readme_file": "reports/products_catalog/Readme.md",
+            "renderers": [
+                {
+                    "id": "pdf-portrait",
+                    "type": "pdf",
+                    "description": "Export data as PDF (portrait)",
+                    "default": true,
+                    "template": "reports/products_catalog/templates/pdf/template.html.j2",
+                    "args": {
+                        "css_file": "reports/products_catalog/templates/pdf/template.css"
+                    }
+                }
+
+            ],
+            "audience": [
+                "provider"
+            ],
+            "report_spec": "2",
+            "entrypoint": "reports.products_catalog.entrypoint.generate",
+            "parameters": [
+            ]
+        }
    ]
 }

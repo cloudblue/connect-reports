@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@page :first {
+    counter-reset: page 1;
+    margin: 3cm 1.5cm 2cm 1.5cm;
+    @bottom-left {
+        background: none;
+        content: '';
+    }
+    @bottom-right {
+        background: none;
+        content: '';
+    }
+    @top-left {
+        background-image: url("reports/products_catalog/templates/pdf/img/ClouBlue-Logo-Black.png");
+        height: 1.5cm;
+        width: 50%;
+        content: "";
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    @top-right {
+        background: none;
+        content: '';
+    }
+    @bottom-center {
+        font-size: 12px;
+        content: "© Ingram Micro, Inc. All Rights Reserved";
+        height: 0.5cm;
+        width: 100%;
+        text-align: center;
+        color: #000;
+    }
+}
+@page {
+    margin: 2.5cm 1.5cm 2cm 1.5cm;
+    @top-left {
+        background-image: url("reports/products_catalog/templates/pdf/img/ClouBlue-Logo-Black.png");
+        height: 1cm;
+        width: 50%;
+        content: "";
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    @top-right {
+        height: 1cm;
+        width: 50%;
+        font-weight: 600;
+        font-size: 13pt;
+        display: flex;
+        align-items: flex-end;
+        content: "Connect Catalog";
+    }
+    @bottom-left {
+        font-size: 10px;
+        content: "December 30, 2020";
+        height: 0.5cm;
+        text-align: left;
+        width: 33%;
+        color: #777;
+    }
+    @bottom-right {
+        font-size: 10px;
+        content: "Page " counter(page) " of " counter(pages);
+        height: 0.5cm;
+        text-align: right;
+        width: 33%;
+        color: #777;
+    }
+    @bottom-center {
+        font-size: 10px;
+        content: "© Ingram Micro, Inc. All Rights Reserved";
+        height: 0.5cm;
+        width: 33%;
+        text-align: center;
+        color: #777;
+    }
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    margin: 0;
+}
+html body {
+    margin: 0;
+}
+
+/* --------------------- */
+/* ------- COVER ------- */
+/* --------------------- */
+html body article#cover {
+    height: 30cm;
+}
+html body article#cover header a {
+    color: #000;
+    width: 100%;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+html body article#cover header img {
+    height: 1.5cm;
+}
+html body article#cover header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+html body article#cover .cover-text {
+    color: #000;
+    width: 100%;
+    margin-top: 7cm;
+    text-align: center;
+}
+html body article#cover h1 {
+    font-size: 50px;
+}
+html body article#cover .cover-text p {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+/* --------------------- */
+/* ------ CATALOG ------ */
+/* --------------------- */
+
+article.catalog {
+    position: relative;
+    align-content: space-between;
+    display: block;
+    flex-wrap: wrap;
+    height: 24cm;
+    padding: 1cm 0;
+}
+.item-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 5.4cm;
+    margin-bottom: 0.65cm;
+    border-bottom: 1px solid #ddd;
+}
+.item-wrapper img {
+    width: 3.5cm;
+    height: 2cm;
+    object-fit: contain;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    object-position: center;
+    padding: 10px 0;
+    margin-right: 0.7cm;
+}
+.item-wrapper .content {
+    position: relative;
+    width: 14.5cm;
+}
+.item-wrapper .id {
+    position: absolute !important;
+    right: 0;
+    font-size: 10px;
+}
+.item-wrapper h2 {
+    font-size: 16px;
+    line-height: 22px;
+    width: 11cm;
+    margin: 0;
+    padding: 0;
+}
+.item-wrapper .subtitle {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+.marketplaces {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.marketplaces img {
+    -ms-filter: saturate(0);
+    filter: saturate(0);
+    height: 12px;
+    width: 12px;
+    padding: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 3px;
+    border: none;
+}

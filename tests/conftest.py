@@ -264,3 +264,16 @@ def usage_records_response():
         ),
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def catalog_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'catalog.json',
+        ),
+    ) as request:
+        return json.load(request)
