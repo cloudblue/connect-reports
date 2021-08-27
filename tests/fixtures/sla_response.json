@@ -1,0 +1,1955 @@
+[
+    {
+        "id": "PR-1841-6921-8006-031",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8006",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P1",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor1"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "email": "john.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-11T10:38:33+00:00",
+        "updated": "2021-08-11T10:38:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-05022",
+            "name": "Marketplace M22 for galonso",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-032",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8007",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P3",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "production",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor1"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer 2",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "James",
+                            "last_name": "Doe",
+                            "email": "james.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-12T10:40:33+00:00",
+        "updated": "2021-08-12T10:40:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-02222",
+            "name": "Marketplace M22",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-033",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8003",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-003",
+                "icon": "",
+                "name": "Product P2",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor account 3"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "Lilith",
+                            "last_name": "Doe",
+                            "email": "lilith.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider3",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-03333",
+                "name": "Marketplace M33",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-13T10:38:33+00:00",
+        "updated": "2021-08-13T10:38:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-03333",
+            "name": "Marketplace M33",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-021",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8006",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P1",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor account 00 for galonso"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "email": "john.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-20T10:38:33+00:00",
+        "updated": "2021-08-20T10:38:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-05022",
+            "name": "Marketplace M22 for galonso",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-022",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8007",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P03",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "production",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor1"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer 2",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "James",
+                            "last_name": "Doe",
+                            "email": "james.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-21T10:30:33+00:00",
+        "updated": "2021-08-21T10:30:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-02222",
+            "name": "Marketplace M22",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-023",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8003",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-003",
+                "icon": "",
+                "name": "Product P3",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor account 3"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "Lilith",
+                            "last_name": "Doe",
+                            "email": "lilith.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider3",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-03333",
+                "name": "Marketplace M33",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-21T10:38:33+00:00",
+        "updated": "2021-08-21T10:38:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-03333",
+            "name": "Marketplace M33",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-011",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8006",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P1",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor account 00 for galonso"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "John",
+                            "last_name": "Doe",
+                            "email": "john.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-22T10:38:33+00:00",
+        "updated": "2021-08-22T10:38:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-05022",
+            "name": "Marketplace M22 for galonso",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-012",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8007",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-002",
+                "icon": "",
+                "name": "Product P03",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "production",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor1"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer 2",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "James",
+                            "last_name": "Doe",
+                            "email": "james.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider account 02 for galonso",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-05022",
+                "name": "Marketplace M22 for galonso",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-22T10:40:33+00:00",
+        "updated": "2021-08-22T10:40:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-02222",
+            "name": "Marketplace M22",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    },
+    {
+        "id": "PR-1841-6921-8006-013",
+        "type": "purchase",
+        "note": "",
+        "asset": {
+            "id": "AS-1841-6921-8003",
+            "status": "processing",
+            "external_id": "3K68NLK6N5",
+            "external_uid": "ed94667e-277c-4686-8ba1-643f010f41ab",
+            "product": {
+                "id": "PRD-000-050-003",
+                "icon": "",
+                "name": "Product P3",
+                "status": "published"
+            },
+            "connection": {
+                "id": "CT-9288-7722",
+                "type": "test",
+                "status": "approved",
+                "provider": {
+                    "id": "PA-050-102",
+                    "name": "Provider account 02 for galonso"
+                },
+                "vendor": {
+                    "id": "VA-050-000",
+                    "name": "Vendor account 3"
+                },
+                "created_at": "2021-08-24T10:38:32+00:00",
+                "hub": {
+                    "id": "HB-0000-0000",
+                    "name": "None"
+                }
+            },
+            "events": {
+                "created": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                },
+                "updated": {
+                    "at": "2021-08-24T10:38:33+00:00"
+                }
+            },
+            "items": [
+                {
+                    "id": "PRD_000_050_002_0001",
+                    "global_id": "PRD-000-050-002-0001",
+                    "mpn": "MPN-A",
+                    "old_quantity": "0",
+                    "quantity": "68",
+                    "type": "Gb",
+                    "display_name": "Prd 000 050 002 0001",
+                    "period": "Monthly",
+                    "item_type": "Reservation"
+                }
+            ],
+            "params": [
+                {
+                    "id": "param_a",
+                    "name": "param_a",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter A",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter A",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                },
+                {
+                    "id": "param_b",
+                    "name": "param_b",
+                    "type": "text",
+                    "phase": "fulfillment",
+                    "description": "Description of the Parameter B",
+                    "value": "",
+                    "value_error": "",
+                    "title": "Title of the Parameter B",
+                    "constraints": {
+                        "meta": {},
+                        "required": true,
+                        "reconciliation": false
+                    }
+                }
+            ],
+            "tiers": {
+                "customer": {
+                    "id": "TA-3938-2681-4021",
+                    "version": 1,
+                    "name": "Test Customer",
+                    "type": "customer",
+                    "external_id": "1",
+                    "external_uid": "52034062-ab07-4785-9e6d-d59fabc4adfe",
+                    "parent": {
+                        "id": "TA-2335-3342-0217",
+                        "name": "Provider account 02 for galonso",
+                        "external_id": "PA-050-102"
+                    },
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:05+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "Lilith",
+                            "last_name": "Doe",
+                            "email": "lilith.doe@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier1": {
+                    "id": "TA-2335-3342-0217",
+                    "version": 1,
+                    "name": "Provider3",
+                    "type": "reseller",
+                    "external_id": "PA-050-102",
+                    "external_uid": "PA-050-102",
+                    "owner": {
+                        "id": "PA-050-102",
+                        "name": "Provider account 02 for galonso"
+                    },
+                    "scopes": [],
+                    "hub": {
+                        "id": "HB-0000-0000",
+                        "name": "None"
+                    },
+                    "events": {
+                        "created": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        },
+                        "updated": {
+                            "at": "2021-08-24T01:13:04+00:00"
+                        }
+                    },
+                    "contact_info": {
+                        "address_line1": "-",
+                        "address_line2": "-",
+                        "city": "-",
+                        "state": "-",
+                        "postal_code": "-",
+                        "country": "US",
+                        "contact": {
+                            "first_name": "-",
+                            "last_name": "-",
+                            "email": "unspecified@example.com",
+                            "phone_number": {
+                                "country_code": "+1",
+                                "area_code": "951",
+                                "phone_number": "2623062",
+                                "extension": ""
+                            }
+                        }
+                    }
+                },
+                "tier2": {}
+            },
+            "configuration": {
+                "params": []
+            },
+            "marketplace": {
+                "id": "MP-03333",
+                "name": "Marketplace M33",
+                "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+            },
+            "contract": {
+                "id": "CRD-39112-64418-16369",
+                "type": "distribution",
+                "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+            }
+        },
+        "reason": "",
+        "status": "pending",
+        "created": "2021-08-22T10:48:33+00:00",
+        "updated": "2021-08-22T10:48:33+00:00",
+        "answered": false,
+        "assignee": "",
+        "activation_key": "",
+        "previous_approved_request": null,
+        "effective_date": null,
+        "planned_date": null,
+        "marketplace": {
+            "id": "MP-03333",
+            "name": "Marketplace M33",
+            "icon": "/media/PA-050-102/marketplaces/MP-05022/icon.png"
+        },
+        "contract": {
+            "id": "CRD-39112-64418-16369",
+            "type": "distribution",
+            "name": "Contract of Distribution Agreement for the Marketplace M22 (galonso)"
+        }
+    }
+]

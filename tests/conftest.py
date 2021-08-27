@@ -138,8 +138,8 @@ def client_factory():
                     url,
                     **mock_kwargs,
                 )
-
                 self.response = requests.request(method, url, **kwargs)
+
                 if self.response.status_code >= 400:
                     self.response.raise_for_status()
 
@@ -274,6 +274,19 @@ def catalog_response():
             'tests',
             'fixtures',
             'catalog.json',
+        ),
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def sla_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'sla_response.json',
         ),
     ) as request:
         return json.load(request)
