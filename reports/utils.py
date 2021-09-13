@@ -46,3 +46,10 @@ class Progress:
         self.current += 1
         self.callback(self.current, self.total)
         self.lock.release()
+
+
+def get_dict_element(dictionary, *keys):
+    if not keys or keys[0] not in dictionary:
+        return '' if not dictionary else dictionary
+    key = keys[0]
+    return get_dict_element(dictionary[key], *keys[1:])

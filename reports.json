@@ -1149,6 +1149,45 @@
             "entrypoint": "reports.products_catalog.entrypoint.generate",
             "parameters": [
             ]
-        }
+      },
+      {
+         "name": "SLA Report",
+         "readme_file": "reports/sla/README.md",
+         "entrypoint": "reports.sla.entrypoint.generate",
+         "audience": [
+             "provider",
+             "vendor"
+         ],
+         "report_spec": "2",
+         "parameters": [
+             {
+                 "id": "offset_yellow_days",
+                 "type": "single_line",
+                 "name": "Yellow Offset (days)",
+                 "description": "Provide the yellow offset in days",
+                 "required": true
+             },
+             {
+                 "id": "offset_red_days",
+                 "type": "single_line",
+                 "name": "Red Offset (days)",
+                 "description": "Provide the red offset in days",
+                 "required": true
+             }
+         ],
+         "renderers": [
+             {
+                 "id": "xlsx",
+                 "type": "xlsx",
+                 "default": true,
+                 "description": "Export data in Microsoft Excel 2020 format.",
+                 "template": "reports/sla/templates/xlsx/template.xlsx",
+                 "args": {
+                     "start_row": 2,
+                     "start_col": 1
+                 }
+             }
+         ]
+     }
    ]
 }
