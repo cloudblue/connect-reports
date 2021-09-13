@@ -6,6 +6,7 @@
 
 from datetime import datetime
 from threading import Lock
+import collections
 
 
 def convert_to_datetime(param_value):
@@ -50,6 +51,8 @@ class Progress:
 
 def get_dict_element(dictionary, *keys):
     if not keys or keys[0] not in dictionary:
-        return '' if not dictionary else dictionary
+        if not dictionary or isinstance(dictionary, collections.Mapping):
+            return ''
+        return dictionary
     key = keys[0]
     return get_dict_element(dictionary[key], *keys[1:])
