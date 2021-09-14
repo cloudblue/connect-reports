@@ -1151,7 +1151,7 @@
             ]
       },
       {
-         "name": "SLA Report",
+         "name": "SLA Report for pending requests",
          "readme_file": "reports/sla/Readme.md",
          "entrypoint": "reports.sla.entrypoint.generate",
          "audience": [
@@ -1163,17 +1163,34 @@
              {
                  "id": "offset_yellow_days",
                  "type": "single_line",
-                 "name": "Yellow Offset (days)",
-                 "description": "Provide the yellow offset in days",
+                 "name": "Yellow Zone (days)",
+                 "description": "Provide the amount of to consider a transaction on yellow zone",
                  "required": true
              },
              {
                  "id": "offset_red_days",
                  "type": "single_line",
-                 "name": "Red Offset (days)",
-                 "description": "Provide the red offset in days",
+                 "name": "Red Zone (days)",
+                 "description": "Provide the amount of to consider a transaction on red zone",
                  "required": true
-             }
+             },
+            {
+               "id": "trans_type",
+               "type": "checkbox",
+               "name": "Transaction types",
+               "required": true,
+               "description": "Select the types of transactions you want to include in report",
+               "choices": [
+                  {
+                     "value": "production",
+                     "label": "Production"
+                  },
+                  {
+                     "value": "test",
+                     "label": "Test"
+                  }
+               ]
+            }
          ],
          "renderers": [
              {
