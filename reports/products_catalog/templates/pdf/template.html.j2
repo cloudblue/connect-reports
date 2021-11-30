@@ -11,8 +11,10 @@
 <article id="cover">
     <div class="cover-text">
         <div>
-            <h1>Connect Catalog</h1>
+            <h1>Products Catalog</h1>
+            <p>{{ extra_context.account_name }} ({{extra_context.account_id }})</p>
             <p>{{ extra_context.products_count }} Products by {{ extra_context.vendors_count }} Vendors</p>
+            <p>From {{ extra_context.distributors_count }} distributors</p>
             <p>{{ extra_context.generation_date }}</p>
         </div>
     </div>
@@ -32,13 +34,11 @@
             <h2>{{ product.name }}</h2>
             <div class="subtitle">{{ product.owner.name }}</div>
             <div class="description">{{ product.short_description }}</div>
-            {% if product.sourcing and product.sourcing.agreements %}
-              <div class="marketplaces">
-              {% for agreement in product.sourcing.agreements %}
-                <img src="https://api.connect.cloudblue.com{{ agreement.marketplace.icon }}">
-              {% endfor %}
-              </div>
-            {% endif %}
+            <div class="marketplaces">
+            {% for marketplace in product.marketplaces %}
+                <img src="{{extra_context.api_url}}{{ marketplace.icon }}">
+            {% endfor %}
+          </div>
         </div>
     </div>
     {% set ns.count = ns.count + 1 %}
