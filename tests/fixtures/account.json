@@ -1,0 +1,26 @@
+{
+  "id": "PA-123-123-123",
+  "name": "Test Provider",
+  "icon": "/media/PA-833-239/media/icon_E4x7d3g.png",
+  "description": "Test Provider",
+  "overview": "",
+  "type": "provider",
+  "role": "distributor",
+  "brand": "BR-000",
+  "external_id": "",
+  "sourcing": false,
+  "industries": [],
+  "public": false,
+  "events": {
+    "created": {
+      "at": "2018-07-03T17:25:19+00:00"
+    },
+    "updated": {
+      "at": "2021-07-14T10:54:34+00:00",
+      "by": {
+        "id": "UR-749-681-670",
+        "name": "John Doe"
+      }
+    }
+  }
+}

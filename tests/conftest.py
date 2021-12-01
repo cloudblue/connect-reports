@@ -290,3 +290,29 @@ def sla_response():
         ),
     ) as request:
         return json.load(request)
+
+
+@pytest.fixture
+def account_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'account.json',
+        ),
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def service_agreement_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'service_agreement.json',
+        ),
+    ) as request:
+        return json.load(request)

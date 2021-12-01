@@ -1,0 +1,20 @@
+{
+    "id": "AGS-XXX-XXX-XXX",
+    "type": "service",
+    "title": "CloudBlue Standard Service Agreement",
+    "name": "CloudBlue Standard Service Agreement",
+    "description": "CloudBlue Standard Service Agreement to get access to CB Connect platform",
+    "created": "2021-11-15T18:26:42+00:00",
+    "updated": "2021-11-15T18:26:42+00:00",
+    "owner": {
+      "id": "PA-123-123",
+      "name": "CloudBlue",
+      "icon": "/media/PA-400-685/media/icon.png"
+    },
+    "stats": {
+      "versions": 1
+    },
+    "version": 1,
+    "active": true,
+    "version_created": "2021-11-15T18:26:42+00:00"
+  }

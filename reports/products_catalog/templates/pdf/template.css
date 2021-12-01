@@ -48,7 +48,7 @@
         font-size: 13pt;
         display: flex;
         align-items: flex-end;
-        content: "Connect Catalog";
+        content: "Products Catalog";
     }
     @bottom-left {
         font-size: 10px;
