@@ -3,14 +3,12 @@
 # Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
-
-from connect.client import R
-
-from reports.utils import Progress, convert_to_datetime, get_basic_value, get_value
-
 from concurrent import futures
 
+from connect.client import R
 from connect.client import ClientError
+
+from ..utils import convert_to_datetime, get_basic_value, get_value, Progress
 
 HEADERS = (
     'Asset ID', 'Asset External ID', 'Asset Status',

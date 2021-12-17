@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.listing_requests.entrypoint import generate, HEADERS
+from reports.listing_requests.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'product': {

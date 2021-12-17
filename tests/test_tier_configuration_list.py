@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.tier_configuration_list.entrypoint import generate, HEADERS
+from reports.tier_configuration_list.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'product': {

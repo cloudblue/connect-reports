@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.tier_configuration_requests.entrypoint import generate, HEADERS
+from reports.tier_configuration_requests.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'date': {
