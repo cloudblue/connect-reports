@@ -1,7 +1,7 @@
 from copy import deepcopy
+from unittest.mock import MagicMock
 
 from reports.products_catalog.entrypoint import generate
-from unittest.mock import MagicMock
 
 
 def test_generate(

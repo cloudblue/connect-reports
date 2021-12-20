@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="reports/my_awesome_report_pdf/templates/pdf/template.css" rel="stylesheet">
+    <title>Report</title>
+    <meta name="description" content="Requests Executive Report">
+</head>
+<body>
+<article id="cover">
+    <div class="cover-text">
+        <div>
+            <h1>Requests Executive Report</h1>
+            <p>{{ account.name }}</p>
+            <p>{{ account.id }}</p>
+            <p>{{ data.generation_date }}</p>
+            <p>From {{ data.range.start }} to {{ data.range.end }}</p>
+        </div>
+    </div>
+</article>
+
+{% for chart in data.charts %}
+    <article id="page">
+    <h2>{{ chart.title }}</h2>
+    <p>{{ chart.description }}</p>
+    {% for image in chart.images %}
+        <img src='{{ image }}' class='chart'/>
+    {% endfor %}
+    {% if chart.table %}
+        <table>
+        <tr>
+            <th> # </th>
+            <th> Country </th>
+            <th> Requests </th>
+        </tr>
+       {% for row in chart.table %}
+            <tr>
+                <td>{{ row.number }}</td>
+                <td>{{ row.country }}</td>
+                <td id="value">{{ row.amount }}</td>
+            </tr>
+       {% endfor %}
+       </table>
+    {% endif %}
+    </article>
+{% endfor %}
+
+
+</body>
+</html>

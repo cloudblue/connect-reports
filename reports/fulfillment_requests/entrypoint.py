@@ -6,7 +6,7 @@
 
 from connect.client import R
 
-from reports.utils import convert_to_datetime, get_basic_value, get_value, today_str
+from ..utils import convert_to_datetime, get_basic_value, get_value, today_str
 
 HEADERS = (
     'Request ID', 'Request Type', 'Request Status',
@@ -51,7 +51,7 @@ def generate(
 
 
 def _get_requests(client, parameters):
-    all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed', 'draft']
+    all_status = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed', 'draft']
 
     query = R()
     query &= R().created.ge(parameters['date']['after'])
@@ -64,7 +64,7 @@ def _get_requests(client, parameters):
     if parameters.get('rr_status') and parameters['rr_status']['all'] is False:
         query &= R().status.oneof(parameters['rr_status']['choices'])
     else:
-        query &= R().status.oneof(all_types)
+        query &= R().status.oneof(all_status)
     if parameters.get('mkp') and parameters['mkp']['all'] is False:
         query &= R().asset.marketplace.id.oneof(parameters['mkp']['choices'])
     if parameters.get('hub') and parameters['hub']['all'] is False:

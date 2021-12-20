@@ -6,7 +6,7 @@
 
 from connect.client import R
 
-from reports.utils import convert_to_datetime, get_basic_value, get_value, today_str
+from ..utils import convert_to_datetime, get_basic_value, get_value, today_str
 
 HEADERS = (
     'Request ID', 'Request Type', 'Status',

@@ -79,6 +79,10 @@
                   {
                      "value":"cancel",
                      "label":"Cancel"
+                  },
+                  {
+                     "value":"adjustment",
+                     "label":"Adjustment"
                   }
                ]
             },
@@ -1205,6 +1209,97 @@
                  }
              }
          ]
-     }
+     },
+     {
+      "name":"Executive report for fullfilment requests",
+      "readme_file":"reports/executive_fullfilment_requests/Readme.md",
+      "entrypoint":"reports.executive_fullfilment_requests.entrypoint.generate",
+      "audience":[
+         "provider"
+      ],
+      "report_spec":"2",
+      "renderers": [
+         {
+            "id": "pdf",
+            "type": "pdf",
+            "description": "Export data as PDF (portrait)",
+            "default": true,
+            "template": "reports/executive_fullfilment_requests/templates/pdf/template.html.j2",
+            "args": {
+                "css_file": "reports/executive_fullfilment_requests/templates/pdf/template.css"
+            }
+        }
+      ],
+      "parameters":[
+         {
+            "id":"date",
+            "type":"date_range",
+            "name":"Report period",
+            "description":"Provide the time period to create the report",
+            "required":true
+         },
+         {
+            "id":"product",
+            "type":"product",
+            "name":"Product list",
+            "description":"Select the products you want to include in report",
+            "required":true
+         },
+         {
+            "id":"rr_type",
+            "type":"checkbox",
+            "name":"Types of requests",
+            "description":"Select the requests types you want to include in report",
+            "required":true,
+            "choices":[
+               {
+                  "value":"purchase",
+                  "label":"Purchase"
+               },
+               {
+                  "value":"change",
+                  "label":"Change"
+               },
+               {
+                  "value":"suspend",
+                  "label":"Suspend"
+               },
+               {
+                  "value":"resume",
+                  "label":"Resume"
+               },
+               {
+                  "value":"cancel",
+                  "label":"Cancel"
+               },
+               {
+                  "value": "adjustment",
+                  "label": "Adjustment"
+               }
+            ]
+         },
+         {
+            "id":"connection_type",
+            "type":"checkbox",
+            "name":"Transaction type",
+            "required":true,
+            "description":"Select the type of transaction to include in report",
+            "choices":[
+               {
+                  "value":"preview",
+                  "label":"Preview"
+               },
+               {
+                  "value":"test",
+                  "label":"Test"
+               },
+               {
+                  "value":"production",
+                  "label":"Production"
+               }
+            ]
+         }
+      ]
+   }
    ]
 }

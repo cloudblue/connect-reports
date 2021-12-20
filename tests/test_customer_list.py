@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.customers_list.entrypoint import generate, HEADERS
+from reports.customers_list.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'date': {

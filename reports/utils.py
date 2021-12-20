@@ -51,7 +51,7 @@ class Progress:
 
 def get_dict_element(dictionary, *keys):
     if not keys or keys[0] not in dictionary:
-        if not dictionary or isinstance(dictionary, collections.Mapping):
+        if not dictionary or isinstance(dictionary, collections.abc.Mapping):
             return ''
         return dictionary
     key = keys[0]

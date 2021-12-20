@@ -5,8 +5,9 @@
 #
 import datetime
 
-from reports.utils import convert_to_datetime, get_dict_element
 from connect.client import R
+
+from ..utils import convert_to_datetime, get_dict_element
 
 
 def generate(

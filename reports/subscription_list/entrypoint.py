@@ -6,7 +6,7 @@
 
 from connect.client import R
 
-from reports.utils import convert_to_datetime, get_value
+from ..utils import convert_to_datetime, get_value
 
 HEADERS = (
     'Subscription ID', 'Subscription External ID', 'Subscription Type',

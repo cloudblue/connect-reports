@@ -3,21 +3,16 @@
 # Copyright (c) 2021, CloudBlue
 # All rights reserved.
 #
-
+import json
+import os
 from collections import namedtuple
 from collections.abc import Iterable
 from types import MethodType
 from urllib.parse import parse_qs
 
 import pytest
-
 import requests
-
 import responses
-
-import json
-import os
-
 from connect.client import ConnectClient
 
 
@@ -313,6 +308,19 @@ def service_agreement_response():
             'tests',
             'fixtures',
             'service_agreement.json',
+        ),
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def executive_fullfilment_requests_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'executive_fullfilment_requests.json',
         ),
     ) as request:
         return json.load(request)

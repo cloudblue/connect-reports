@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.fulfillment_requests_line_item.entrypoint import generate, HEADERS
+from reports.fulfillment_requests_line_item.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'date': {

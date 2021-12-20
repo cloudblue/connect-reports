@@ -6,7 +6,7 @@
 
 from connect.client import R
 
-from reports.utils import get_basic_value, get_value
+from ..utils import get_basic_value, get_value
 
 HEADERS = (
     'Account ID', 'External ID', 'Customer Scope',

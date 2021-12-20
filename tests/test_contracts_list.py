@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.contract_list.entrypoint import generate, HEADERS
+from reports.contract_list.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'type': {

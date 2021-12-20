@@ -4,7 +4,10 @@
 # All rights reserved.
 #
 
-from reports.billing_requests.entrypoint import generate, HEADERS
+from reports.billing_requests.entrypoint import (
+    generate,
+    HEADERS,
+)
 
 PARAMETERS = {
     'date': {
