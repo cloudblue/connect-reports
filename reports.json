@@ -116,6 +116,18 @@
                   {
                      "value":"draft",
                      "label":"Draft"
+                  },
+                  {
+                     "value": "scheduled",
+                     "label":  "Scheduled"
+                  },
+                  {
+                     "value": "revoking",
+                     "label":  "Revoking"
+                  },
+                  {
+                     "value": "revoked",
+                     "label":  "Revoked"
                   }
                ]
             },
