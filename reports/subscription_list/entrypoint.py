@@ -9,8 +9,8 @@ from connect.client import R
 from ..utils import convert_to_datetime, get_value
 
 HEADERS = (
-    'Subscription ID', 'Subscription External ID', 'Subscription Type',
-    'Creation date', 'Updated date', 'Status', 'Billing Period',
+    'Subscription ID', 'Subscription External ID', 'Vendor primary key',
+    'Subscription Type', 'Creation date', 'Updated date', 'Status', 'Billing Period',
     'Anniversary Day', 'Anniversary Month', 'Contract ID', 'Contract Name',
     'Customer ID', 'Customer Name', 'Customer External ID',
     'Tier 1 ID', 'Tier 1 Name', 'Tier 1 External ID',
@@ -28,6 +28,7 @@ def generate(
     renderer_type=None,
     extra_context_callback=None,
 ):
+    products_primary_keys = {}
     subscriptions = _get_subscriptions(client, parameters)
     total = subscriptions.count()
     progress = 0
@@ -38,13 +39,19 @@ def generate(
         progress_callback(progress, total)
 
     for subscription in subscriptions:
+        primary_vendor_key = get_primary_key(
+            subscription.get('params', []),
+            subscription['product']['id'],
+            client,
+            products_primary_keys,
+        )
         if renderer_type == 'json':
             yield {
                 HEADERS[idx].replace(' ', '_').lower(): value
-                for idx, value in enumerate(_process_line(subscription))
+                for idx, value in enumerate(_process_line(subscription, primary_vendor_key))
             }
         else:
-            yield _process_line(subscription)
+            yield _process_line(subscription, primary_vendor_key)
         progress += 1
         progress_callback(progress, total)
 
@@ -89,10 +96,28 @@ def get_anniversary_month(subscription_billing):
     return '-'
 
 
-def _process_line(subscription):
+def search_product_primary(parameters):
+    for param in parameters:
+        if param['constraints'].get('reconciliation'):
+            return param['name']
+
+
+def get_primary_key(parameters, product_id, client, products_primary_keys):
+    if product_id not in products_primary_keys:
+        prod_parameters = client.collection('products')[product_id].collection('parameters').all()
+        primary_id = search_product_primary(prod_parameters)
+        products_primary_keys[product_id] = primary_id
+    for param in parameters:
+        if param['id'] == products_primary_keys[product_id]:
+            return param['value'] if len(param['value']) > 0 else '-'
+    return '-'
+
+
+def _process_line(subscription, primary_vendor_key):
     return (
         subscription.get('id'),
         subscription.get('external_id', '-'),
+        primary_vendor_key,
         get_value(subscription, 'connection', 'type'),
         convert_to_datetime(subscription['events']['created']['at']),
         convert_to_datetime(subscription['events']['updated']['at']),
