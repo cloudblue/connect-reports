@@ -47,7 +47,7 @@ def test_generate(progress, client_factory, response_factory, ff_request):
     responses.append(
         response_factory(
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),in(status,'
-                  '(tiers_setup,inquiring,pending,approved,failed,draft)))',
+                  '(tiers_setup,inquiring,pending,approved,failed)))',
             value=[ff_request],
         ),
     )
@@ -121,7 +121,7 @@ def test_generate_csv_renderer(progress, client_factory, response_factory, ff_re
     responses.append(
         response_factory(
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),in(status,'
-                  '(tiers_setup,inquiring,pending,approved,failed,draft)))',
+                  '(tiers_setup,inquiring,pending,approved,failed)))',
             value=[ff_request],
         ),
     )
@@ -146,7 +146,7 @@ def test_generate_json_renderer(progress, client_factory, response_factory, ff_r
     responses.append(
         response_factory(
             query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),in(status,'
-                  '(tiers_setup,inquiring,pending,approved,failed,draft)))',
+                  '(tiers_setup,inquiring,pending,approved,failed)))',
             value=[ff_request],
         ),
     )

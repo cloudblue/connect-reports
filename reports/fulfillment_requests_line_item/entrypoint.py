@@ -40,19 +40,20 @@ def generate(
     for request in requests:
         connection = request['asset']['connection']
         for item in request['asset']['items']:
-            if renderer_type == 'json':
-                yield {
-                    HEADERS[idx].replace(' ', '_').lower(): value
-                    for idx, value in enumerate(_process_line(item, request, connection))
-                }
-            else:
-                yield _process_line(item, request, connection)
+            if item['quantity'] != 0 and item['old_quantity'] != 0:
+                if renderer_type == 'json':
+                    yield {
+                        HEADERS[idx].replace(' ', '_').lower(): value
+                        for idx, value in enumerate(_process_line(item, request, connection))
+                    }
+                else:
+                    yield _process_line(item, request, connection)
         progress += 1
         progress_callback(progress, total)
 
 
 def _get_requests(client, parameters):
-    all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed', 'draft']
+    all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed']
 
     query = R()
     query &= R().created.ge(parameters['date']['after'])
@@ -71,7 +72,7 @@ def _get_requests(client, parameters):
     if parameters.get('hub') and parameters['hub']['all'] is False:
         query &= R().asset.connection.hub.id.oneof(parameters['hub']['choices'])
 
-    return client.requests.filter(query)
+    return client.requests.filter(query).all()
 
 
 def _process_line(item, request, connection):

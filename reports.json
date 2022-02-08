@@ -114,10 +114,6 @@
                      "label":"Failed"
                   },
                   {
-                     "value":"draft",
-                     "label":"Draft"
-                  },
-                  {
                      "value": "scheduled",
                      "label":  "Scheduled"
                   },
@@ -244,10 +240,6 @@
                   {
                      "value":"failed",
                      "label":"Failed"
-                  },
-                  {
-                     "value":"draft",
-                     "label":"Draft"
                   }
                ]
             },
