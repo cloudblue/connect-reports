@@ -254,7 +254,7 @@
       },
       {
          "name":"Fulfillment requests failed with vendor reason",
-         "readme_file":"reports/fulfillment_requests/Readme.md",
+         "readme_file":"reports/fulfillment_requests_failed/Readme.md",
          "entrypoint":"reports.fulfillment_requests_failed.entrypoint.generate",
          "audience":[
             "provider",
@@ -267,7 +267,7 @@
                "type": "xlsx",
                "default": true,
                "description": "Export data in Microsoft Excel 2020 format.",
-               "template": "reports/fulfillment_requests/templates/xlsx/template.xlsx",
+               "template": "reports/fulfillment_requests_failed/templates/xlsx/template.xlsx",
                "args": {
                    "start_row": 2,
                    "start_col": 1
