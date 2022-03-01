@@ -31,7 +31,11 @@ def generate(
     query &= R().status.eq('pending')
     if parameters.get('trans_type') and parameters['trans_type']['all'] is False:
         query &= R().asset.connection.type.oneof(parameters['trans_type']['choices'])
-    requests = client.requests.filter(query).order_by('created')
+    requests = client.requests.filter(query).select(
+        '-asset.items',
+        '-asset.params',
+        '-asset.configuration',
+    ).order_by('created')
 
     total = requests.count()
 
