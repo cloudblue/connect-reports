@@ -63,7 +63,11 @@ def _get_requests(client, parameters):
     if parameters.get('connection_type') and parameters['connection_type']['all'] is False:
         query &= R().asset.connection.type.oneof(parameters['connection_type']['choices'])
 
-    return client.requests.filter(query)
+    return client.requests.filter(query).select(
+        '-asset.items',
+        '-asset.params,'
+        '-asset.configuration',
+    )
 
 
 def _process_line(request, connection):
