@@ -31,6 +31,8 @@ def generate(
     query &= R().status.eq('pending')
     if parameters.get('trans_type') and parameters['trans_type']['all'] is False:
         query &= R().asset.connection.type.oneof(parameters['trans_type']['choices'])
+    if parameters.get('product') and parameters['product']['all'] is False:
+        query &= R().asset.product.id.oneof(parameters['product']['choices'])
     requests = client.requests.filter(query).select(
         '-asset.items',
         '-asset.params',
