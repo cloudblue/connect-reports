@@ -109,7 +109,7 @@ def get_primary_key(parameters, product_id, client, products_primary_keys):
         products_primary_keys[product_id] = primary_id
     for param in parameters:
         if param['id'] == products_primary_keys[product_id]:
-            return param['value'] if len(param['value']) > 0 else '-'
+            return param['value'] if 'value' in param and len(param['value']) > 0 else '-'
     return '-'
 
 
