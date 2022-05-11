@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from connect.client import R, ClientError
+from connect.client import ClientError, R
 
 from ..utils import convert_to_datetime, get_value
 
@@ -105,7 +105,11 @@ def search_product_primary(parameters):
 def get_primary_key(parameters, product_id, client, products_primary_keys):
     try:
         if product_id not in products_primary_keys:
-            prod_parameters = client.collection('products')[product_id].collection('parameters').all()
+            prod_parameters = client.collection(
+                'products',
+            )[product_id].collection(
+                'parameters',
+            ).all()
             primary_id = search_product_primary(prod_parameters)
             products_primary_keys[product_id] = primary_id
         for param in parameters:
