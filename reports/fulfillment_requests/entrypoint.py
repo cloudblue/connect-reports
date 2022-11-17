@@ -75,6 +75,8 @@ def _get_requests(client, parameters):
         '-asset.items',
         '-asset.params',
         '-asset.configuration',
+        '-activation_key',
+        '-template',
     )
 
 

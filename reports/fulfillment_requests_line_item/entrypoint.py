@@ -72,7 +72,12 @@ def _get_requests(client, parameters):
     if parameters.get('hub') and parameters['hub']['all'] is False:
         query &= R().asset.connection.hub.id.oneof(parameters['hub']['choices'])
 
-    return client.requests.filter(query).all()
+    return client.requests.filter(query).select(
+        '-asset.params,'
+        '-asset.configuration',
+        '-activation_key',
+        '-template',
+    )
 
 
 def _process_line(item, request, connection):

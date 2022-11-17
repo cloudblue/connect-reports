@@ -40,7 +40,12 @@ def _get_requests(client, parameters):
         query &= R().asset.product.id.oneof(parameters['product']['choices'])
     if parameters.get('rr_type') and parameters['rr_type']['all'] is False:
         query &= R().type.oneof(parameters['rr_type']['choices'])
-    return client.requests.filter(query).select('-asset.params', '-asset.configuration')
+    return client.requests.filter(query).select(
+        '-asset.params',
+        '-asset.configuration',
+        '-activation_key',
+        '-template',
+    )
 
 
 def _get_request_count_group_by_type(client, parameters):

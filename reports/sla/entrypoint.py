@@ -37,6 +37,8 @@ def generate(
         '-asset.items',
         '-asset.params',
         '-asset.configuration',
+        '-activation_key',
+        '-template',
     ).order_by('created')
 
     total = requests.count()
