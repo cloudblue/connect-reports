@@ -439,7 +439,7 @@ def _process_product_data(report_data, request):
 def _process_country_data(report_data, request):
     country = get_dict_element(request, 'asset', 'tiers', 'customer', 'contact_info', 'country')
     if country:
-        country_name = COUNTRIES[country.upper()]
+        country_name = COUNTRIES.get(country.upper(), "Antarctica")
 
         country_data = report_data['country'].get(
             country_name,

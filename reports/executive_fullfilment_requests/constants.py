@@ -7,6 +7,7 @@ COUNTRIES = {
     "AF": "Afghanistan",
     "AO": "Angola",
     "AI": "Anguilla",
+    "AN": "Netherlands Antilles",
     "AX": "Åland Islands",
     "AL": "Albania",
     "AD": "Andorra",
