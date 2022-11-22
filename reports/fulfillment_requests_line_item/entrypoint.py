@@ -9,7 +9,7 @@ from connect.client import R
 from ..utils import convert_to_datetime, get_basic_value, get_value, today_str
 
 HEADERS = (
-    'Request ID', 'Request Type',
+    'Request ID', 'Request Type', 'Request Status',
     'Created At', 'Updated At', 'Exported At',
     'Item ID', 'Item Name', 'Item Type', 'Item Unit Of measure', 'Item MPN', 'Item Period',
     'Quantity', 'Customer ID', 'Customer Name', 'Customer External ID',
@@ -17,7 +17,7 @@ HEADERS = (
     'Tier 2 ID', 'Tier 2 Name', 'Tier 2 External ID',
     'Provider ID', 'Provider Name', 'Vendor ID', 'Vendor Name',
     'Product ID', 'Product Name', 'Asset ID', 'Asset External ID',
-    'Transaction Type', 'Hub ID', 'Hub Name', 'Request Status',
+    'Transaction Type', 'Hub ID', 'Hub Name', 'Asset Status',
 )
 
 
@@ -84,6 +84,7 @@ def _process_line(item, request, connection):
     return (
         get_basic_value(request, 'id'),
         get_basic_value(request, 'type'),
+        get_basic_value(request, 'status'),
         convert_to_datetime(
             get_basic_value(request, 'created'),
         ),

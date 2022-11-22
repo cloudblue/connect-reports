@@ -130,7 +130,7 @@ def test_generate_csv_renderer(progress, client_factory, response_factory, ff_re
 
     assert len(result) == 19
     assert result[0] == HEADERS
-    assert len(result[0]) == 33
+    assert len(result[0]) == 34
     assert result[0][0] == 'Request ID'
     assert progress.call_count == 2
     assert progress.call_args == ((2, 2),)
@@ -154,7 +154,7 @@ def test_generate_json_renderer(progress, client_factory, response_factory, ff_r
     result = list(generate(client, PARAMETERS, progress, renderer_type='json'))
 
     assert len(result) == 18
-    assert len(result[0]) == 33
+    assert len(result[0]) == 34
     assert result[0]['request_id'] == 'PR-1895-0864-1238-001'
     assert progress.call_count == 1
     assert progress.call_args == ((1, 1),)
