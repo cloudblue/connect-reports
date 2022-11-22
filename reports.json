@@ -18,7 +18,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/fulfillment_requests/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -150,7 +150,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/fulfillment_requests_line_item/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -266,7 +266,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/fulfillment_requests_failed/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -367,7 +367,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/billing_requests/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -425,7 +425,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/billing_requests_line_item/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -483,7 +483,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/subscription_list/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -602,7 +602,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/tier_configuration_requests/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -706,7 +706,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/tier_configuration_list/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -781,7 +781,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/listing_requests/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -868,7 +868,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/listing_list/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -942,7 +942,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/customers_list/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -1006,7 +1006,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/contract_list/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -1097,7 +1097,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/usage_in_subscription/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
@@ -1211,7 +1211,7 @@
           "id": "xlsx",
           "type": "xlsx",
           "default": true,
-          "description": "Export data in Microsoft Excel 2020 format.",
+          "description": "Export data in Microsoft Excel 2020 format",
           "template": "reports/sla/templates/xlsx/template.xlsx",
           "args": {
             "start_row": 2,
