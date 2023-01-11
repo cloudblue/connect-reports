@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2021, Globex Corporation
+# Copyright (c) 2023, CloudBlue
 # All rights reserved.
 #
 

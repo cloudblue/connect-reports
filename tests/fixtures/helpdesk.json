@@ -1,0 +1,68 @@
+{
+   "id":"CA-925-402-166",
+   "subject":"Test Case Subject",
+   "description":"Test Case Details",
+   "priority":0,
+   "state":"closed",
+   "type":"technical",
+   "issuer":{
+      "account":{
+         "id":"PA-111-111",
+         "name":"CB Demo Distributor",
+         "icon":"/media/PA-425-033/media/icon.png"
+      },
+      "agent":{
+         "id":"UR-667-478-059",
+         "name":"John Smit"
+      },
+      "recipients":[
+         {
+            "id":"UR-667-478-059",
+            "name":"John Smit"
+         }
+      ]
+   },
+   "receiver":{
+      "account":{
+         "id":"PA-222-222",
+         "name":"CloudBlue",
+         "icon":"/media/PA-639-594/media/icon.png"
+      },
+      "recipients":[
+
+      ]
+   },
+   "events":{
+      "created":{
+         "at":"2021-03-05T13:51:46+00:00",
+         "by":{
+            "id":"UR-667-478-059",
+            "name":"John Smit"
+         }
+      },
+      "updated":{
+         "at":"2021-03-16T17:01:10+00:00",
+         "by":{
+            "id":"UR-667-478-059",
+            "name":"John Smit"
+         }
+      },
+      "pending":{
+         "at":"2021-03-05T13:51:46+00:00",
+         "by":{
+            "id":"UR-667-478-059",
+            "name":"John Smit"
+         }
+      },
+      "resolved":{
+         "at":"2021-03-09T16:28:13+00:00",
+         "by":{
+            "id":"UR-841-574-187",
+            "name":"John Smit 2"
+         }
+      },
+      "closed":{
+         "at":"2021-03-16T17:01:10+00:00"
+      }
+   }
+}
