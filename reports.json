@@ -1310,6 +1310,75 @@
           ]
         }
       ]
+    },
+    {
+      "name": "HelpDesk report",
+      "readme_file": "reports/helpdesk/Readme.md",
+      "entrypoint": "reports.helpdesk.entrypoint.generate",
+      "audience": [
+        "provider",
+        "vendor"
+      ],
+      "report_spec": "2",
+      "renderers": [
+        {
+          "id": "xlsx",
+          "type": "xlsx",
+          "default": true,
+          "description": "Export data in Microsoft Excel 2020 format",
+          "template": "reports/helpdesk/templates/xlsx/template.xlsx",
+          "args": {
+            "start_row": 2,
+            "start_col": 1
+          }
+        },
+        {
+          "id": "json",
+          "type": "json",
+          "default": false,
+          "description": "Export data as JSON"
+        },
+        {
+          "id": "csv",
+          "type": "csv",
+          "default": false,
+          "description": "Export data as CSV"
+        }
+      ],
+      "parameters": [
+        {
+          "id": "date",
+          "type": "date_range",
+          "name": "Report period",
+          "description": "Provide the time period to create the report",
+          "required": true
+        },
+        {
+          "id": "ticket_status",
+          "type": "checkbox",
+          "name": "Tickets in status",
+          "description": "Select the status of ticket you want to include in report",
+          "required": true,
+          "choices": [
+            {
+              "value": "inquiring",
+              "label": "Inquiring"
+            },
+            {
+              "value": "pending",
+              "label": "Pending"
+            },
+            {
+              "value": "resolved",
+              "label": "Resolved"
+            },
+            {
+              "value": "closed",
+              "label": "Closed"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

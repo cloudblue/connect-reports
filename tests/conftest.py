@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2021, CloudBlue
+# Copyright (c) 2023, CloudBlue
 # All rights reserved.
 #
 import json
@@ -321,6 +321,19 @@ def executive_fullfilment_requests_response():
             'tests',
             'fixtures',
             'executive_fullfilment_requests.json',
+        ),
+    ) as request:
+        return json.load(request)
+
+
+@pytest.fixture
+def helpdesk_response():
+    with open(
+        os.path.join(
+            os.getcwd(),
+            'tests',
+            'fixtures',
+            'helpdesk.json',
         ),
     ) as request:
         return json.load(request)

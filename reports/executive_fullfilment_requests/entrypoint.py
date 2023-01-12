@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (c) 2021, CloudBlue
+# Copyright (c) 2023, CloudBlue
 # All rights reserved.
 #
 import pathlib
