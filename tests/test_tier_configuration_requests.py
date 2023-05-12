@@ -92,7 +92,8 @@ def test_generate_all_params(progress, client_factory, response_factory, tcr_req
     responses.append(
         response_factory(
             query='and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,'
-                  '2021-01-01T00:00:00),in(product.id,(PRD-1)),in(marketplace.id,(MKP-1)),'
+                  '2021-01-01T00:00:00),in(configuration.product.id,(PRD-1)),'
+                  'in(configuration.marketplace.id,(MKP-1)),'
                   'in(type,(setup)),in(status,(pending)))',
             value=[tcr_request],
         ),
