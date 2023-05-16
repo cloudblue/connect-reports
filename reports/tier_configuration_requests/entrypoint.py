@@ -61,9 +61,9 @@ def _get_requests(client, parameters):
     query &= R().events.created.at.le(parameters['date']['before'])
 
     if parameters.get('product') and parameters['product']['all'] is False:
-        query &= R().product.id.oneof(parameters['product']['choices'])
+        query &= R().configuration.product.id.oneof(parameters['product']['choices'])
     if parameters.get('mkp') and parameters['mkp']['all'] is False:
-        query &= R().marketplace.id.oneof(parameters['mkp']['choices'])
+        query &= R().configuration.marketplace.id.oneof(parameters['mkp']['choices'])
     if parameters.get('rr_type') and parameters['rr_type']['all'] is False:
         query &= R().type.oneof(parameters['rr_type']['choices'])
     if parameters.get('rr_status') and parameters['rr_status']['all'] is False:
