@@ -17,7 +17,7 @@ HEADERS = (
     'Provider ID', 'Provider Name', 'Vendor ID', 'Vendor Name',
     'Product ID', 'Product Name',
     'Subscription ID', 'Subscription External ID', 'Subscription Status', 'Subscription Type',
-    'Hub ID', 'Hub Name',
+    'Hub ID', 'Hub Name', 'Marketplace ID', 'Marketplace Name',
 )
 
 
@@ -52,9 +52,13 @@ def generate(
 
 
 def _get_requests(client, parameters):
+    after = parameters['date']['after']
+    before = parameters['date']['before']
+    query_from = R(period__from__ge=after) & R(period__from__le=before)
+    query_to = R(period__to__ge=after) & R(period__to__le=before)
+
     query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
+    query &= query_from | query_to
 
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().asset.product.id.oneof(parameters['product']['choices'])
@@ -102,4 +106,6 @@ def _process_line(item, request, connection):
         get_value(request['asset'], 'connection', 'type'),
         get_value(connection, 'hub', 'id') if 'hub' in connection else '',
         get_value(connection, 'hub', 'name') if 'hub' in connection else '',
+        get_value(request['asset'], 'marketplace', 'id'),
+        get_value(request['asset'], 'marketplace', 'name'),
     )

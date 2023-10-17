@@ -14,8 +14,10 @@ exclude = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-connect-openapi-client = "^24"
+connect-openapi-client = ">24"
 openpyxl = "^3.0.5"
+pyyaml = '6.0.0'
+Pygments = '2.10.0'
 
 [tool.poetry.dev-dependencies]
 connect-cli = "^24.5"

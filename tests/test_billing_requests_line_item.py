@@ -38,7 +38,10 @@ def test_generate(progress, client_factory, response_factory, billing_request):
     )
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'or(and(ge(period.from,2020-12-01T00:00:00),le(period.from,2021-01-01T00:00:00)),'
+                'and(ge(period.to,2020-12-01T00:00:00),le(period.to,2021-01-01T00:00:00)))'
+            ),
             value=[billing_request],
         ),
     )
@@ -85,9 +88,13 @@ def test_generate_additional(progress, client_factory, response_factory, billing
 
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),'
-                  'in(asset.product.id,(PRD-276-377-545)),in(asset.marketplace.id,(MP-123)),'
-                  'in(asset.connection.hub.id,(HB-123)))',
+            query=(
+                'and(or(and(ge(period.from,2020-12-01T00:00:00),'
+                'le(period.from,2021-01-01T00:00:00)),'
+                'and(ge(period.to,2020-12-01T00:00:00),le(period.to,2021-01-01T00:00:00))),'
+                'in(asset.product.id,(PRD-276-377-545)),in(asset.marketplace.id,(MP-123)),'
+                'in(asset.connection.hub.id,(HB-123)))'
+            ),
             value=[billing_request],
         ),
     )
@@ -108,7 +115,10 @@ def test_generate_csv_renderer(progress, client_factory, response_factory, billi
     )
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'or(and(ge(period.from,2020-12-01T00:00:00),le(period.from,2021-01-01T00:00:00)),'
+                'and(ge(period.to,2020-12-01T00:00:00),le(period.to,2021-01-01T00:00:00)))'
+            ),
             value=[billing_request],
         ),
     )
@@ -117,7 +127,7 @@ def test_generate_csv_renderer(progress, client_factory, response_factory, billi
 
     assert len(result) == 7
     assert result[0] == HEADERS
-    assert len(result[0]) == 34
+    assert len(result[0]) == 36
     assert result[0][0] == 'Billing request ID'
     assert result[1][0] == 'BRV-3970-9735-4579-0002'
     assert progress.call_count == 2
@@ -133,7 +143,10 @@ def test_generate_json_renderer(progress, client_factory, response_factory, bill
     )
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'or(and(ge(period.from,2020-12-01T00:00:00),le(period.from,2021-01-01T00:00:00)),'
+                'and(ge(period.to,2020-12-01T00:00:00),le(period.to,2021-01-01T00:00:00)))'
+            ),
             value=[billing_request],
         ),
     )
@@ -141,7 +154,7 @@ def test_generate_json_renderer(progress, client_factory, response_factory, bill
     result = list(generate(client, PARAMETERS, progress, renderer_type='json'))
 
     assert len(result) == 6
-    assert len(result[0].items()) == 34
+    assert len(result[0].items()) == 36
     assert result[0]['billing_request_id'] == 'BRV-3970-9735-4579-0002'
     assert progress.call_count == 1
     assert progress.call_args == ((1, 1),)
