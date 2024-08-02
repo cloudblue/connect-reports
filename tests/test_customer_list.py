@@ -3,6 +3,9 @@
 # Copyright (c) 2023, CloudBlue
 # All rights reserved.
 #
+import copy
+
+import pytest
 
 from reports.customers_list.entrypoint import (
     generate,
@@ -18,6 +21,19 @@ PARAMETERS = {
 }
 
 
+@pytest.mark.parametrize(
+    'parameter_choices,expected_rql',
+    (
+        ({'choices': ['customer']}, ',eq(type,customer)'),
+        ({'choices': ['tier1']}, ',eq(type,reseller)'),
+        ({'choices': ['tier2']}, ',eq(type,reseller)'),
+        ({'choices': ['tier2', 'tier1']}, ',eq(type,reseller)'),
+        ({'choices': ['customer', 'tier1']}, ''),
+        ({'choices': ['customer', 'tier2']}, ''),
+        ({'choices': ['customer', 'tier1', 'tier1', 'tier2']}, ''),
+
+    ),
+)
 def test_generate(
     progress,
     client_factory,
@@ -25,7 +41,11 @@ def test_generate(
     mkp_list,
     ta_list,
     tier_account,
+    parameter_choices,
+    expected_rql,
 ):
+    parameters = copy.deepcopy(PARAMETERS)
+    parameters['tier_type'] = {**parameter_choices, 'all': False}
     responses = []
     responses.append(
         response_factory(
@@ -37,10 +57,13 @@ def test_generate(
             count=1,
         ),
     )
+    ta_list_query = (
+        'and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,'
+        '2021-01-01T00:00:00){0})'
+    )
     responses.append(
         response_factory(
-            query='and(ge(events.created.at,2020-12-01T00:00:00),le(events.created.at,'
-                  '2021-01-01T00:00:00))',
+            query=ta_list_query.format(expected_rql),
             value=ta_list,
         ),
     )
@@ -50,7 +73,7 @@ def test_generate(
         ),
     )
     client = client_factory(responses)
-    result = list(generate(client, PARAMETERS, progress))
+    result = list(generate(client, parameters, progress))
 
     assert len(result) == 1
     i = 0
