@@ -17,6 +17,12 @@ HEADERS = (
     'Extended Information',
 )
 
+TIER_TYPE = {
+    'customer': ['customer'],
+    'reseller': ['tier1', 'tier2'],
+}
+ALL_TYPE = {*TIER_TYPE['customer'], *TIER_TYPE['reseller']}
+
 
 def generate(
     client=None,
@@ -50,13 +56,22 @@ def generate(
 
 def _get_customers(client, parameters):
     query = R()
+    parameter_choices = set((parameters.get('tier_type', {}) or {}).get('choices', []))
 
     if parameters.get('date') and parameters['date'].get('after'):
         query &= R().events.created.at.ge(parameters['date']['after'])
         query &= R().events.created.at.le(parameters['date']['before'])
+    if parameter_choices == ALL_TYPE:
+        # In case all 3 scopes are present in parameter choices, is the same
+        # as all=True
+        parameters['tier_type']['all'] = True
     if parameters.get('tier_type') and parameters['tier_type']['all'] is False:
-        query &= R().scopes.oneof(parameters['tier_type']['choices'])
-
+        # (tier1 or tier2) and customer in choices -> all (no RLQ filter for tier_type)
+        # one or both of tier1/2 in choices -> R().type.eq('reseller')
+        # only customer in choices -> R().type.eq('customer')
+        for t_type, choices in TIER_TYPE.items():
+            if not parameter_choices.difference(choices):
+                query &= R().type.eq(t_type)
     return client.ns('tier').accounts.filter(query).order_by('-events.created.at').limit(1000)
 
 
