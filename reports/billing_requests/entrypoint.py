@@ -53,8 +53,8 @@ def generate(
 
 def _get_requests(client, parameters):
     query = R()
-    query &= R().created.ge(parameters['date']['after'])
-    query &= R().created.le(parameters['date']['before'])
+    query &= R().events.created.at.ge(parameters['date']['after'])
+    query &= R().events.created.at.le(parameters['date']['before'])
 
     if parameters.get('product') and parameters['product']['all'] is False:
         query &= R().asset.product.id.oneof(parameters['product']['choices'])

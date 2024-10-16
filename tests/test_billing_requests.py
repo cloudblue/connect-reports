@@ -39,7 +39,10 @@ def test_generate(progress, client_factory, response_factory, billing_request):
 
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'and(ge(events.created.at,2020-12-01T00:00:00),'
+                'le(events.created.at,2021-01-01T00:00:00))'
+            ),
             value=[billing_request],
         ),
     )
@@ -86,9 +89,12 @@ def test_generate_additional(progress, client_factory, response_factory, billing
 
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00),'
-                  'in(asset.product.id,(PRD-276-377-545)),in(asset.marketplace.id,(MP-123)),'
-                  'in(asset.connection.hub.id,(HB-123)))',
+            query=(
+                'and(ge(events.created.at,2020-12-01T00:00:00),'
+                'le(events.created.at,2021-01-01T00:00:00),'
+                'in(asset.product.id,(PRD-276-377-545)),in(asset.marketplace.id,(MP-123)),'
+                'in(asset.connection.hub.id,(HB-123)))'
+            ),
             value=[billing_request],
         ),
     )
@@ -109,7 +115,10 @@ def test_generate_csv_renderer(progress, client_factory, response_factory, billi
     )
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'and(ge(events.created.at,2020-12-01T00:00:00),'
+                'le(events.created.at,2021-01-01T00:00:00))'
+            ),
             value=[billing_request],
         ),
     )
@@ -133,7 +142,10 @@ def test_generate_json_renderer(progress, client_factory, response_factory, bill
     )
     responses.append(
         response_factory(
-            query='and(ge(created,2020-12-01T00:00:00),le(created,2021-01-01T00:00:00))',
+            query=(
+                'and(ge(events.created.at,2020-12-01T00:00:00),'
+                'le(events.created.at,2021-01-01T00:00:00))'
+            ),
             value=[billing_request],
         ),
     )
