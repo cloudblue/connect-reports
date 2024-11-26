@@ -83,6 +83,10 @@
             {
               "value": "adjustment",
               "label": "Adjustment"
+            },
+            {
+              "value": "renew",
+              "label": "Renew"
             }
           ]
         },
