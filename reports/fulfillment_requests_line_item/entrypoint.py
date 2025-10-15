@@ -53,7 +53,7 @@ def generate(
 
 
 def _get_requests(client, parameters):
-    all_types = ['tiers_setup', 'inquiring', 'pending', 'approved', 'failed']
+    all_types = ['tiers_setup', 'inquiring', 'pending', 'queued', 'approved', 'failed']
 
     query = R()
     query &= R().created.ge(parameters['date']['after'])

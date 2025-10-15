@@ -118,6 +118,10 @@
               "label": "Failed"
             },
             {
+              "value": "queued",
+              "label": "Queued"
+            },
+            {
               "value": "scheduled",
               "label": "Scheduled"
             },
@@ -236,6 +240,10 @@
             {
               "value": "pending",
               "label": "Pending"
+            },
+            {
+              "value": "queued",
+              "label": "Queued"
             },
             {
               "value": "approved",
